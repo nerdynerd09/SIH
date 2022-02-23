@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+
+<body>
+    <!-- <h1>
+        {{data}}
+    </h1> -->
+
+
+
+    <script>
+        $(function() {
+            window.setInterval(function() {
+                loadList()
+            }, 1000)
+
+
+            function loadList() {
+                x
+                $.ajax({
+                    url: "/updateList",
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data) {
+                        $(urldata).replaceWith(data)
+                    }
+                });
+            }
+        });
+    </script>
+
+    <div id="urldata">
+        <h1>Website Visited: {% for data in dataList %} {{data}} {% endfor %} </h1>
+    </div>
+</body>
+
+</html>
