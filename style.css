@@ -16,7 +16,7 @@
 
 .card{
     background: rgb(124, 119, 119);
-    background: linear-gradient(rgb(175, 175, 175),rgb(76, 75, 75));
+    background: linear-gradient(rgb(175, 175, 175),rgb(20, 20, 20));
     display: inline-table;
     border-radius: 35px;
     padding: 15px 25px;
@@ -88,5 +88,5 @@
 
 .card7{
     width: 90%;
-    height: 255px;
+    height: 255/px;
 }
