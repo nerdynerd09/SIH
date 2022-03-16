@@ -1725,23 +1725,23 @@ WARNING: /etc/snort/rules/community-web-php.rules(474) GID 1 SID 100000934 in ru
 +-----------------------[event-filter-global]----------------------------------
 | none
 +-----------------------[event-filter-local]-----------------------------------
-| gen-id=1      sig-id=2523       type=Both      tracking=dst count=10  seconds=10 
 | gen-id=1      sig-id=2275       type=Threshold tracking=dst count=5   seconds=60 
-| gen-id=1      sig-id=2494       type=Both      tracking=dst count=20  seconds=60 
-| gen-id=1      sig-id=2495       type=Both      tracking=dst count=20  seconds=60 
 | gen-id=1      sig-id=2496       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2523       type=Both      tracking=dst count=10  seconds=10 
+| gen-id=1      sig-id=3273       type=Threshold tracking=src count=5   seconds=2  
+| gen-id=1      sig-id=2494       type=Both      tracking=dst count=20  seconds=60 
 | gen-id=1      sig-id=3152       type=Threshold tracking=src count=5   seconds=2  
+| gen-id=1      sig-id=2495       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=1991       type=Limit     tracking=src count=1   seconds=60 
 | gen-id=1      sig-id=2923       type=Threshold tracking=dst count=10  seconds=60 
 | gen-id=1      sig-id=2924       type=Threshold tracking=dst count=10  seconds=60 
-| gen-id=1      sig-id=3273       type=Threshold tracking=src count=5   seconds=2  
-| gen-id=1      sig-id=1991       type=Limit     tracking=src count=1   seconds=60 
 +-----------------------[suppression]------------------------------------------
 | none
 -------------------------------------------------------------------------------
 Rule application order: pass->drop->sdrop->reject->alert->log
 Verifying Preprocessor Configurations!
-WARNING: flowbits key 'smb.tree.create.llsrpc' is set but not ever checked.
 WARNING: flowbits key 'ms_sql_seen_dns' is checked but not ever set.
+WARNING: flowbits key 'smb.tree.create.llsrpc' is set but not ever checked.
 33 out of 1024 flowbits in use.
 
 [ Port Based Pattern Matching Memory ]
@@ -1772,7 +1772,7 @@ WARNING: flowbits key 'ms_sql_seen_dns' is checked but not ever set.
 pcap DAQ configured to passive.
 Acquiring network traffic from "eth0".
 Reload thread starting...
-Reload thread started, thread 0x7fdeceb18640 (4434)
+Reload thread started, thread 0x7fb853032640 (5376)
 Decoding Ethernet
 
         --== Initialization Complete ==--
@@ -1802,43 +1802,44 @@ Decoding Ethernet
            Preprocessor Object: SF_REPUTATION  Version 1.1  <Build 1>
            Preprocessor Object: SF_DNS  Version 1.1  <Build 4>
            Preprocessor Object: SF_POP  Version 1.0  <Build 1>
-Commencing packet processing (pid=4422)
+Commencing packet processing (pid=5366)
 *** Caught Int-Signal
 ===============================================================================
-Run time for packet processing was 22.112836 seconds
-Snort processed 159 packets.
-Snort ran for 0 days 0 hours 0 minutes 22 seconds
-   Pkts/sec:            7
+Run time for packet processing was 232.579227 seconds
+Snort processed 13105 packets.
+Snort ran for 0 days 0 hours 3 minutes 52 seconds
+   Pkts/min:         4368
+   Pkts/sec:           56
 ===============================================================================
 Memory usage summary:
-  Total non-mmapped bytes (arena):       48840704
+  Total non-mmapped bytes (arena):       50057216
   Bytes in mapped regions (hblkhd):      22392832
-  Total allocated space (uordblks):      45432848
-  Total free space (fordblks):           3407856
-  Topmost releasable block (keepcost):   133312
+  Total allocated space (uordblks):      45425952
+  Total free space (fordblks):           4631264
+  Topmost releasable block (keepcost):   132928
 ===============================================================================
 Packet I/O Totals:
-   Received:          159
-   Analyzed:          159 (100.000%)
+   Received:        13198
+   Analyzed:        13105 ( 99.295%)
     Dropped:            0 (  0.000%)
    Filtered:            0 (  0.000%)
-Outstanding:            0 (  0.000%)
+Outstanding:           93 (  0.705%)
    Injected:            0
 ===============================================================================
 Breakdown by protocol (includes rebuilt packets):
-        Eth:          160 (100.000%)
+        Eth:        13106 (100.000%)
        VLAN:            0 (  0.000%)
-        IP4:          160 (100.000%)
+        IP4:          284 (  2.167%)
        Frag:            0 (  0.000%)
        ICMP:            0 (  0.000%)
-        UDP:           17 ( 10.625%)
-        TCP:          135 ( 84.375%)
-        IP6:            0 (  0.000%)
-    IP6 Ext:            0 (  0.000%)
+        UDP:           41 (  0.313%)
+        TCP:          219 (  1.671%)
+        IP6:            4 (  0.031%)
+    IP6 Ext:            4 (  0.031%)
    IP6 Opts:            0 (  0.000%)
       Frag6:            0 (  0.000%)
-      ICMP6:            0 (  0.000%)
-       UDP6:            0 (  0.000%)
+      ICMP6:            2 (  0.015%)
+       UDP6:            2 (  0.015%)
        TCP6:            0 (  0.000%)
      Teredo:            0 (  0.000%)
     ICMP-IP:            0 (  0.000%)
@@ -1857,26 +1858,26 @@ GRE IP6 Ext:            0 (  0.000%)
     GRE IPX:            0 (  0.000%)
    GRE Loop:            0 (  0.000%)
        MPLS:            0 (  0.000%)
-        ARP:            0 (  0.000%)
+        ARP:        12818 ( 97.803%)
         IPX:            0 (  0.000%)
    Eth Loop:            0 (  0.000%)
    Eth Disc:            0 (  0.000%)
-   IP4 Disc:            8 (  5.000%)
+   IP4 Disc:           15 (  0.114%)
    IP6 Disc:            0 (  0.000%)
    TCP Disc:            0 (  0.000%)
    UDP Disc:            0 (  0.000%)
   ICMP Disc:            0 (  0.000%)
-All Discard:            8 (  5.000%)
-      Other:            0 (  0.000%)
-Bad Chk Sum:           89 ( 55.625%)
+All Discard:           15 (  0.114%)
+      Other:            9 (  0.069%)
+Bad Chk Sum:          127 (  0.969%)
     Bad TTL:            0 (  0.000%)
-     S5 G 1:            1 (  0.625%)
+     S5 G 1:            1 (  0.008%)
      S5 G 2:            0 (  0.000%)
-      Total:          160
+      Total:        13106
 ===============================================================================
 Action Stats:
-     Alerts:            4 (  2.500%)
-     Logged:            4 (  2.500%)
+     Alerts:           18 (  0.137%)
+     Logged:           18 (  0.137%)
      Passed:            0 (  0.000%)
 Limits:
       Match:            0
@@ -1885,10 +1886,10 @@ Limits:
       Event:            0
       Alert:            0
 Verdicts:
-      Allow:          156 ( 98.113%)
+      Allow:        13084 ( 99.136%)
       Block:            0 (  0.000%)
     Replace:            0 (  0.000%)
-  Whitelist:            3 (  1.887%)
+  Whitelist:           21 (  0.159%)
   Blacklist:            0 (  0.000%)
      Ignore:            0 (  0.000%)
       Retry:            0 (  0.000%)
@@ -1911,117 +1912,145 @@ FragTrackers Auto Freed: 0
 ===============================================================================
 ===============================================================================
 Stream statistics:
-            Total sessions: 15
-              TCP sessions: 9
-              UDP sessions: 6
+            Total sessions: 22
+   *** Caught Int-Signal
+===============================================================================
+Run time for packet processing was 295.684974 seconds
+Snort processed 20676 packets.
+Snort ran for 0 days 0 hours 4 minutes 55 seconds
+   Pkts/min:         5169
+   Pkts/sec:           70
+===============================================================================
+Memory usage summary:
+  Total non-mmapped bytes (arena):       54714368
+  Bytes in mapped regions (hblkhd):      22392832
+  Total allocated space (uordblks):      45417552
+  Total free space (fordblks):           9296816
+  Topmost releasable block (keepcost):   54032
+===============================================================================
+Packet I/O Totals:
+   Received:        20763
+   Analyzed:        20676 ( 99.581%)
+    Dropped:            0 (  0.000%)
+   Filtered:            0 (  0.000%)
+Outstanding:           87 (  0.419%)
+   Injected:            0
+===============================================================================
+Breakdown by protocol (includes rebuilt packets):
+        Eth:        20677 (100.000%)
+       VLAN:            0 (  0.000%)
+        IP4:         6788 ( 32.829%)
+       Frag:            0 (  0.000%)
+       ICMP:            0 (  0.000%)
+        UDP:          107 (  0.517%)
+        TCP:         6651 ( 32.166%)
+        IP6:            6 (  0.029%)
+    IP6 Ext:            6 (  0.029%)
+   IP6 Opts:            0 (  0.000%)
+      Frag6:            0 (  0.000%)
+      ICMP6:            3 (  0.015%)
+       UDP6:            3 (  0.015%)
+       TCP6:            0 (  0.000%)
+     Teredo:            0 (  0.000%)
+    ICMP-IP:            0 (  0.000%)
+    IP4/IP4:            0 (  0.000%)
+    IP4/IP6:            0 (  0.000%)
+    IP6/IP4:            0 (  0.000%)
+    IP6/IP6:            0 (  0.000%)
+        GRE:            0 (  0.000%)
+    GRE Eth:            0 (  0.000%)
+   GRE VLAN:            0 (  0.000%)
+    GRE IP4:            0 (  0.000%)
+    GRE IP6:            0 (  0.000%)
+GRE IP6 Ext:            0 (  0.000%)
+   GRE PPTP:            0 (  0.000%)
+    GRE ARP:            0 (  0.000%)
+    GRE IPX:            0 (  0.000%)
+   GRE Loop:            0 (  0.000%)
+       MPLS:            0 (  0.000%)
+        ARP:        13883 ( 67.142%)
+        IPX:            0 (  0.000%)
+   Eth Loop:            0 (  0.000%)
+   Eth Disc:            0 (  0.000%)
+   IP4 Disc:           16 (  0.077%)
+   IP6 Disc:            0 (  0.000%)
+   TCP Disc:            0 (  0.000%)
+   UDP Disc:            0 (  0.000%)
+  ICMP Disc:            0 (  0.000%)
+All Discard:           16 (  0.077%)
+      Other:           14 (  0.068%)
+Bad Chk Sum:          364 (  1.760%)
+    Bad TTL:            0 (  0.000%)
+     S5 G 1:            1 (  0.005%)
+     S5 G 2:            0 (  0.000%)
+      Total:        20677
+===============================================================================
+Action Stats:
+     Alerts:           40 (  0.193%)
+     Logged:           40 (  0.193%)
+     Passed:            0 (  0.000%)
+Limits:
+      Match:            0
+      Queue:            0
+        Log:            0
+      Event:            0
+      Alert:            0
+Verdicts:
+      Allow:        20629 ( 99.355%)
+      Block:            0 (  0.000%)
+    Replace:            0 (  0.000%)
+  Whitelist:           47 (  0.226%)
+  Blacklist:            0 (  0.000%)
+     Ignore:            0 (  0.000%)
+      Retry:            0 (  0.000%)
+===============================================================================
+Frag3 statistics:
+        Total Fragments: 0
+      Frags Reassembled: 0
+               Discards: 0
+          Memory Faults: 0
+               Timeouts: 0
+               Overlaps: 0
+              Anomalies: 0
+                 Alerts: 0
+                  Drops: 0
+     FragTrackers Added: 0
+    FragTrackers Dumped: 0
+FragTrackers Auto Freed: 0
+    Frag Nodes Inserted: 0
+     Frag Nodes Deleted: 0
+===============================================================================
+===============================================================================
+Stream statistics:
+            Total sessions: 5096
+              TCP sessions: 5077
+              UDP sessions: 19
              ICMP sessions: 0
                IP sessions: 0
                 TCP Prunes: 0
                 UDP Prunes: 0
                ICMP Prunes: 0
                  IP Prunes: 0
-TCP StreamTrackers Created: 9
-TCP StreamTrackers Deleted: 9
+TCP StreamTrackers Created: 5077
+TCP StreamTrackers Deleted: 5077
               TCP Timeouts: 0
               TCP Overlaps: 0
-       TCP Segments Queued: 28
-     TCP Segments Released: 28
+       TCP Segments Queued: 46
+     TCP Segments Released: 46
        TCP Rebuilt Packets: 15
-         TCP Segments Used: 25
-              TCP Discards: 0
+         TCP Segments Used: 37
+              TCP Discards: 10
                   TCP Gaps: 3
-      UDP Sessions Created: 6
-      UDP Sessions Deleted: 6
-              UDP Timeouts: 0
-              UDP Discards: 0
-                    Events: 0
-           Internal Events: 0
-           TCP Port Filter
-                  Filtered: 0
-                 Inspected: 0
-                   Tracked: 51
-           UDP Port Filter
-                  Filtered: 0
-                 Inspected: 0
-                   Tracked: 6
-===============================================================================
-HTTP Inspect - encodings (Note: stream-reassembled packets included):
-    POST methods:                         0         
-    GET methods:                          0         
-    HTTP Request Headers extracted:       0         
-    HTTP Request Cookies extracted:       0         
-    Post parameters extracted:            0         
-    HTTP response Headers extracted:      1         
-    HTTP Response Cookies extracted:      0         
-    Unicode:                              0         
-    Double unicode:                       0         
-    Non-ASCII representable:              0         
-    Directory traversals:                 0         
-    Extra slashes ("//"):                 0         
-    Self-referencing paths ("./"):        0         
-    HTTP Response Gzip packets extracted: 0         
-    Gzip Compressed Data Processed:       n/a       
-    Gzip Decompressed Data Processed:     n/a       
-    Http/2 Rebuilt Packets:               0         
-    Total packets processed:              1         
-===============================================================================
-SMTP Preprocessor Statistics
-  Total sessions                                    : 0
-  Max concurrent sessions                           : 0
-===============================================================================
-dcerpc2 Preprocessor Statistics
-  Total sessions: 0
-===============================================================================
-SSL Preprocessor:
-   SSL packets decoded: 42        
-          Client Hello: 0         
-          Server Hello: 0         
-           Certificate: 0         
-           Server Done: 0         
-   Client Key Exchange: 0         
-   Server Key Exchange: 0         
-         Change Cipher: 0         
-              Finished: 0         
-    Client Application: 0         
-    Server Application: 2         
-                 Alert: 0         
-  Unrecognized records: 40        
-  Completed handshakes: 0         
-        Bad handshakes: 0         
-      Sessions ignored: 2         
-    Detection disabled: 0         
-===============================================================================
-SIP Preprocessor Statistics
-  Total sessions: 0
-===============================================================================
-IMAP Preprocessor Statistics
-  Total sessions                                    : 0
-  Max concurrent sessions                           : 0
-===============================================================================
-POP Preprocessor Statistics
-  Total sessions                                    : 0
-  Max concurrent sessions                           : 0
-===============================================================================
-Snort exiting
-03/17-02:20:49.739262  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
-03/17-02:20:50.722974  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
-03/17-02:20:51.724887  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
-03/17-02:20:52.724202  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
-50
-       TCP Rebuilt Packets: 20
-         TCP Segments Used: 45
-              TCP Discards: 0
-                  TCP Gaps: 4
       UDP Sessions Created: 19
       UDP Sessions Deleted: 19
               UDP Timeouts: 0
               UDP Discards: 0
-                    Events: 0
+                    Events: 6
            Internal Events: 0
            TCP Port Filter
                   Filtered: 0
                  Inspected: 0
-                   Tracked: 4230
+                   Tracked: 6317
            UDP Port Filter
                   Filtered: 0
                  Inspected: 0
@@ -2033,7 +2062,7 @@ HTTP Inspect - encodings (Note: stream-reassembled packets included):
     HTTP Request Headers extracted:       0         
     HTTP Request Cookies extracted:       0         
     Post parameters extracted:            0         
-    HTTP response Headers extracted:      13        
+    HTTP response Headers extracted:      14        
     HTTP Response Cookies extracted:      0         
     Unicode:                              0         
     Double unicode:                       0         
@@ -2045,7 +2074,7 @@ HTTP Inspect - encodings (Note: stream-reassembled packets included):
     Gzip Compressed Data Processed:       n/a       
     Gzip Decompressed Data Processed:     n/a       
     Http/2 Rebuilt Packets:               0         
-    Total packets processed:              23        
+    Total packets processed:              24        
 ===============================================================================
 SMTP Preprocessor Statistics
   Total sessions                                    : 0
@@ -2055,7 +2084,7 @@ dcerpc2 Preprocessor Statistics
   Total sessions: 0
 ===============================================================================
 SSL Preprocessor:
-   SSL packets decoded: 47        
+   SSL packets decoded: 37        
           Client Hello: 0         
           Server Hello: 0         
            Certificate: 0         
@@ -2065,12 +2094,12 @@ SSL Preprocessor:
          Change Cipher: 0         
               Finished: 0         
     Client Application: 0         
-    Server Application: 5         
+    Server Application: 8         
                  Alert: 0         
-  Unrecognized records: 42        
+  Unrecognized records: 29        
   Completed handshakes: 0         
         Bad handshakes: 0         
-      Sessions ignored: 5         
+      Sessions ignored: 8         
     Detection disabled: 0         
 ===============================================================================
 SIP Preprocessor Statistics
@@ -2085,4 +2114,19 @@ POP Preprocessor Statistics
   Max concurrent sessions                           : 0
 ===============================================================================
 Snort exiting
-etection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
+813460  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56619 -> 239.255.255.250:1900
+03/17-02:52:23.814590  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56619 -> 239.255.255.250:1900
+03/17-02:52:49.739658  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:54343 -> 239.255.255.250:1900
+03/17-02:52:50.740352  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:54343 -> 239.255.255.250:1900
+03/17-02:52:51.740934  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:54343 -> 239.255.255.250:1900
+03/17-02:52:52.741262  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:54343 -> 239.255.255.250:1900
+03/17-02:53:20.348494  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:52652 -> 239.255.255.250:1900
+03/17-02:54:20.806171  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:50516 -> 239.255.255.250:1900
+03/17-02:54:21.807834  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:50516 -> 239.255.255.250:1900
+03/17-02:54:22.810383  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:50516 -> 239.255.255.250:1900
+03/17-02:54:23.808686  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:50516 -> 239.255.255.250:1900
+03/17-02:54:49.741134  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:55306 -> 239.255.255.250:1900
+03/17-02:54:50.737792  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:55306 -> 239.255.255.250:1900
+03/17-02:54:51.738596  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:55306 -> 239.255.255.250:1900
+03/17-02:54:52.757322  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:55306 -> 239.255.255.250:1900
+03/17-02:55:20.418793  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:52652 -> 239.255.255.250:1900
