@@ -1,0 +1,2339 @@
+Running in IDS mode
+
+        --== Initializing Snort ==--
+Initializing Output Plugins!
+Initializing Preprocessors!
+Initializing Plug-ins!
+Parsing Rules file "/etc/snort/snort.conf"
+PortVar 'HTTP_PORTS' defined :  [ 80:81 311 383 591 593 901 1220 1414 1741 1830 2301 2381 2809 3037 3128 3702 4343 4848 5250 6988 7000:7001 7144:7145 7510 7777 7779 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180:8181 8243 8280 8300 8800 8888 8899 9000 9060 9080 9090:9091 9443 9999 11371 34443:34444 41080 50002 55555 ]
+PortVar 'SHELLCODE_PORTS' defined :  [ 0:79 81:65535 ]
+PortVar 'ORACLE_PORTS' defined :  [ 1024:65535 ]
+PortVar 'SSH_PORTS' defined :  [ 22 ]
+PortVar 'FTP_PORTS' defined :  [ 21 2100 3535 ]
+PortVar 'SIP_PORTS' defined :  [ 5060:5061 5600 ]
+PortVar 'FILE_DATA_PORTS' defined :  [ 80:81 110 143 311 383 591 593 901 1220 1414 1741 1830 2301 2381 2809 3037 3128 3702 4343 4848 5250 6988 7000:7001 7144:7145 7510 7777 7779 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180:8181 8243 8280 8300 8800 8888 8899 9000 9060 9080 9090:9091 9443 9999 11371 34443:34444 41080 50002 55555 ]
+PortVar 'GTP_PORTS' defined :  [ 2123 2152 3386 ]
+Detection:
+   Search-Method = AC-Full-Q
+    Split Any/Any group = enabled
+    Search-Method-Optimizations = enabled
+    Maximum pattern length = 20
+Tagged Packet Limit: 256
+Loading dynamic engine /usr/lib/snort/snort_dynamicengine/libsf_engine.so... done
+Loading all dynamic detection libs from /usr/lib/snort/snort_dynamicrules...
+WARNING: No dynamic libraries found in directory /usr/lib/snort/snort_dynamicrules.
+  Finished Loading all dynamic detection libs from /usr/lib/snort/snort_dynamicrules
+Loading all dynamic preprocessor libs from /usr/lib/snort/snort_dynamicpreprocessor/...
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_pop_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_dns_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_reputation_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_ftptelnet_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_dce2_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_modbus_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_sip_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_ssh_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_ssl_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_sdf_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_dnp3_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_gtp_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_appid_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_imap_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_smtp_preproc.so... done
+  Finished Loading all dynamic preprocessor libs from /usr/lib/snort/snort_dynamicpreprocessor/
+Log directory = /var/log/snort
+WARNING: ip4 normalizations disabled because not inline.
+WARNING: tcp normalizations disabled because not inline.
+WARNING: icmp4 normalizations disabled because not inline.
+WARNING: ip6 normalizations disabled because not inline.
+WARNING: icmp6 normalizations disabled because not inline.
+Frag3 global config:
+    Max frags: 65536
+    Fragment memory cap: 4194304 bytes
+Frag3 engine config:
+    Bound Address: default
+    Target-based policy: WINDOWS
+    Fragment timeout: 180 seconds
+    Fragment min_ttl:   1
+    Fragment Anomalies: Alert
+    Overlap Limit:     10
+    Min fragment Length:     100
+      Max Expected Streams: 768
+Stream global config:
+    Track TCP sessions: ACTIVE
+    Max TCP sessions: 262144
+    TCP cache pruning timeout: 30 seconds
+    TCP cache nominal timeout: 180 seconds
+    Memcap (for reassembly packet storage): 8388608
+    Track UDP sessions: ACTIVE
+    Max UDP sessions: 131072
+    UDP cache pruning timeout: 30 seconds
+    UDP cache nominal timeout: 180 seconds
+    Track ICMP sessions: INACTIVE
+    Track IP sessions: INACTIVE
+    Log info if session memory consumption exceeds 1048576
+    Send up to 2 active responses
+    Wait at least 5 seconds between responses
+    Protocol Aware Flushing: ACTIVE
+        Maximum Flush Point: 16000
+Stream TCP Policy config:
+    Bound Address: default
+    Reassembly Policy: WINDOWS
+    Timeout: 180 seconds
+    Limit on TCP Overlaps: 10
+    Maximum number of bytes to queue per session: 1048576
+    Maximum number of segs to queue per session: 2621
+    Options:
+        Require 3-Way Handshake: YES
+        3-Way Handshake Timeout: 180
+        Detect Anomalies: YES
+    Reassembly Ports:
+      21 client (Footprint) 
+      22 client (Footprint) 
+      23 client (Footprint) 
+      25 client (Footprint) 
+      42 client (Footprint) 
+      53 client (Footprint) 
+      79 client (Footprint) 
+      80 client (Footprint) server (Footprint)
+      81 client (Footprint) server (Footprint)
+      109 client (Footprint) 
+      110 client (Footprint) 
+      111 client (Footprint) 
+      113 client (Footprint) 
+      119 client (Footprint) 
+      135 client (Footprint) 
+      136 client (Footprint) 
+      137 client (Footprint) 
+      139 client (Footprint) 
+      143 client (Footprint) 
+      161 client (Footprint) 
+      additional ports configured but not printed.
+Stream UDP Policy config:
+    Timeout: 180 seconds
+HttpInspect Config:
+    GLOBAL CONFIG
+      Detect Proxy Usage:       NO
+      IIS Unicode Map Filename: /etc/snort/unicode.map
+      IIS Unicode Map Codepage: 1252
+      Memcap used for logging URI and Hostname: 150994944
+      Max Gzip Memory: 104857600
+      Max Gzip Sessions: 201649
+      Gzip Compress Depth: 65535
+      Gzip Decompress Depth: 65535
+    DEFAULT SERVER CONFIG:
+      Server profile: All
+      Ports (PAF): 80 81 311 383 591 593 901 1220 1414 1741 1830 2301 2381 2809 3037 3128 3702 4343 4848 5250 6988 7000 7001 7144 7145 7510 7777 7779 8000 8008 8014 8028 8080 8085 8088 8090 8118 8123 8180 8181 8243 8280 8300 8800 8888 8899 9000 9060 9080 9090 9091 9443 9999 11371 34443 34444 41080 50002 55555 
+      Server Flow Depth: 0
+      Client Flow Depth: 0
+      Max Chunk Length: 500000
+      Small Chunk Length Evasion: chunk size <= 10, threshold >= 5 times
+      Max Header Field Length: 750
+      Max Number Header Fields: 100
+      Max Number of WhiteSpaces allowed with header folding: 200
+      Inspect Pipeline Requests: YES
+      URI Discovery Strict Mode: NO
+      Allow Proxy Usage: NO
+      Disable Alerting: NO
+      Oversize Dir Length: 500
+      Only inspect URI: NO
+      Normalize HTTP Headers: NO
+      Inspect HTTP Cookies: YES
+      Inspect HTTP Responses: YES
+      Extract Gzip from responses: YES
+      Decompress response files:   
+      Unlimited decompression of gzip data from responses: YES
+      Normalize Javascripts in HTTP Responses: YES
+      Max Number of WhiteSpaces allowed with Javascript Obfuscation in HTTP responses: 200
+      Normalize HTTP Cookies: NO
+      Enable XFF and True Client IP: NO
+      Log HTTP URI data: NO
+      Log HTTP Hostname data: NO
+      Extended ASCII code support in URI: NO
+      Ascii: YES alert: NO
+      Double Decoding: YES alert: NO
+      %U Encoding: YES alert: YES
+      Bare Byte: YES alert: NO
+      UTF 8: YES alert: NO
+      IIS Unicode: YES alert: NO
+      Multiple Slash: YES alert: NO
+      IIS Backslash: YES alert: NO
+      Directory Traversal: YES alert: NO
+      Web Root Traversal: YES alert: NO
+      Apache WhiteSpace: YES alert: NO
+      IIS Delimiter: YES alert: NO
+      IIS Unicode Map: GLOBAL IIS UNICODE MAP CONFIG
+      Non-RFC Compliant Characters: 0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 
+      Whitespace Characters: 0x09 0x0b 0x0c 0x0d 
+      Legacy mode: NO
+rpc_decode arguments:
+    Ports to decode RPC on: 111 32770 32771 32772 32773 32774 32775 32776 32777 32778 32779 
+    alert_fragments: INACTIVE
+    alert_large_fragments: INACTIVE
+    alert_incomplete: INACTIVE
+    alert_multiple_requests: INACTIVE
+FTPTelnet Config:
+    GLOBAL CONFIG
+      Inspection Type: stateful
+      Check for Encrypted Traffic: YES alert: NO
+      Continue to check encrypted data: YES
+    TELNET CONFIG:
+      Ports: 23 
+      Are You There Threshold: 20
+      Normalize: YES
+      Detect Anomalies: YES
+    FTP CONFIG:
+      FTP Server: default
+        Ports (PAF): 21 2100 3535 
+        Check for Telnet Cmds: YES alert: YES
+        Ignore Telnet Cmd Operations: YES alert: YES
+        Ignore open data channels: NO
+      FTP Client: default
+        Check for Bounce Attacks: YES alert: YES
+        Check for Telnet Cmds: YES alert: YES
+        Ignore Telnet Cmd Operations: YES alert: YES
+        Max Response Length: 256
+SMTP Config:
+    Ports: 25 465 587 691 
+    Inspection Type: Stateful
+    Normalize: ATRN AUTH BDAT DATA DEBUG EHLO EMAL ESAM ESND ESOM ETRN EVFY EXPN HELO HELP IDENT MAIL NOOP ONEX QUEU QUIT RCPT RSET SAML SEND STARTTLS SOML TICK TIME TURN TURNME VERB VRFY X-EXPS XADR XAUTH XCIR XEXCH50 XGEN XLICENSE X-LINK2STATE XQUE XSTA XTRN XUSR CHUNKING X-ADAT X-DRCP X-ERCP X-EXCH50 
+    Ignore Data: No
+    Ignore TLS Data: No
+    Ignore SMTP Alerts: No
+    Max Command Line Length: 512
+    Max auth Command Line Length: 1000
+    Max Specific Command Line Length: 
+       ATRN:255 AUTH:246 BDAT:255 DATA:246 DEBUG:255 
+       EHLO:500 EMAL:255 ESAM:255 ESND:255 ESOM:255 
+       ETRN:246 EVFY:255 EXPN:255 HELO:500 HELP:500 
+       IDENT:255 MAIL:260 NOOP:255 ONEX:246 QUEU:246 
+       QUIT:246 RCPT:300 RSET:246 SAML:246 SEND:246 
+       SIZE:255 STARTTLS:246 SOML:246 TICK:246 TIME:246 
+       TURN:246 TURNME:246 VERB:246 VRFY:255 X-EXPS:246 
+       XADR:246 XAUTH:246 XCIR:246 XEXCH50:246 XGEN:246 
+       XLICENSE:246 X-LINK2STATE:246 XQUE:246 XSTA:246 XTRN:246 
+       XUSR:246 
+    Max Header Line Length: 1000
+    Max Response Line Length: 512
+    X-Link2State Alert: Yes
+    Drop on X-Link2State Alert: No
+    Alert on commands: None
+    Alert on unknown commands: No
+    SMTP Memcap: 838860
+    MIME Max Mem: 838860
+    Base64 Decoding: Enabled
+    Base64 Decoding Depth: Unlimited
+    Quoted-Printable Decoding: Enabled
+    Quoted-Printable Decoding Depth: Unlimited
+    Unix-to-Unix Decoding: Enabled
+    Unix-to-Unix Decoding Depth: Unlimited
+    Non-Encoded MIME attachment Extraction: Enabled
+    Non-Encoded MIME attachment Extraction Depth: Unlimited
+    Log Attachment filename: Enabled
+    Log MAIL FROM Address: Enabled
+    Log RCPT TO Addresses: Enabled
+    Log Email Headers: Enabled
+    Email Hdrs Log Depth: 1464
+SSH config: 
+    Autodetection: ENABLED
+    Challenge-Response Overflow Alert: ENABLED
+    SSH1 CRC32 Alert: ENABLED
+    Server Version String Overflow Alert: ENABLED
+    Protocol Mismatch Alert: ENABLED
+    Bad Message Direction Alert: DISABLED
+    Bad Payload Size Alert: DISABLED
+    Unrecognized Version Alert: DISABLED
+    Max Encrypted Packets: 20  
+    Max Server Version String Length: 100  
+    MaxClientBytes: 19600 (Default) 
+    Ports:
+	22
+DCE/RPC 2 Preprocessor Configuration
+  Global Configuration
+    DCE/RPC Defragmentation: Enabled
+    Memcap: 102400 KB
+    Events: co 
+    SMB Fingerprint policy: Disabled
+  Server Default Configuration
+    Policy: WinXP
+    Detect ports (PAF)
+      SMB: 139 445 
+      TCP: 135 
+      UDP: 135 
+      RPC over HTTP server: 593 
+      RPC over HTTP proxy: None
+    Autodetect ports (PAF)
+      SMB: None
+      TCP: 1025-65535 
+      UDP: 1025-65535 
+      RPC over HTTP server: 1025-65535 
+      RPC over HTTP proxy: None
+    Invalid SMB shares: C$ D$ ADMIN$ 
+    Maximum SMB command chaining: 3 commands
+    SMB file inspection: Disabled
+DNS config: 
+    DNS Client rdata txt Overflow Alert: ACTIVE
+    Obsolete DNS RR Types Alert: INACTIVE
+    Experimental DNS RR Types Alert: INACTIVE
+    Ports: 53
+SSLPP config:
+    Encrypted packets: not inspected
+    Ports:
+      443      465      563      636      989
+      992      993      994      995     7801
+     7802     7900     7901     7902     7903
+     7904     7905     7906     7907     7908
+     7909     7910     7911     7912     7913
+     7914     7915     7916     7917     7918
+     7919     7920
+    Server side data is trusted
+    Maximum SSL Heartbeat length: 0
+Sensitive Data preprocessor config: 
+    Global Alert Threshold: 25
+    Masked Output: DISABLED
+SIP config: 
+    Max number of sessions: 40000  
+    Max number of dialogs in a session: 4 (Default) 
+    Status: ENABLED
+    Ignore media channel: DISABLED
+    Max URI length: 512  
+    Max Call ID length: 80  
+    Max Request name length: 20 (Default) 
+    Max From length: 256 (Default) 
+    Max To length: 256 (Default) 
+    Max Via length: 1024 (Default) 
+    Max Contact length: 512  
+    Max Content length: 2048  
+    Ports:
+	5060	5061	5600
+    Methods:
+	  invite cancel ack bye register options refer subscribe update join info message notify benotify do qauth sprack publish service unsubscribe prack
+IMAP Config:
+    Ports: 143 
+    IMAP Memcap: 838860
+    MIME Max Mem: 838860
+    Base64 Decoding: Enabled
+    Base64 Decoding Depth: Unlimited
+    Quoted-Printable Decoding: Enabled
+    Quoted-Printable Decoding Depth: Unlimited
+    Unix-to-Unix Decoding: Enabled
+    Unix-to-Unix Decoding Depth: Unlimited
+    Non-Encoded MIME attachment Extraction: Enabled
+    Non-Encoded MIME attachment Extraction Depth: Unlimited
+POP Config:
+    Ports: 110 
+    POP Memcap: 838860
+    MIME Max Mem: 838860
+    Base64 Decoding: Enabled
+    Base64 Decoding Depth: Unlimited
+    Quoted-Printable Decoding: Enabled
+    Quoted-Printable Decoding Depth: Unlimited
+    Unix-to-Unix Decoding: Enabled
+    Unix-to-Unix Decoding Depth: Unlimited
+    Non-Encoded MIME attachment Extraction: Enabled
+    Non-Encoded MIME attachment Extraction Depth: Unlimited
+Modbus config: 
+    Ports:
+	502
+DNP3 config: 
+    Memcap: 262144
+    Check Link-Layer CRCs: ENABLED
+    Ports:
+	20000
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Initializing rule chains...
+WARNING: /etc/snort/rules/chat.rules(33) threshold (in rule) is deprecated; use detection_filter instead.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(6) GID 1 SID 100000106 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(7) GID 1 SID 100000107 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(8) GID 1 SID 100000108 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(9) GID 1 SID 100000109 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(11) GID 1 SID 100000192 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(12) GID 1 SID 100000193 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(13) GID 1 SID 100000194 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(14) GID 1 SID 100000690 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-sql-injection.rules(15) GID 1 SID 100000691 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(6) GID 1 SID 100000118 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(7) GID 1 SID 100000119 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(9) GID 1 SID 100000228 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(14) GID 1 SID 100000284 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(16) GID 1 SID 100000447 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(18) GID 1 SID 100000692 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(20) GID 1 SID 100000693 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-client.rules(23) GID 1 SID 100000864 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-iis.rules(7) GID 1 SID 100000138 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-iis.rules(8) GID 1 SID 100000139 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-iis.rules(9) GID 1 SID 100000173 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-iis.rules(10) GID 1 SID 100000174 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(6) GID 1 SID 100000121 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(7) GID 1 SID 100000122 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(8) GID 1 SID 100000129 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(9) GID 1 SID 100000130 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(10) GID 1 SID 100000131 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(12) GID 1 SID 100000132 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(13) GID 1 SID 100000133 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(14) GID 1 SID 100000140 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(15) GID 1 SID 100000141 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(16) GID 1 SID 100000142 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(17) GID 1 SID 100000143 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(18) GID 1 SID 100000144 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(19) GID 1 SID 100000145 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(20) GID 1 SID 100000146 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(22) GID 1 SID 100000148 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(23) GID 1 SID 100000149 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(24) GID 1 SID 100000150 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(25) GID 1 SID 100000177 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(26) GID 1 SID 100000178 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(27) GID 1 SID 100000179 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(28) GID 1 SID 100000184 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(29) GID 1 SID 100000185 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(30) GID 1 SID 100000200 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(31) GID 1 SID 100000209 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(33) GID 1 SID 100000216 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(34) GID 1 SID 100000217 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(35) GID 1 SID 100000225 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(38) GID 1 SID 100000237 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(39) GID 1 SID 100000302 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(40) GID 1 SID 100000303 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(42) GID 1 SID 100000313 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(43) GID 1 SID 100000314 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(49) GID 1 SID 100000317 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(50) GID 1 SID 100000318 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(51) GID 1 SID 100000319 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(52) GID 1 SID 100000320 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(53) GID 1 SID 100000321 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(54) GID 1 SID 100000322 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(55) GID 1 SID 100000323 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(56) GID 1 SID 100000324 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(57) GID 1 SID 100000325 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(58) GID 1 SID 100000326 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(59) GID 1 SID 100000327 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(60) GID 1 SID 100000328 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(61) GID 1 SID 100000329 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(62) GID 1 SID 100000330 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(63) GID 1 SID 100000331 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(64) GID 1 SID 100000332 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(65) GID 1 SID 100000333 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(66) GID 1 SID 100000334 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(67) GID 1 SID 100000335 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(68) GID 1 SID 100000336 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(69) GID 1 SID 100000337 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(70) GID 1 SID 100000338 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(71) GID 1 SID 100000339 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(72) GID 1 SID 100000340 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(73) GID 1 SID 100000341 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(74) GID 1 SID 100000342 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(75) GID 1 SID 100000343 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(76) GID 1 SID 100000344 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(77) GID 1 SID 100000345 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(78) GID 1 SID 100000346 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(79) GID 1 SID 100000347 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(80) GID 1 SID 100000348 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(81) GID 1 SID 100000349 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(82) GID 1 SID 100000350 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(83) GID 1 SID 100000351 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(84) GID 1 SID 100000352 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(85) GID 1 SID 100000353 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(86) GID 1 SID 100000354 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(87) GID 1 SID 100000355 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(88) GID 1 SID 100000356 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(89) GID 1 SID 100000357 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(90) GID 1 SID 100000358 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(91) GID 1 SID 100000359 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(92) GID 1 SID 100000360 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(93) GID 1 SID 100000361 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(94) GID 1 SID 100000362 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(95) GID 1 SID 100000363 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(96) GID 1 SID 100000364 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(97) GID 1 SID 100000365 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(98) GID 1 SID 100000366 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(99) GID 1 SID 100000367 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(100) GID 1 SID 100000368 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(101) GID 1 SID 100000369 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(102) GID 1 SID 100000370 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(103) GID 1 SID 100000371 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(104) GID 1 SID 100000372 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(105) GID 1 SID 100000373 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(106) GID 1 SID 100000374 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(107) GID 1 SID 100000375 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(108) GID 1 SID 100000376 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(109) GID 1 SID 100000377 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(110) GID 1 SID 100000378 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(111) GID 1 SID 100000379 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(112) GID 1 SID 100000380 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(113) GID 1 SID 100000382 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(114) GID 1 SID 100000383 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(115) GID 1 SID 100000384 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(116) GID 1 SID 100000385 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(117) GID 1 SID 100000386 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(119) GID 1 SID 100000387 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(120) GID 1 SID 100000388 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(121) GID 1 SID 100000389 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(122) GID 1 SID 100000390 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(123) GID 1 SID 100000391 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(124) GID 1 SID 100000392 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(125) GID 1 SID 100000393 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(126) GID 1 SID 100000394 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(127) GID 1 SID 100000395 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(128) GID 1 SID 100000396 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(129) GID 1 SID 100000397 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(130) GID 1 SID 100000398 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(131) GID 1 SID 100000399 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(132) GID 1 SID 100000400 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(133) GID 1 SID 100000401 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(134) GID 1 SID 100000402 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(135) GID 1 SID 100000403 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(136) GID 1 SID 100000404 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(137) GID 1 SID 100000405 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(138) GID 1 SID 100000406 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(139) GID 1 SID 100000407 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(140) GID 1 SID 100000408 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(141) GID 1 SID 100000409 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(142) GID 1 SID 100000410 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(143) GID 1 SID 100000411 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(144) GID 1 SID 100000412 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(145) GID 1 SID 100000413 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(146) GID 1 SID 100000414 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(147) GID 1 SID 100000415 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(148) GID 1 SID 100000416 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(149) GID 1 SID 100000417 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(150) GID 1 SID 100000418 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(151) GID 1 SID 100000419 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(152) GID 1 SID 100000420 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(153) GID 1 SID 100000421 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(154) GID 1 SID 100000422 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(155) GID 1 SID 100000423 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(156) GID 1 SID 100000424 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(157) GID 1 SID 100000425 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(158) GID 1 SID 100000426 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(161) GID 1 SID 100000427 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(162) GID 1 SID 100000428 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(163) GID 1 SID 100000429 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(166) GID 1 SID 100000430 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(167) GID 1 SID 100000431 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(168) GID 1 SID 100000432 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(169) GID 1 SID 100000433 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(170) GID 1 SID 100000434 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(171) GID 1 SID 100000435 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(172) GID 1 SID 100000436 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(173) GID 1 SID 100000437 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(174) GID 1 SID 100000438 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(175) GID 1 SID 100000439 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(176) GID 1 SID 100000440 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(177) GID 1 SID 100000441 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(178) GID 1 SID 100000442 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(179) GID 1 SID 100000443 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(180) GID 1 SID 100000444 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(181) GID 1 SID 100000448 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(182) GID 1 SID 100000449 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(183) GID 1 SID 100000450 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(184) GID 1 SID 100000451 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(185) GID 1 SID 100000452 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(186) GID 1 SID 100000453 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(187) GID 1 SID 100000454 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(188) GID 1 SID 100000455 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(189) GID 1 SID 100000456 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(190) GID 1 SID 100000457 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(191) GID 1 SID 100000458 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(192) GID 1 SID 100000459 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(193) GID 1 SID 100000460 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(194) GID 1 SID 100000461 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(195) GID 1 SID 100000462 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(196) GID 1 SID 100000694 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(197) GID 1 SID 100000695 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(198) GID 1 SID 100000696 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(199) GID 1 SID 100000697 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(200) GID 1 SID 100000698 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(201) GID 1 SID 100000699 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(202) GID 1 SID 100000700 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(203) GID 1 SID 100000701 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(204) GID 1 SID 100000702 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(207) GID 1 SID 100000890 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(208) GID 1 SID 100000891 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(211) GID 1 SID 100000895 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(212) GID 1 SID 100000896 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(213) GID 1 SID 100000897 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(214) GID 1 SID 100000898 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-misc.rules(215) GID 1 SID 100000899 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(6) GID 1 SID 100000151 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(7) GID 1 SID 100000186 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(8) GID 1 SID 100000187 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(9) GID 1 SID 100000188 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(10) GID 1 SID 100000195 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(11) GID 1 SID 100000201 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(12) GID 1 SID 100000202 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(13) GID 1 SID 100000203 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(14) GID 1 SID 100000204 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(15) GID 1 SID 100000205 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(16) GID 1 SID 100000206 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(17) GID 1 SID 100000211 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(18) GID 1 SID 100000212 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(19) GID 1 SID 100000213 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(20) GID 1 SID 100000214 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(21) GID 1 SID 100000218 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(22) GID 1 SID 100000220 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(23) GID 1 SID 100000221 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(24) GID 1 SID 100000285 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(25) GID 1 SID 100000286 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(26) GID 1 SID 100000287 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(27) GID 1 SID 100000288 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(28) GID 1 SID 100000289 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(29) GID 1 SID 100000290 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(30) GID 1 SID 100000291 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(31) GID 1 SID 100000292 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(32) GID 1 SID 100000293 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(33) GID 1 SID 100000294 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(34) GID 1 SID 100000295 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(35) GID 1 SID 100000296 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(36) GID 1 SID 100000297 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(37) GID 1 SID 100000298 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(38) GID 1 SID 100000299 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(39) GID 1 SID 100000300 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(40) GID 1 SID 100000304 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(41) GID 1 SID 100000305 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(42) GID 1 SID 100000306 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(43) GID 1 SID 100000307 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(44) GID 1 SID 100000308 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(45) GID 1 SID 100000309 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(46) GID 1 SID 100000445 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(48) GID 1 SID 100000463 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(49) GID 1 SID 100000464 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(50) GID 1 SID 100000465 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(51) GID 1 SID 100000466 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(52) GID 1 SID 100000467 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(53) GID 1 SID 100000468 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(54) GID 1 SID 100000469 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(55) GID 1 SID 100000470 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(56) GID 1 SID 100000471 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(57) GID 1 SID 100000472 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(58) GID 1 SID 100000473 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(59) GID 1 SID 100000474 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(60) GID 1 SID 100000475 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(61) GID 1 SID 100000476 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(62) GID 1 SID 100000477 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(63) GID 1 SID 100000478 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(64) GID 1 SID 100000479 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(65) GID 1 SID 100000480 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(66) GID 1 SID 100000481 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(67) GID 1 SID 100000482 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(68) GID 1 SID 100000483 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(69) GID 1 SID 100000484 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(70) GID 1 SID 100000485 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(71) GID 1 SID 100000486 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(72) GID 1 SID 100000487 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(73) GID 1 SID 100000488 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(74) GID 1 SID 100000489 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(75) GID 1 SID 100000490 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(76) GID 1 SID 100000491 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(77) GID 1 SID 100000492 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(78) GID 1 SID 100000493 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(79) GID 1 SID 100000494 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(80) GID 1 SID 100000495 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(81) GID 1 SID 100000496 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(82) GID 1 SID 100000497 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(83) GID 1 SID 100000498 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(84) GID 1 SID 100000499 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(85) GID 1 SID 100000500 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(86) GID 1 SID 100000501 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(87) GID 1 SID 100000502 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(88) GID 1 SID 100000503 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(89) GID 1 SID 100000504 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(90) GID 1 SID 100000505 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(91) GID 1 SID 100000506 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(92) GID 1 SID 100000507 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(93) GID 1 SID 100000508 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(94) GID 1 SID 100000509 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(95) GID 1 SID 100000510 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(96) GID 1 SID 100000511 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(97) GID 1 SID 100000512 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(98) GID 1 SID 100000513 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(99) GID 1 SID 100000514 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(100) GID 1 SID 100000515 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(101) GID 1 SID 100000516 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(102) GID 1 SID 100000517 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(103) GID 1 SID 100000518 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(104) GID 1 SID 100000519 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(105) GID 1 SID 100000520 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(106) GID 1 SID 100000521 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(107) GID 1 SID 100000522 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(108) GID 1 SID 100000523 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(109) GID 1 SID 100000524 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(110) GID 1 SID 100000525 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(111) GID 1 SID 100000526 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(112) GID 1 SID 100000527 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(113) GID 1 SID 100000528 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(114) GID 1 SID 100000529 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(115) GID 1 SID 100000530 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(116) GID 1 SID 100000531 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(117) GID 1 SID 100000532 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(118) GID 1 SID 100000533 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(119) GID 1 SID 100000534 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(120) GID 1 SID 100000535 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(121) GID 1 SID 100000536 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(122) GID 1 SID 100000537 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(123) GID 1 SID 100000538 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(124) GID 1 SID 100000539 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(125) GID 1 SID 100000540 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(126) GID 1 SID 100000541 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(127) GID 1 SID 100000542 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(128) GID 1 SID 100000543 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(129) GID 1 SID 100000544 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(130) GID 1 SID 100000545 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(131) GID 1 SID 100000546 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(132) GID 1 SID 100000547 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(133) GID 1 SID 100000548 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(134) GID 1 SID 100000549 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(135) GID 1 SID 100000550 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(136) GID 1 SID 100000551 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(137) GID 1 SID 100000552 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(138) GID 1 SID 100000553 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(139) GID 1 SID 100000554 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(140) GID 1 SID 100000555 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(141) GID 1 SID 100000556 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(142) GID 1 SID 100000557 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(143) GID 1 SID 100000558 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(144) GID 1 SID 100000559 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(145) GID 1 SID 100000560 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(146) GID 1 SID 100000561 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(147) GID 1 SID 100000562 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(148) GID 1 SID 100000563 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(149) GID 1 SID 100000564 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(150) GID 1 SID 100000565 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(151) GID 1 SID 100000566 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(152) GID 1 SID 100000567 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(153) GID 1 SID 100000568 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(154) GID 1 SID 100000569 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(155) GID 1 SID 100000570 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(156) GID 1 SID 100000571 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(157) GID 1 SID 100000572 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(158) GID 1 SID 100000573 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(159) GID 1 SID 100000574 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(160) GID 1 SID 100000575 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(161) GID 1 SID 100000576 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(162) GID 1 SID 100000577 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(163) GID 1 SID 100000578 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(164) GID 1 SID 100000579 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(165) GID 1 SID 100000580 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(166) GID 1 SID 100000581 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(167) GID 1 SID 100000582 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(168) GID 1 SID 100000583 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(169) GID 1 SID 100000584 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(170) GID 1 SID 100000585 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(171) GID 1 SID 100000586 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(172) GID 1 SID 100000587 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(173) GID 1 SID 100000588 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(174) GID 1 SID 100000589 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(175) GID 1 SID 100000590 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(176) GID 1 SID 100000591 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(177) GID 1 SID 100000592 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(178) GID 1 SID 100000593 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(179) GID 1 SID 100000594 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(180) GID 1 SID 100000595 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(181) GID 1 SID 100000596 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(182) GID 1 SID 100000597 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(183) GID 1 SID 100000598 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(184) GID 1 SID 100000599 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(185) GID 1 SID 100000600 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(186) GID 1 SID 100000601 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(187) GID 1 SID 100000602 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(188) GID 1 SID 100000603 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(189) GID 1 SID 100000604 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(190) GID 1 SID 100000605 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(191) GID 1 SID 100000606 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(192) GID 1 SID 100000607 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(193) GID 1 SID 100000608 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(194) GID 1 SID 100000609 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(195) GID 1 SID 100000610 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(196) GID 1 SID 100000611 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(197) GID 1 SID 100000612 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(198) GID 1 SID 100000613 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(199) GID 1 SID 100000614 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(200) GID 1 SID 100000615 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(201) GID 1 SID 100000616 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(202) GID 1 SID 100000617 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(203) GID 1 SID 100000618 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(204) GID 1 SID 100000619 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(205) GID 1 SID 100000620 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(206) GID 1 SID 100000621 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(207) GID 1 SID 100000622 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(208) GID 1 SID 100000623 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(209) GID 1 SID 100000624 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(210) GID 1 SID 100000625 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(211) GID 1 SID 100000626 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(212) GID 1 SID 100000627 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(213) GID 1 SID 100000628 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(214) GID 1 SID 100000629 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(215) GID 1 SID 100000630 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(216) GID 1 SID 100000631 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(217) GID 1 SID 100000632 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(218) GID 1 SID 100000633 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(219) GID 1 SID 100000634 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(220) GID 1 SID 100000635 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(221) GID 1 SID 100000636 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(222) GID 1 SID 100000637 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(223) GID 1 SID 100000638 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(224) GID 1 SID 100000639 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(225) GID 1 SID 100000640 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(226) GID 1 SID 100000641 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(227) GID 1 SID 100000642 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(228) GID 1 SID 100000643 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(229) GID 1 SID 100000644 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(230) GID 1 SID 100000645 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(231) GID 1 SID 100000646 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(232) GID 1 SID 100000647 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(233) GID 1 SID 100000648 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(234) GID 1 SID 100000649 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(235) GID 1 SID 100000650 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(236) GID 1 SID 100000651 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(237) GID 1 SID 100000652 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(238) GID 1 SID 100000653 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(239) GID 1 SID 100000654 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(240) GID 1 SID 100000655 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(241) GID 1 SID 100000656 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(242) GID 1 SID 100000657 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(243) GID 1 SID 100000658 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(244) GID 1 SID 100000659 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(245) GID 1 SID 100000660 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(246) GID 1 SID 100000661 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(247) GID 1 SID 100000662 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(248) GID 1 SID 100000663 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(249) GID 1 SID 100000664 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(250) GID 1 SID 100000665 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(251) GID 1 SID 100000666 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(252) GID 1 SID 100000667 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(253) GID 1 SID 100000668 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(254) GID 1 SID 100000669 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(255) GID 1 SID 100000670 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(256) GID 1 SID 100000671 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(257) GID 1 SID 100000672 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(258) GID 1 SID 100000673 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(259) GID 1 SID 100000674 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(260) GID 1 SID 100000675 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(261) GID 1 SID 100000676 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(262) GID 1 SID 100000677 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(263) GID 1 SID 100000678 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(264) GID 1 SID 100000679 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(265) GID 1 SID 100000680 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(266) GID 1 SID 100000681 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(267) GID 1 SID 100000682 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(268) GID 1 SID 100000683 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(270) GID 1 SID 100000703 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(271) GID 1 SID 100000704 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(272) GID 1 SID 100000705 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(273) GID 1 SID 100000706 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(274) GID 1 SID 100000707 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(275) GID 1 SID 100000708 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(276) GID 1 SID 100000709 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(277) GID 1 SID 100000710 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(278) GID 1 SID 100000711 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(279) GID 1 SID 100000712 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(280) GID 1 SID 100000713 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(281) GID 1 SID 100000714 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(282) GID 1 SID 100000715 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(283) GID 1 SID 100000716 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(284) GID 1 SID 100000717 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(285) GID 1 SID 100000718 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(286) GID 1 SID 100000719 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(287) GID 1 SID 100000720 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(288) GID 1 SID 100000721 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(289) GID 1 SID 100000722 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(290) GID 1 SID 100000723 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(291) GID 1 SID 100000724 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(292) GID 1 SID 100000725 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(293) GID 1 SID 100000726 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(294) GID 1 SID 100000727 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(295) GID 1 SID 100000728 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(296) GID 1 SID 100000729 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(297) GID 1 SID 100000730 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(298) GID 1 SID 100000731 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(299) GID 1 SID 100000732 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(300) GID 1 SID 100000733 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(301) GID 1 SID 100000734 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(302) GID 1 SID 100000735 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(303) GID 1 SID 100000736 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(304) GID 1 SID 100000737 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(305) GID 1 SID 100000738 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(306) GID 1 SID 100000739 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(307) GID 1 SID 100000740 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(308) GID 1 SID 100000741 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(309) GID 1 SID 100000742 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(310) GID 1 SID 100000743 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(311) GID 1 SID 100000744 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(312) GID 1 SID 100000745 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(313) GID 1 SID 100000746 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(314) GID 1 SID 100000747 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(315) GID 1 SID 100000748 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(316) GID 1 SID 100000749 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(317) GID 1 SID 100000750 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(318) GID 1 SID 100000751 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(319) GID 1 SID 100000752 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(320) GID 1 SID 100000753 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(321) GID 1 SID 100000754 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(322) GID 1 SID 100000755 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(323) GID 1 SID 100000756 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(324) GID 1 SID 100000757 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(325) GID 1 SID 100000758 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(326) GID 1 SID 100000759 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(327) GID 1 SID 100000760 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(328) GID 1 SID 100000761 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(329) GID 1 SID 100000762 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(330) GID 1 SID 100000763 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(331) GID 1 SID 100000764 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(332) GID 1 SID 100000765 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(333) GID 1 SID 100000766 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(334) GID 1 SID 100000767 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(335) GID 1 SID 100000768 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(336) GID 1 SID 100000769 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(337) GID 1 SID 100000770 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(338) GID 1 SID 100000771 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(339) GID 1 SID 100000772 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(340) GID 1 SID 100000773 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(341) GID 1 SID 100000774 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(342) GID 1 SID 100000775 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(343) GID 1 SID 100000776 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(344) GID 1 SID 100000777 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(345) GID 1 SID 100000778 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(346) GID 1 SID 100000779 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(347) GID 1 SID 100000780 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(348) GID 1 SID 100000781 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(349) GID 1 SID 100000782 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(350) GID 1 SID 100000783 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(351) GID 1 SID 100000784 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(352) GID 1 SID 100000785 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(353) GID 1 SID 100000786 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(354) GID 1 SID 100000787 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(355) GID 1 SID 100000788 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(356) GID 1 SID 100000789 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(357) GID 1 SID 100000790 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(358) GID 1 SID 100000791 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(359) GID 1 SID 100000792 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(360) GID 1 SID 100000793 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(361) GID 1 SID 100000794 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(362) GID 1 SID 100000795 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(363) GID 1 SID 100000796 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(364) GID 1 SID 100000797 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(365) GID 1 SID 100000798 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(366) GID 1 SID 100000799 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(367) GID 1 SID 100000800 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(368) GID 1 SID 100000801 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(369) GID 1 SID 100000802 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(370) GID 1 SID 100000803 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(371) GID 1 SID 100000804 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(372) GID 1 SID 100000805 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(373) GID 1 SID 100000806 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(374) GID 1 SID 100000807 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(375) GID 1 SID 100000808 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(376) GID 1 SID 100000809 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(377) GID 1 SID 100000810 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(378) GID 1 SID 100000811 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(379) GID 1 SID 100000812 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(380) GID 1 SID 100000813 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(381) GID 1 SID 100000814 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(382) GID 1 SID 100000815 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(383) GID 1 SID 100000816 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(384) GID 1 SID 100000817 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(385) GID 1 SID 100000818 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(386) GID 1 SID 100000820 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(387) GID 1 SID 100000821 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(388) GID 1 SID 100000822 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(389) GID 1 SID 100000823 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(390) GID 1 SID 100000824 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(391) GID 1 SID 100000825 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(392) GID 1 SID 100000826 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(393) GID 1 SID 100000827 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(394) GID 1 SID 100000828 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(395) GID 1 SID 100000829 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(396) GID 1 SID 100000830 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(397) GID 1 SID 100000831 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(398) GID 1 SID 100000832 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(399) GID 1 SID 100000833 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(400) GID 1 SID 100000834 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(401) GID 1 SID 100000835 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(402) GID 1 SID 100000836 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(403) GID 1 SID 100000837 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(404) GID 1 SID 100000838 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(405) GID 1 SID 100000839 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(406) GID 1 SID 100000840 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(407) GID 1 SID 100000841 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(408) GID 1 SID 100000842 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(409) GID 1 SID 100000843 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(410) GID 1 SID 100000844 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(411) GID 1 SID 100000845 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(412) GID 1 SID 100000846 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(413) GID 1 SID 100000847 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(414) GID 1 SID 100000849 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(415) GID 1 SID 100000850 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(416) GID 1 SID 100000851 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(417) GID 1 SID 100000852 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(418) GID 1 SID 100000853 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(419) GID 1 SID 100000854 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(420) GID 1 SID 100000855 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(421) GID 1 SID 100000856 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(422) GID 1 SID 100000857 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(423) GID 1 SID 100000858 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(424) GID 1 SID 100000859 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(425) GID 1 SID 100000860 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(426) GID 1 SID 100000861 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(427) GID 1 SID 100000862 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(428) GID 1 SID 100000863 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(431) GID 1 SID 100000865 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(432) GID 1 SID 100000866 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(433) GID 1 SID 100000867 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(434) GID 1 SID 100000868 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(435) GID 1 SID 100000869 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(436) GID 1 SID 100000870 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(437) GID 1 SID 100000871 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(438) GID 1 SID 100000872 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(439) GID 1 SID 100000873 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(441) GID 1 SID 100000882 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(443) GID 1 SID 100000883 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(444) GID 1 SID 100000884 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(445) GID 1 SID 100000885 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(446) GID 1 SID 100000886 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(447) GID 1 SID 100000887 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(448) GID 1 SID 100000888 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(449) GID 1 SID 100000889 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(450) GID 1 SID 100000906 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(451) GID 1 SID 100000907 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(452) GID 1 SID 100000908 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(453) GID 1 SID 100000909 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(454) GID 1 SID 100000910 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(455) GID 1 SID 100000911 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(456) GID 1 SID 100000912 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(457) GID 1 SID 100000913 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(458) GID 1 SID 100000914 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(459) GID 1 SID 100000915 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(460) GID 1 SID 100000916 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(461) GID 1 SID 100000917 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(462) GID 1 SID 100000918 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(463) GID 1 SID 100000919 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(464) GID 1 SID 100000920 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(465) GID 1 SID 100000921 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(466) GID 1 SID 100000922 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(467) GID 1 SID 100000925 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(468) GID 1 SID 100000926 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(469) GID 1 SID 100000929 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(470) GID 1 SID 100000930 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(471) GID 1 SID 100000931 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(472) GID 1 SID 100000932 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(473) GID 1 SID 100000933 in rule duplicates previous rule. Ignoring old rule.
+
+WARNING: /etc/snort/rules/community-web-php.rules(474) GID 1 SID 100000934 in rule duplicates previous rule. Ignoring old rule.
+
+4057 Snort rules read
+    3383 detection rules
+    0 decoder rules
+    0 preprocessor rules
+3383 Option Chains linked into 932 Chain Headers
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++-------------------[Rule Port Counts]---------------------------------------
+|             tcp     udp    icmp      ip
+|     src     151      18       0       0
+|     dst    3306     126       0       0
+|     any     383      48      52      22
+|      nc      27       8      15      20
+|     s+d      12       5       0       0
++----------------------------------------------------------------------------
+
++-----------------------[detection-filter-config]------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[detection-filter-rules]-------------------------------
+| none
+-------------------------------------------------------------------------------
+
++-----------------------[rate-filter-config]-----------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[rate-filter-rules]------------------------------------
+| none
+-------------------------------------------------------------------------------
+
++-----------------------[event-filter-config]----------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[event-filter-global]----------------------------------
+| none
++-----------------------[event-filter-local]-----------------------------------
+| gen-id=1      sig-id=2494       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2275       type=Threshold tracking=dst count=5   seconds=60 
+| gen-id=1      sig-id=2924       type=Threshold tracking=dst count=10  seconds=60 
+| gen-id=1      sig-id=2923       type=Threshold tracking=dst count=10  seconds=60 
+| gen-id=1      sig-id=2496       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=3152       type=Threshold tracking=src count=5   seconds=2  
+| gen-id=1      sig-id=2495       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2523       type=Both      tracking=dst count=10  seconds=10 
+| gen-id=1      sig-id=3273       type=Threshold tracking=src count=5   seconds=2  
+| gen-id=1      sig-id=1991       type=Limit     tracking=src count=1   seconds=60 
++-----------------------[suppression]------------------------------------------
+| none
+-------------------------------------------------------------------------------
+Rule application order: pass->drop->sdrop->reject->alert->log
+Verifying Preprocessor Configurations!
+WARNING: flowbits key 'ms_sql_seen_dns' is checked but not ever set.
+WARNING: flowbits key 'smb.tree.create.llsrpc' is set but not ever checked.
+33 out of 1024 flowbits in use.
+
+[ Port Based Pattern Matching Memory ]
++- [ Aho-Corasick Summary ] -------------------------------------
+| Storage Format    : Full-Q 
+| Finite Automaton  : DFA
+| Alphabet Size     : 256 Chars
+| Sizeof State      : Variable (1,2,4 bytes)
+| Instances         : 215
+|     1 byte states : 204
+|     2 byte states : 11
+|     4 byte states : 0
+| Characters        : 64755
+| States            : 31951
+| Transitions       : 863868
+| State Density     : 10.6%
+| Patterns          : 5041
+| Match States      : 3836
+| Memory (MB)       : 16.90
+|   Patterns        : 0.51
+|   Match Lists     : 1.01
+|   DFA
+|     1 byte states : 1.02
+|     2 byte states : 13.96
+|     4 byte states : 0.00
++----------------------------------------------------------------
+[ Number of patterns truncated to 20 bytes: 1038 ]
+pcap DAQ configured to passive.
+Acquiring network traffic from "eth0".
+Reload thread starting...
+Reload thread started, thread 0x7fce1712a640 (4107)
+Decoding Ethernet
+
+        --== Initialization Complete ==--
+
+   ,,_     -*> Snort! <*-
+  o"  )~   Version 2.9.15.1 GRE (Build 15125) 
+   ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
+           Copyright (C) 2014-2019 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using libpcap version 1.10.1 (with TPACKET_V3)
+           Using PCRE version: 8.39 2016-06-14
+           Using ZLIB version: 1.2.11
+
+           Rules Engine: SF_SNORT_DETECTION_ENGINE  Version 3.1  <Build 1>
+           Preprocessor Object: SF_SMTP  Version 1.1  <Build 9>
+           Preprocessor Object: SF_IMAP  Version 1.0  <Build 1>
+           Preprocessor Object: appid  Version 1.1  <Build 5>
+           Preprocessor Object: SF_GTP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_DNP3  Version 1.1  <Build 1>
+           Preprocessor Object: SF_SDF  Version 1.1  <Build 1>
+           Preprocessor Object: SF_SSLPP  Version 1.1  <Build 4>
+           Preprocessor Object: SF_SSH  Version 1.1  <Build 3>
+           Preprocessor Object: SF_SIP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_MODBUS  Version 1.1  <Build 1>
+           Preprocessor Object: SF_DCERPC2  Version 1.0  <Build 3>
+           Preprocessor Object: SF_FTPTELNET  Version 1.2  <Build 13>
+           Preprocessor Object: SF_REPUTATION  Version 1.1  <Build 1>
+           Preprocessor Object: SF_DNS  Version 1.1  <Build 4>
+           Preprocessor Object: SF_POP  Version 1.0  <Build 1>
+Commencing packet processing (pid=4081)
+03/15-16:02:47.951175  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:63724 -> 239.255.255.250:1900
+03/15-16:02:50.028685  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:63724 -> 239.255.255.250:1900
+03/15-16:02:51.130882  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:63724 -> 239.255.255.250:1900
+03/15-16:02:52.323208  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
+03/15-16:02:53.344109  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
+03/15-16:02:54.332626  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
+03/15-16:02:55.327949  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
+03/15-16:03:42.762246  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.214.115.117:61100 -> 192.168.43.17:80
+03/15-16:03:42.896236  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.17.178:61433 -> 192.168.43.17:80
+03/15-16:03:42.961364  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.90.12:61672 -> 192.168.43.17:80
+03/15-16:03:42.961940  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.92.3.112:61678 -> 192.168.43.17:80
+03/15-16:03:43.010263  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.41.178.238:61829 -> 192.168.43.17:80
+03/15-16:03:43.059130  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.240.178.43:61994 -> 192.168.43.17:80
+03/15-16:03:43.560316  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.146.7.89:63608 -> 192.168.43.17:80
+03/15-16:03:44.010788  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.36.105.35:65097 -> 192.168.43.17:80
+03/15-16:03:44.122048  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.16.0.63:65328 -> 192.168.43.17:80
+03/15-16:03:44.163002  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.169.82.166:65423 -> 192.168.43.17:80
+03/15-16:03:44.222099  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 30.0.126.247:0 -> 192.168.43.17:80
+03/15-16:03:44.222110  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 192.168.43.17:80 -> 30.0.126.247:0
+03/15-16:03:44.224747  [**] [1:503:7] MISC Source Port 20 to <1024 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 121.189.148.115:20 -> 192.168.43.17:80
+03/15-16:03:44.259134  [**] [1:504:7] MISC source port 53 to <1024 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 118.18.63.30:53 -> 192.168.43.17:80
+03/15-16:03:44.307145  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 117.52.225.189:161
+03/15-16:03:44.307246  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 20.54.244.221:162
+03/15-16:03:44.393118  [**] [1:1421:11] SNMP AgentX/tcp request [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 155.10.255.249:705
+03/15-16:03:44.569041  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.126.155.70:1161 -> 192.168.43.17:80
+03/15-16:03:44.624290  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.177.36.38:1278 -> 192.168.43.17:80
+03/15-16:03:44.792066  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.17.32.11:2027 -> 192.168.43.17:80
+03/15-16:03:45.012434  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.177.82.127:3712 -> 192.168.43.17:80
+03/15-16:03:45.089569  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.155.227.148:3831 -> 192.168.43.17:80
+03/15-16:03:45.283177  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.59.26.26:4250 -> 192.168.43.17:80
+03/15-16:03:45.401756  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.221.12.159:4483 -> 192.168.43.17:80
+03/15-16:03:45.440284  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.223.85.77:4558 -> 192.168.43.17:80
+03/15-16:03:45.482951  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.127.30.90:4594 -> 192.168.43.17:80
+03/15-16:03:45.535793  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.10.202.85:4640 -> 192.168.43.17:80
+03/15-16:03:45.597806  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.111.198.245:4776 -> 192.168.43.17:80
+03/15-16:03:45.775244  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.85.53.242:5122 -> 192.168.43.17:80
+03/15-16:03:45.800748  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.118.159.7:5143 -> 192.168.43.17:80
+03/15-16:03:45.961482  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.0.144.125:5545 -> 192.168.43.17:80
+03/15-16:03:46.050118  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.111.109.251:5653 -> 192.168.43.17:80
+03/15-16:03:46.172047  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.3.49.70:6034 -> 192.168.43.17:80
+03/15-16:03:46.351319  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.223.221.254:7546 -> 192.168.43.17:80
+03/15-16:03:46.352572  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.180.47.66:7553 -> 192.168.43.17:80
+03/15-16:03:46.585053  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.111.162.159:8916 -> 192.168.43.17:80
+03/15-16:03:46.681383  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.197.68.156:9470 -> 192.168.43.17:80
+03/15-16:03:47.493394  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.101.180.85:13930 -> 192.168.43.17:80
+03/15-16:03:47.596946  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.12.57.109:14407 -> 192.168.43.17:80
+03/15-16:03:47.599077  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.184.7.45:14421 -> 192.168.43.17:80
+03/15-16:03:47.771210  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.134.106.155:14752 -> 192.168.43.17:80
+03/15-16:03:47.847807  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.25.44.121:15019 -> 192.168.43.17:80
+03/15-16:03:48.013320  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.109.240:15610 -> 192.168.43.17:80
+03/15-16:03:48.133468  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.12.201.156:15812 -> 192.168.43.17:80
+03/15-16:03:48.221349  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.221.5.63:16002 -> 192.168.43.17:80
+03/15-16:03:48.262925  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.32.177.146:16076 -> 192.168.43.17:80
+03/15-16:03:48.421184  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.75.43.180:18507 -> 192.168.43.17:80
+03/15-16:03:48.511326  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.39.163.155:19130 -> 192.168.43.17:80
+03/15-16:03:48.594704  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.161.38.148:19710 -> 192.168.43.17:80
+03/15-16:03:48.637019  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.26.118:19885 -> 192.168.43.17:80
+03/15-16:03:48.699467  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.175.222.184:20561 -> 192.168.43.17:80
+03/15-16:03:48.721293  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.205.78.238:20709 -> 192.168.43.17:80
+03/15-16:03:48.735801  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.144.149.198:21084 -> 192.168.43.17:80
+03/15-16:03:48.807434  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.244.26.47:22678 -> 192.168.43.17:80
+03/15-16:03:48.848617  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.155.17.145:23128 -> 192.168.43.17:80
+03/15-16:03:49.338089  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.125.221.225:24006 -> 192.168.43.17:80
+03/15-16:03:50.838872  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.177.63:24587 -> 192.168.43.17:80
+03/15-16:03:50.856722  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.214.218.215:24973 -> 192.168.43.17:80
+03/15-16:03:50.897638  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.178.221.125:25299 -> 192.168.43.17:80
+03/15-16:03:50.901789  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.77.118.177:25459 -> 192.168.43.17:80
+03/15-16:03:51.012714  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.202.75.177:26765 -> 192.168.43.17:80
+03/15-16:03:51.469220  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.121.13.32:37326 -> 192.168.43.17:80
+03/15-16:03:51.716066  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.167.7.82:38142 -> 192.168.43.17:80
+03/15-16:03:51.866772  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.224.7.134:38340 -> 192.168.43.17:80
+03/15-16:03:52.005565  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.53.118.145:38541 -> 192.168.43.17:80
+03/15-16:03:52.015840  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.178.162.108:38656 -> 192.168.43.17:80
+03/15-16:03:52.087697  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.255.155.178:40561 -> 192.168.43.17:80
+03/15-16:03:52.180732  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.32.125.225:40968 -> 192.168.43.17:80
+03/15-16:03:53.604381  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.39.101.166:42074 -> 192.168.43.17:80
+03/15-16:03:53.957047  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.184.180.32:42354 -> 192.168.43.17:80
+03/15-16:03:53.971393  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.45.61.173:42414 -> 192.168.43.17:80
+03/15-16:03:54.364651  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.109.150.53:49553 -> 192.168.43.17:80
+03/15-16:03:54.601973  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.34.212.254:49882 -> 192.168.43.17:80
+03/15-16:03:54.676888  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.213.131.44:50093 -> 192.168.43.17:80
+03/15-16:03:54.804941  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.61.217.127:50426 -> 192.168.43.17:80
+03/15-16:03:55.124682  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.26.65.189:50952 -> 192.168.43.17:80
+03/15-16:03:55.183081  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.53.35.30:51238 -> 192.168.43.17:80
+03/15-16:03:55.321067  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.146.159.179:52168 -> 192.168.43.17:80
+03/15-16:03:55.580055  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.115.175.159:53333 -> 192.168.43.17:80
+03/15-16:03:55.687572  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.122.236.166:53558 -> 192.168.43.17:80
+03/15-16:03:55.739949  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.84.82.238:53611 -> 192.168.43.17:80
+03/15-16:03:55.756008  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.236.32.164:53704 -> 192.168.43.17:80
+03/15-16:03:55.839908  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.96.118.177:53857 -> 192.168.43.17:80
+03/15-16:03:55.962479  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.118.8.197:54269 -> 192.168.43.17:80
+03/15-16:03:56.248314  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.65.92.227:55143 -> 192.168.43.17:80
+03/15-16:03:56.987164  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.52.249.36:55508 -> 192.168.43.17:80
+03/15-16:03:57.318569  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.225.205.123:55604 -> 192.168.43.17:80
+03/15-16:03:57.513614  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.156.168.92:55702 -> 192.168.43.17:80
+03/15-16:03:57.612297  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.155.221.242:56011 -> 192.168.43.17:80
+03/15-16:03:57.622880  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.68.221.130:56094 -> 192.168.43.17:80
+03/15-16:03:57.690855  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.61.222.169:56393 -> 192.168.43.17:80
+03/15-16:03:57.757447  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.193.118.25:58016 -> 192.168.43.17:80
+03/15-16:03:57.845009  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.30.203.89:62208 -> 192.168.43.17:80
+03/15-16:03:57.845077  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.144.222.99:62210 -> 192.168.43.17:80
+03/15-16:03:57.969944  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.249.85.7:62503 -> 192.168.43.17:80
+03/15-16:03:57.979761  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.173.238.184:62636 -> 192.168.43.17:80
+03/15-16:03:58.007446  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.7.92.236:62742 -> 192.168.43.17:80
+03/15-16:03:58.063513  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.238.159.184:62772 -> 192.168.43.17:80
+03/15-16:03:58.112612  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.3.232.17:62885 -> 192.168.43.17:80
+03/15-16:03:58.137680  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.85.245.167:62995 -> 192.168.43.17:80
+03/15-16:03:58.271569  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.117.255.92:63142 -> 192.168.43.17:80
+03/15-16:03:58.361771  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.215.180.97:63229 -> 192.168.43.17:80
+03/15-16:03:58.504835  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.123.251.16:63421 -> 192.168.43.17:80
+03/15-16:03:58.506884  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.221.26.76:63456 -> 192.168.43.17:80
+03/15-16:03:58.754199  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.49.49.218:63585 -> 192.168.43.17:80
+03/15-16:03:58.971524  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.178.155.184:64061 -> 192.168.43.17:80
+03/15-16:03:59.008011  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.54.59:64545 -> 192.168.43.17:80
+03/15-16:03:59.161916  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.239.16.221:65219 -> 192.168.43.17:80
+03/15-16:03:59.163088  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.126.13.251:65237 -> 192.168.43.17:80
+03/15-16:03:59.213235  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.12.213.12:656 -> 192.168.43.17:80
+03/15-16:03:59.402686  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.32.146.63:1586 -> 192.168.43.17:80
+03/15-16:03:59.405131  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.141.239.221:1589 -> 192.168.43.17:80
+03/15-16:03:59.576777  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.44.1.144:1998 -> 192.168.43.17:80
+03/15-16:03:59.725800  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.251.184.57:2227 -> 192.168.43.17:80
+03/15-16:03:59.954199  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.189.109.77:2712 -> 192.168.43.17:80
+03/15-16:04:00.051212  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.77.238.184:3489 -> 192.168.43.17:80
+03/15-16:04:00.095275  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.36.8.167:3722 -> 192.168.43.17:80
+03/15-16:04:00.316779  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.215.123.159:30259 -> 192.168.43.17:80
+03/15-16:04:00.389927  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.16.34.178:37753 -> 192.168.43.17:80
+03/15-16:04:00.490965  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.54.240.126:44541 -> 192.168.43.17:80
+03/15-16:04:00.556642  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.70.222:50865 -> 192.168.43.17:80
+03/15-16:04:00.564615  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.43.13.178:51024 -> 192.168.43.17:80
+03/15-16:04:00.603947  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.164.53.85:51058 -> 192.168.43.17:80
+03/15-16:04:00.611363  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.68.119:52004 -> 192.168.43.17:80
+03/15-16:04:00.762314  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.139.122.162:54279 -> 192.168.43.17:80
+03/15-16:04:00.817590  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.119.242.130:58766 -> 192.168.43.17:80
+03/15-16:04:01.007317  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 212.77.225.221:161
+03/15-16:04:01.007375  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 123.213.205.92:162
+03/15-16:04:01.130770  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.44.158.70:208 -> 192.168.43.17:80
+03/15-16:04:01.226157  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.48.93.20:760 -> 192.168.43.17:80
+03/15-16:04:01.354968  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.38.249.239:1902 -> 192.168.43.17:80
+03/15-16:04:01.373923  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.122.245.76:2246 -> 192.168.43.17:80
+03/15-16:04:01.581323  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.50.212.63:10595 -> 192.168.43.17:80
+03/15-16:04:01.625212  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.212.33.12:10901 -> 192.168.43.17:80
+03/15-16:04:02.332241  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.127.182.41:15724 -> 192.168.43.17:80
+03/15-16:04:02.421469  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.232.234.134:22004 -> 192.168.43.17:80
+03/15-16:04:02.423451  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.97.221.46:22038 -> 192.168.43.17:80
+03/15-16:04:02.557734  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.11.106.4:23968 -> 192.168.43.17:80
+03/15-16:04:02.563944  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.211.109.106:24089 -> 192.168.43.17:80
+03/15-16:04:02.572025  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.130.32.115:24200 -> 192.168.43.17:80
+03/15-16:04:02.593938  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.238.188.70:26760 -> 192.168.43.17:80
+03/15-16:04:03.225901  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.203.161.146:53598 -> 192.168.43.17:80
+03/15-16:04:04.119870  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.18.249.150:54545 -> 192.168.43.17:80
+03/15-16:04:04.305926  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.52.184.163:54765 -> 192.168.43.17:80
+03/15-16:04:05.243893  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.5.241.254:62203 -> 192.168.43.17:80
+03/15-16:04:48.009482  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:56653 -> 239.255.255.250:1900
+03/15-16:04:50.046405  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:56653 -> 239.255.255.250:1900
+03/15-16:04:51.070313  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:56653 -> 239.255.255.250:1900
+03/15-16:04:52.379980  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
+03/15-16:04:53.392729  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
+03/15-16:04:54.421317  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
+03/15-16:04:55.420926  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
+03/15-16:06:48.008789  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
+03/15-16:06:49.038583  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
+03/15-16:06:50.054681  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
+03/15-16:06:51.083811  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
+03/15-16:06:52.381394  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
+03/15-16:06:53.500759  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
+03/15-16:06:54.382489  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
+03/15-16:06:55.458472  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
+03/15-16:08:46.181779  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:62933 -> 239.255.255.250:1900
+03/15-16:08:49.048867  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54298 -> 239.255.255.250:1900
+03/15-16:08:49.250462  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:62933 -> 239.255.255.250:1900
+03/15-16:08:51.094615  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54298 -> 239.255.255.250:1900
+03/15-16:08:52.325261  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:62933 -> 239.255.255.250:1900
+03/15-16:08:52.379044  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
+03/15-16:08:53.533760  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
+03/15-16:08:54.386380  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
+03/15-16:08:55.505912  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
+03/15-16:10:48.029927  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54040 -> 239.255.255.250:1900
+03/15-16:10:49.056656  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54040 -> 239.255.255.250:1900
+03/15-16:10:50.079683  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54040 -> 239.255.255.250:1900
+03/15-16:10:52.461223  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
+03/15-16:10:53.374628  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
+03/15-16:10:54.376073  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
+03/15-16:10:55.378353  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
+03/15-16:12:33.879945  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 -> 239.255.255.250:1900
+03/15-16:12:36.781566  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 ->*** Caught Int-Signal
+===============================================================================
+Run time for packet processing was 783.805133 seconds
+Snort processed 68549 packets.
+Snort ran for 0 days 0 hours 13 minutes 3 seconds
+   Pkts/min:         5273
+   Pkts/sec:           87
+===============================================================================
+Memory usage summary:
+  Total non-mmapped bytes (arena):       51789824
+  Bytes in mapped regions (hblkhd):      22392832
+  Total allocated space (uordblks):      45438544
+  Total free space (fordblks):           6351280
+  Topmost releasable block (keepcost):   133008
+===============================================================================
+Packet I/O Totals:
+   Received:        68550
+   Analyzed:        68549 ( 99.999%)
+    Dropped:            0 (  0.000%)
+   Filtered:            0 (  0.000%)
+Outstanding:            1 (  0.001%)
+   Injected:            0
+===============================================================================
+Breakdown by protocol (includes rebuilt packets):
+        Eth:        68550 (100.000%)
+       VLAN:            0 (  0.000%)
+        IP4:        68308 ( 99.647%)
+       Frag:            0 (  0.000%)
+       ICMP:            0 (  0.000%)
+        UDP:          799 (  1.166%)
+        TCP:        67474 ( 98.430%)
+        IP6:          189 (  0.276%)
+    IP6 Ext:          196 (  0.286%)
+   IP6 Opts:            7 (  0.010%)
+      Frag6:            0 (  0.000%)
+      ICMP6:           41 (  0.060%)
+       UDP6:          104 (  0.152%)
+       TCP6:           44 (  0.064%)
+     Teredo:            0 (  0.000%)
+    ICMP-IP:            0 (  0.000%)
+    IP4/IP4:            0 (  0.000%)
+    IP4/IP6:            0 (  0.000%)
+    IP6/IP4:            0 (  0.000%)
+    IP6/IP6:            0 (  0.000%)
+        GRE:            0 (  0.000%)
+    GRE Eth:            0 (  0.000%)
+   GRE VLAN:            0 (  0.000%)
+    GRE IP4:            0 (  0.000%)
+    GRE IP6:            0 (  0.000%)
+GRE IP6 Ext:            0 (  0.000%)
+   GRE PPTP:            0 (  0.000%)
+    GRE ARP:            0 (  0.000%)
+    GRE IPX:            0 (  0.000%)
+   GRE Loop:            0 (  0.000%)
+       MPLS:            0 (  0.000%)
+        ARP:           53 (  0.077%)
+        IPX:            0 (  0.000%)
+   Eth Loop:            0 (  0.000%)
+   Eth Disc:            0 (  0.000%)
+   IP4 Disc:           30 (  0.044%)
+   IP6 Disc:            0 (  0.000%)
+   TCP Disc:            0 (  0.000%)
+   UDP Disc:            0 (  0.000%)
+  ICMP Disc:            0 (  0.000%)
+All Discard:           30 (  0.044%)
+      Other:            5 (  0.007%)
+Bad Chk Sum:          241 (  0.352%)
+    Bad TTL:            0 (  0.000%)
+     S5 G 1:            1 (  0.001%)
+     S5 G 2:            0 (  0.000%)
+      Total:        68550
+===============================================================================
+Action Stats:
+     Alerts:          193 (  0.282%)
+     Logged:          193 (  0.282%)
+     Passed:            0 (  0.000%)
+Limits:
+      Match:            0
+      Queue:            0
+        Log:            0
+      Event:            0
+      Alert:            0
+Verdicts:
+      Allow:        68424 ( 99.816%)
+      Block:            0 (  0.000%)
+    Replace:            0 (  0.000%)
+  Whitelist:          125 (  0.182%)
+  Blacklist:            0 (  0.000%)
+     Ignore:            0 (  0.000%)
+      Retry:            0 (  0.000%)
+===============================================================================
+Frag3 statistics:
+        Total Fragments: 0
+      Frags Reassembled: 0
+               Discards: 0
+          Memory Faults: 0
+               Timeouts: 0
+               Overlaps: 0
+              Anomalies: 0
+                 Alerts: 0
+                  Drops: 0
+     FragTrackers Added: 0
+    FragTrackers Dumped: 0
+FragTrackers Auto Freed: 0
+    Frag Nodes Inserted: 0
+     Frag Nodes Deleted: 0
+===============================================================================
+===============================================================================
+Stream statistics:
+            Total sessions: 34864
+              TCP sess===============================================================================
+Run time for packet processing was 869.865810 seconds
+Snort processed 77010 packets.
+Snort ran for 0 days 0 hours 14 minutes 29 seconds
+   Pkts/min:         5500
+   Pkts/sec:           88
+===============================================================================
+Memory usage summary:
+  Total non-mmapped bytes (arena):       96153600
+  Bytes in mapped regions (hblkhd):      22392832
+  Total allocated space (uordblks):      45440160
+  Total free space (fordblks):           50713440
+  Topmost releasable block (keepcost):   42762624
+===============================================================================
+Packet I/O Totals:
+   Received:        77011
+   Analyzed:        77010 ( 99.999%)
+    Dropped:            0 (  0.000%)
+   Filtered:            0 (  0.000%)
+Outstanding:            1 (  0.001%)
+   Injected:            0
+===============================================================================
+Breakdown by protocol (includes rebuilt packets):
+        Eth:        77011 (100.000%)
+       VLAN:            0 (  0.000%)
+        IP4:        75513 ( 98.055%)
+       Frag:            0 (  0.000%)
+       ICMP:            0 (  0.000%)
+        UDP:          937 (  1.217%)
+        TCP:        74537 ( 96.787%)
+        IP6:          389 (  0.505%)
+    IP6 Ext:          394 (  0.512%)
+   IP6 Opts:            7 (  0.009%)
+      Frag6:            0 (  0.000%)
+      ICMP6:           53 (  0.069%)
+       UDP6:          153 (  0.199%)
+       TCP6:          181 (  0.235%)
+     Teredo:            0 (  0.000%)
+    ICMP-IP:            0 (  0.000%)
+    IP4/IP4:            0 (  0.000%)
+    IP4/IP6:            0 (  0.000%)
+    IP6/IP4:            0 (  0.000%)
+    IP6/IP6:            0 (  0.000%)
+        GRE:            0 (  0.000%)
+    GRE Eth:            0 (  0.000%)
+   GRE VLAN:            0 (  0.000%)
+    GRE IP4:            0 (  0.000%)
+    GRE IP6:            0 (  0.000%)
+GRE IP6 Ext:            0 (  0.000%)
+   GRE PPTP:            0 (  0.000%)
+    GRE ARP:            0 (  0.000%)
+    GRE IPX:            0 (  0.000%)
+   GRE Loop:            0 (  0.000%)
+       MPLS:            0 (  0.000%)
+        ARP:         1109 (  1.440%)
+        IPX:            0 (  0.000%)
+   Eth Loop:            0 (  0.000%)
+   Eth Disc:            0 (  0.000%)
+   IP4 Disc:           34 (  0.044%)
+   IP6 Disc:            2 (  0.003%)
+   TCP Disc:            0 (  0.000%)
+   UDP Disc:            0 (  0.000%)
+  ICMP Disc:            0 (  0.000%)
+All Discard:           36 (  0.047%)
+      Other:            5 (  0.006%)
+Bad Chk Sum:          877 (  1.139%)
+    Bad TTL:            0 (  0.000%)
+     S5 G 1:            1 (  0.001%)
+     S5 G 2:            0 (  0.000%)
+      Total:        77011
+===============================================================================
+Action Stats:
+     Alerts:          219 (  0.284%)
+     Logged:          219 (  0.284%)
+     Passed:            0 (  0.000%)
+Limits:
+      Match:            0
+      Queue:            0
+        Log:            0
+      Event:            0
+      Alert:            0
+Verdicts:
+      Allow:        76845 ( 99.784%)
+      Block:            0 (  0.000%)
+    Replace:            0 (  0.000%)
+  Whitelist:          165 (  0.214%)
+  Blacklist:            0 (  0.000%)
+     Ignore:            0 (  0.000%)
+      Retry:            0 (  0.000%)
+===============================================================================
+Frag3 statistics:
+        Total Fragments: 0
+      Frags Reassembled: 0
+               Discards: 0
+          Memory Faults: 0
+               Timeouts: 0
+               Overlaps: 0
+              Anomalies: 0
+                 Alerts: 0
+                  Drops: 0
+     FragTrackers Added: 0
+    FragTrackers Dumped: 0
+FragTrackers Auto Freed: 0
+    Frag Nodes Inserted: 0
+     Frag Nodes Deleted: 0
+===============================================================================
+===============================================================================
+Stream statistics:
+            Total sessions: 39026
+              TCP sessions: 38942
+              UDP sessions: 84
+             ICMP sessions: 0
+               IP sessions: 0
+                TCP Prunes: 0
+                UDP Prunes: 0
+               ICMP Prunes: 0
+                 IP Prunes: 0
+TCP StreamTrackers Created: 38942
+TCP StreamTrackers Deleted: 38942
+              TCP Timeouts: 0
+              TCP Overlaps: 0
+       TCP Segments Queued: 74
+     TCP Segments Released: 74
+       TCP Rebuilt Packets: 36
+         TCP Segments Used: 67
+              TCP Discards: 4
+                  TCP Gaps: 4
+      UDP Sessions Created: 84
+      UDP Sessions Deleted: 84
+              UDP Timeouts: 0
+              UDP Discards: 0
+                    Events: 9
+           Internal Events: 0
+           TCP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 73909
+           UDP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 84
+===============================================================================
+HTTP Inspect - encodings (Note: stream-reassembled packets included):
+    POST methods:                         0         
+    GET methods:                          0         
+    HTTP Request Headers extracted:       0         
+    HTTP Request Cookies extracted:       0         
+    Post parameters extracted:            0         
+    HTTP response Headers extracted:      12        
+    HTTP Response Cookies extracted:      0         
+    Unicode:                              0         
+    Double unicode:                       0         
+    Non-ASCII representable:              0         
+    Directory traversals:                 0         
+    Extra slashes ("//"):                 0         
+    Self-referencing paths ("./"):        0         
+    HTTP Response Gzip packets extracted: 0         
+    Gzip Compressed Data Processed:       n/a       
+    Gzip Decompressed Data Processed:     n/a       
+    Http/2 Rebuilt Packets:               0         
+    Total packets processed:              16        
+===============================================================================
+SMTP Preprocessor Statistics
+  Total sessions                                    : 1
+  Max concurrent sessions                           : 1
+  Base64 attachments decoded                        : 0
+  Total Base64 decoded bytes                        : 0
+  Quoted-Printable attachments decoded              : 0
+  Total Quoted decoded bytes                        : 0
+  UU attachments decoded                            : 0
+  Total UU decoded bytes                            : 0
+  Non-Encoded MIME attachments extracted            : 0
+  Total Non-Encoded MIME bytes extracted            : 0
+===============================================================================
+dcerpc2 Preprocessor Statistics
+  Total sessions: 2
+  Total sessions aborted: 2
+
+  Transports
+    SMB
+      Total sessions: 2
+      Packet stats
+        Packets: 0
+        Maximum outstanding requests: 0
+        SMB command requests/responses processed
+    SMB2
+      Smb2 prunes: 0
+      Memory used for smb2 processing: 0
+      Maximum memory used for smb2 processing: 0
+      SMB2 command requests/responses processed
+        smb2 create         : 0
+        smb2 write          : 0
+        smb2 read           : 0
+        smb2 set info       : 0
+        smb2 tree connect   : 0
+        smb2 tree disconnect: 0
+        smb2 close          : 0
+===============================================================================
+SSL Preprocessor:
+   SSL packets decoded: 92        
+          Client Hello: 0         
+          Server Hello: 10        
+           Certificate: 2         
+           Server Done: 2         
+   Client Key Exchange: 0         
+   Server Key Exchange: 0         
+         Change Cipher: 10        
+              Finished: 0         
+    Client Application: 1         
+    Server Application: 24        
+                 Alert: 0         
+  Unrecognized records: 65        
+  Completed handshakes: 0         
+        Bad handshakes: 0         
+      Sessions ignored: 12        
+    Detection disabled: 5         
+===============================================================================
+SIP Preprocessor Statistics
+  Total sessions: 0
+===============================================================================
+IMAP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+POP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+Snort exiting
+ of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
+03/15-16:12:33.879945  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 -> 239.255.255.250:1900
+03/15-16:12:36.781566  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 -> 239.255.255.250:1900
+03/15-16:12:48.062351  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
+03/15-16:12:49.069797  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
+03/15-16:12:50.091555  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
+03/15-16:12:50.906271  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
+03/15-16:12:52.407304  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
+03/15-16:12:53.379552  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
+03/15-16:12:54.379741  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
+03/15-16:12:55.380258  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
