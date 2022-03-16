@@ -1725,14 +1725,14 @@ WARNING: /etc/snort/rules/community-web-php.rules(474) GID 1 SID 100000934 in ru
 +-----------------------[event-filter-global]----------------------------------
 | none
 +-----------------------[event-filter-local]-----------------------------------
-| gen-id=1      sig-id=2494       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2523       type=Both      tracking=dst count=10  seconds=10 
 | gen-id=1      sig-id=2275       type=Threshold tracking=dst count=5   seconds=60 
-| gen-id=1      sig-id=2924       type=Threshold tracking=dst count=10  seconds=60 
-| gen-id=1      sig-id=2923       type=Threshold tracking=dst count=10  seconds=60 
+| gen-id=1      sig-id=2494       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2495       type=Both      tracking=dst count=20  seconds=60 
 | gen-id=1      sig-id=2496       type=Both      tracking=dst count=20  seconds=60 
 | gen-id=1      sig-id=3152       type=Threshold tracking=src count=5   seconds=2  
-| gen-id=1      sig-id=2495       type=Both      tracking=dst count=20  seconds=60 
-| gen-id=1      sig-id=2523       type=Both      tracking=dst count=10  seconds=10 
+| gen-id=1      sig-id=2923       type=Threshold tracking=dst count=10  seconds=60 
+| gen-id=1      sig-id=2924       type=Threshold tracking=dst count=10  seconds=60 
 | gen-id=1      sig-id=3273       type=Threshold tracking=src count=5   seconds=2  
 | gen-id=1      sig-id=1991       type=Limit     tracking=src count=1   seconds=60 
 +-----------------------[suppression]------------------------------------------
@@ -1740,8 +1740,8 @@ WARNING: /etc/snort/rules/community-web-php.rules(474) GID 1 SID 100000934 in ru
 -------------------------------------------------------------------------------
 Rule application order: pass->drop->sdrop->reject->alert->log
 Verifying Preprocessor Configurations!
-WARNING: flowbits key 'ms_sql_seen_dns' is checked but not ever set.
 WARNING: flowbits key 'smb.tree.create.llsrpc' is set but not ever checked.
+WARNING: flowbits key 'ms_sql_seen_dns' is checked but not ever set.
 33 out of 1024 flowbits in use.
 
 [ Port Based Pattern Matching Memory ]
@@ -1772,7 +1772,7 @@ WARNING: flowbits key 'smb.tree.create.llsrpc' is set but not ever checked.
 pcap DAQ configured to passive.
 Acquiring network traffic from "eth0".
 Reload thread starting...
-Reload thread started, thread 0x7fce1712a640 (4107)
+Reload thread started, thread 0x7fdeceb18640 (4434)
 Decoding Ethernet
 
         --== Initialization Complete ==--
@@ -1802,229 +1802,44 @@ Decoding Ethernet
            Preprocessor Object: SF_REPUTATION  Version 1.1  <Build 1>
            Preprocessor Object: SF_DNS  Version 1.1  <Build 4>
            Preprocessor Object: SF_POP  Version 1.0  <Build 1>
-Commencing packet processing (pid=4081)
-03/15-16:02:47.951175  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:63724 -> 239.255.255.250:1900
-03/15-16:02:50.028685  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:63724 -> 239.255.255.250:1900
-03/15-16:02:51.130882  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:63724 -> 239.255.255.250:1900
-03/15-16:02:52.323208  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
-03/15-16:02:53.344109  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
-03/15-16:02:54.332626  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
-03/15-16:02:55.327949  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:49594 -> 239.255.255.250:1900
-03/15-16:03:42.762246  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.214.115.117:61100 -> 192.168.43.17:80
-03/15-16:03:42.896236  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.17.178:61433 -> 192.168.43.17:80
-03/15-16:03:42.961364  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.90.12:61672 -> 192.168.43.17:80
-03/15-16:03:42.961940  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.92.3.112:61678 -> 192.168.43.17:80
-03/15-16:03:43.010263  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.41.178.238:61829 -> 192.168.43.17:80
-03/15-16:03:43.059130  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.240.178.43:61994 -> 192.168.43.17:80
-03/15-16:03:43.560316  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.146.7.89:63608 -> 192.168.43.17:80
-03/15-16:03:44.010788  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.36.105.35:65097 -> 192.168.43.17:80
-03/15-16:03:44.122048  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.16.0.63:65328 -> 192.168.43.17:80
-03/15-16:03:44.163002  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.169.82.166:65423 -> 192.168.43.17:80
-03/15-16:03:44.222099  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 30.0.126.247:0 -> 192.168.43.17:80
-03/15-16:03:44.222110  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 192.168.43.17:80 -> 30.0.126.247:0
-03/15-16:03:44.224747  [**] [1:503:7] MISC Source Port 20 to <1024 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 121.189.148.115:20 -> 192.168.43.17:80
-03/15-16:03:44.259134  [**] [1:504:7] MISC source port 53 to <1024 [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 118.18.63.30:53 -> 192.168.43.17:80
-03/15-16:03:44.307145  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 117.52.225.189:161
-03/15-16:03:44.307246  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 20.54.244.221:162
-03/15-16:03:44.393118  [**] [1:1421:11] SNMP AgentX/tcp request [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 155.10.255.249:705
-03/15-16:03:44.569041  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.126.155.70:1161 -> 192.168.43.17:80
-03/15-16:03:44.624290  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.177.36.38:1278 -> 192.168.43.17:80
-03/15-16:03:44.792066  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.17.32.11:2027 -> 192.168.43.17:80
-03/15-16:03:45.012434  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.177.82.127:3712 -> 192.168.43.17:80
-03/15-16:03:45.089569  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.155.227.148:3831 -> 192.168.43.17:80
-03/15-16:03:45.283177  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.59.26.26:4250 -> 192.168.43.17:80
-03/15-16:03:45.401756  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.221.12.159:4483 -> 192.168.43.17:80
-03/15-16:03:45.440284  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.223.85.77:4558 -> 192.168.43.17:80
-03/15-16:03:45.482951  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.127.30.90:4594 -> 192.168.43.17:80
-03/15-16:03:45.535793  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.10.202.85:4640 -> 192.168.43.17:80
-03/15-16:03:45.597806  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.111.198.245:4776 -> 192.168.43.17:80
-03/15-16:03:45.775244  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.85.53.242:5122 -> 192.168.43.17:80
-03/15-16:03:45.800748  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.118.159.7:5143 -> 192.168.43.17:80
-03/15-16:03:45.961482  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.0.144.125:5545 -> 192.168.43.17:80
-03/15-16:03:46.050118  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.111.109.251:5653 -> 192.168.43.17:80
-03/15-16:03:46.172047  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.3.49.70:6034 -> 192.168.43.17:80
-03/15-16:03:46.351319  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.223.221.254:7546 -> 192.168.43.17:80
-03/15-16:03:46.352572  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.180.47.66:7553 -> 192.168.43.17:80
-03/15-16:03:46.585053  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.111.162.159:8916 -> 192.168.43.17:80
-03/15-16:03:46.681383  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.197.68.156:9470 -> 192.168.43.17:80
-03/15-16:03:47.493394  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.101.180.85:13930 -> 192.168.43.17:80
-03/15-16:03:47.596946  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.12.57.109:14407 -> 192.168.43.17:80
-03/15-16:03:47.599077  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.184.7.45:14421 -> 192.168.43.17:80
-03/15-16:03:47.771210  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.134.106.155:14752 -> 192.168.43.17:80
-03/15-16:03:47.847807  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.25.44.121:15019 -> 192.168.43.17:80
-03/15-16:03:48.013320  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.109.240:15610 -> 192.168.43.17:80
-03/15-16:03:48.133468  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.12.201.156:15812 -> 192.168.43.17:80
-03/15-16:03:48.221349  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.221.5.63:16002 -> 192.168.43.17:80
-03/15-16:03:48.262925  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.32.177.146:16076 -> 192.168.43.17:80
-03/15-16:03:48.421184  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.75.43.180:18507 -> 192.168.43.17:80
-03/15-16:03:48.511326  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.39.163.155:19130 -> 192.168.43.17:80
-03/15-16:03:48.594704  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.161.38.148:19710 -> 192.168.43.17:80
-03/15-16:03:48.637019  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.26.118:19885 -> 192.168.43.17:80
-03/15-16:03:48.699467  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.175.222.184:20561 -> 192.168.43.17:80
-03/15-16:03:48.721293  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.205.78.238:20709 -> 192.168.43.17:80
-03/15-16:03:48.735801  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.144.149.198:21084 -> 192.168.43.17:80
-03/15-16:03:48.807434  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.244.26.47:22678 -> 192.168.43.17:80
-03/15-16:03:48.848617  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.155.17.145:23128 -> 192.168.43.17:80
-03/15-16:03:49.338089  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.125.221.225:24006 -> 192.168.43.17:80
-03/15-16:03:50.838872  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.177.63:24587 -> 192.168.43.17:80
-03/15-16:03:50.856722  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.214.218.215:24973 -> 192.168.43.17:80
-03/15-16:03:50.897638  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.178.221.125:25299 -> 192.168.43.17:80
-03/15-16:03:50.901789  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.77.118.177:25459 -> 192.168.43.17:80
-03/15-16:03:51.012714  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.202.75.177:26765 -> 192.168.43.17:80
-03/15-16:03:51.469220  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.121.13.32:37326 -> 192.168.43.17:80
-03/15-16:03:51.716066  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.167.7.82:38142 -> 192.168.43.17:80
-03/15-16:03:51.866772  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.224.7.134:38340 -> 192.168.43.17:80
-03/15-16:03:52.005565  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.53.118.145:38541 -> 192.168.43.17:80
-03/15-16:03:52.015840  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.178.162.108:38656 -> 192.168.43.17:80
-03/15-16:03:52.087697  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.255.155.178:40561 -> 192.168.43.17:80
-03/15-16:03:52.180732  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.32.125.225:40968 -> 192.168.43.17:80
-03/15-16:03:53.604381  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.39.101.166:42074 -> 192.168.43.17:80
-03/15-16:03:53.957047  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.184.180.32:42354 -> 192.168.43.17:80
-03/15-16:03:53.971393  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.45.61.173:42414 -> 192.168.43.17:80
-03/15-16:03:54.364651  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.109.150.53:49553 -> 192.168.43.17:80
-03/15-16:03:54.601973  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.34.212.254:49882 -> 192.168.43.17:80
-03/15-16:03:54.676888  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.213.131.44:50093 -> 192.168.43.17:80
-03/15-16:03:54.804941  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.61.217.127:50426 -> 192.168.43.17:80
-03/15-16:03:55.124682  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.26.65.189:50952 -> 192.168.43.17:80
-03/15-16:03:55.183081  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.53.35.30:51238 -> 192.168.43.17:80
-03/15-16:03:55.321067  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.146.159.179:52168 -> 192.168.43.17:80
-03/15-16:03:55.580055  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.115.175.159:53333 -> 192.168.43.17:80
-03/15-16:03:55.687572  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.122.236.166:53558 -> 192.168.43.17:80
-03/15-16:03:55.739949  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.84.82.238:53611 -> 192.168.43.17:80
-03/15-16:03:55.756008  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.236.32.164:53704 -> 192.168.43.17:80
-03/15-16:03:55.839908  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.96.118.177:53857 -> 192.168.43.17:80
-03/15-16:03:55.962479  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.118.8.197:54269 -> 192.168.43.17:80
-03/15-16:03:56.248314  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.65.92.227:55143 -> 192.168.43.17:80
-03/15-16:03:56.987164  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.52.249.36:55508 -> 192.168.43.17:80
-03/15-16:03:57.318569  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.225.205.123:55604 -> 192.168.43.17:80
-03/15-16:03:57.513614  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.156.168.92:55702 -> 192.168.43.17:80
-03/15-16:03:57.612297  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.155.221.242:56011 -> 192.168.43.17:80
-03/15-16:03:57.622880  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.68.221.130:56094 -> 192.168.43.17:80
-03/15-16:03:57.690855  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.61.222.169:56393 -> 192.168.43.17:80
-03/15-16:03:57.757447  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.193.118.25:58016 -> 192.168.43.17:80
-03/15-16:03:57.845009  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.30.203.89:62208 -> 192.168.43.17:80
-03/15-16:03:57.845077  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.144.222.99:62210 -> 192.168.43.17:80
-03/15-16:03:57.969944  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.249.85.7:62503 -> 192.168.43.17:80
-03/15-16:03:57.979761  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.173.238.184:62636 -> 192.168.43.17:80
-03/15-16:03:58.007446  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.7.92.236:62742 -> 192.168.43.17:80
-03/15-16:03:58.063513  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.238.159.184:62772 -> 192.168.43.17:80
-03/15-16:03:58.112612  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.3.232.17:62885 -> 192.168.43.17:80
-03/15-16:03:58.137680  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.85.245.167:62995 -> 192.168.43.17:80
-03/15-16:03:58.271569  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.117.255.92:63142 -> 192.168.43.17:80
-03/15-16:03:58.361771  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.215.180.97:63229 -> 192.168.43.17:80
-03/15-16:03:58.504835  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.123.251.16:63421 -> 192.168.43.17:80
-03/15-16:03:58.506884  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.221.26.76:63456 -> 192.168.43.17:80
-03/15-16:03:58.754199  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.49.49.218:63585 -> 192.168.43.17:80
-03/15-16:03:58.971524  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.178.155.184:64061 -> 192.168.43.17:80
-03/15-16:03:59.008011  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.82.54.59:64545 -> 192.168.43.17:80
-03/15-16:03:59.161916  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.239.16.221:65219 -> 192.168.43.17:80
-03/15-16:03:59.163088  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.126.13.251:65237 -> 192.168.43.17:80
-03/15-16:03:59.213235  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.12.213.12:656 -> 192.168.43.17:80
-03/15-16:03:59.402686  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.32.146.63:1586 -> 192.168.43.17:80
-03/15-16:03:59.405131  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.141.239.221:1589 -> 192.168.43.17:80
-03/15-16:03:59.576777  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.44.1.144:1998 -> 192.168.43.17:80
-03/15-16:03:59.725800  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.251.184.57:2227 -> 192.168.43.17:80
-03/15-16:03:59.954199  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.189.109.77:2712 -> 192.168.43.17:80
-03/15-16:04:00.051212  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.77.238.184:3489 -> 192.168.43.17:80
-03/15-16:04:00.095275  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.36.8.167:3722 -> 192.168.43.17:80
-03/15-16:04:00.316779  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.215.123.159:30259 -> 192.168.43.17:80
-03/15-16:04:00.389927  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.16.34.178:37753 -> 192.168.43.17:80
-03/15-16:04:00.490965  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.54.240.126:44541 -> 192.168.43.17:80
-03/15-16:04:00.556642  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.70.222:50865 -> 192.168.43.17:80
-03/15-16:04:00.564615  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.43.13.178:51024 -> 192.168.43.17:80
-03/15-16:04:00.603947  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.164.53.85:51058 -> 192.168.43.17:80
-03/15-16:04:00.611363  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.35.68.119:52004 -> 192.168.43.17:80
-03/15-16:04:00.762314  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.139.122.162:54279 -> 192.168.43.17:80
-03/15-16:04:00.817590  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.119.242.130:58766 -> 192.168.43.17:80
-03/15-16:04:01.007317  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 212.77.225.221:161
-03/15-16:04:01.007375  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.43.17:80 -> 123.213.205.92:162
-03/15-16:04:01.130770  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.44.158.70:208 -> 192.168.43.17:80
-03/15-16:04:01.226157  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.48.93.20:760 -> 192.168.43.17:80
-03/15-16:04:01.354968  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.38.249.239:1902 -> 192.168.43.17:80
-03/15-16:04:01.373923  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.122.245.76:2246 -> 192.168.43.17:80
-03/15-16:04:01.581323  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.50.212.63:10595 -> 192.168.43.17:80
-03/15-16:04:01.625212  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.212.33.12:10901 -> 192.168.43.17:80
-03/15-16:04:02.332241  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.127.182.41:15724 -> 192.168.43.17:80
-03/15-16:04:02.421469  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.232.234.134:22004 -> 192.168.43.17:80
-03/15-16:04:02.423451  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.97.221.46:22038 -> 192.168.43.17:80
-03/15-16:04:02.557734  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.11.106.4:23968 -> 192.168.43.17:80
-03/15-16:04:02.563944  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.211.109.106:24089 -> 192.168.43.17:80
-03/15-16:04:02.572025  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.130.32.115:24200 -> 192.168.43.17:80
-03/15-16:04:02.593938  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.238.188.70:26760 -> 192.168.43.17:80
-03/15-16:04:03.225901  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.203.161.146:53598 -> 192.168.43.17:80
-03/15-16:04:04.119870  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.18.249.150:54545 -> 192.168.43.17:80
-03/15-16:04:04.305926  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.52.184.163:54765 -> 192.168.43.17:80
-03/15-16:04:05.243893  [**] [1:528:5] BAD-TRAFFIC loopback traffic [**] [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 127.5.241.254:62203 -> 192.168.43.17:80
-03/15-16:04:48.009482  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:56653 -> 239.255.255.250:1900
-03/15-16:04:50.046405  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:56653 -> 239.255.255.250:1900
-03/15-16:04:51.070313  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:56653 -> 239.255.255.250:1900
-03/15-16:04:52.379980  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
-03/15-16:04:53.392729  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
-03/15-16:04:54.421317  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
-03/15-16:04:55.420926  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60711 -> 239.255.255.250:1900
-03/15-16:06:48.008789  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
-03/15-16:06:49.038583  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
-03/15-16:06:50.054681  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
-03/15-16:06:51.083811  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:59004 -> 239.255.255.250:1900
-03/15-16:06:52.381394  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
-03/15-16:06:53.500759  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
-03/15-16:06:54.382489  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
-03/15-16:06:55.458472  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60715 -> 239.255.255.250:1900
-03/15-16:08:46.181779  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:62933 -> 239.255.255.250:1900
-03/15-16:08:49.048867  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54298 -> 239.255.255.250:1900
-03/15-16:08:49.250462  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:62933 -> 239.255.255.250:1900
-03/15-16:08:51.094615  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54298 -> 239.255.255.250:1900
-03/15-16:08:52.325261  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:62933 -> 239.255.255.250:1900
-03/15-16:08:52.379044  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
-03/15-16:08:53.533760  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
-03/15-16:08:54.386380  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
-03/15-16:08:55.505912  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:64283 -> 239.255.255.250:1900
-03/15-16:10:48.029927  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54040 -> 239.255.255.250:1900
-03/15-16:10:49.056656  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54040 -> 239.255.255.250:1900
-03/15-16:10:50.079683  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54040 -> 239.255.255.250:1900
-03/15-16:10:52.461223  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
-03/15-16:10:53.374628  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
-03/15-16:10:54.376073  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
-03/15-16:10:55.378353  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
-03/15-16:12:33.879945  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 -> 239.255.255.250:1900
-03/15-16:12:36.781566  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 ->*** Caught Int-Signal
+Commencing packet processing (pid=4422)
+*** Caught Int-Signal
 ===============================================================================
-Run time for packet processing was 783.805133 seconds
-Snort processed 68549 packets.
-Snort ran for 0 days 0 hours 13 minutes 3 seconds
-   Pkts/min:         5273
-   Pkts/sec:           87
+Run time for packet processing was 22.112836 seconds
+Snort processed 159 packets.
+Snort ran for 0 days 0 hours 0 minutes 22 seconds
+   Pkts/sec:            7
 ===============================================================================
 Memory usage summary:
-  Total non-mmapped bytes (arena):       51789824
+  Total non-mmapped bytes (arena):       48840704
   Bytes in mapped regions (hblkhd):      22392832
-  Total allocated space (uordblks):      45438544
-  Total free space (fordblks):           6351280
-  Topmost releasable block (keepcost):   133008
+  Total allocated space (uordblks):      45432848
+  Total free space (fordblks):           3407856
+  Topmost releasable block (keepcost):   133312
 ===============================================================================
 Packet I/O Totals:
-   Received:        68550
-   Analyzed:        68549 ( 99.999%)
+   Received:          159
+   Analyzed:          159 (100.000%)
     Dropped:            0 (  0.000%)
    Filtered:            0 (  0.000%)
-Outstanding:            1 (  0.001%)
+Outstanding:            0 (  0.000%)
    Injected:            0
 ===============================================================================
 Breakdown by protocol (includes rebuilt packets):
-        Eth:        68550 (100.000%)
+        Eth:          160 (100.000%)
        VLAN:            0 (  0.000%)
-        IP4:        68308 ( 99.647%)
+        IP4:          160 (100.000%)
        Frag:            0 (  0.000%)
        ICMP:            0 (  0.000%)
-        UDP:          799 (  1.166%)
-        TCP:        67474 ( 98.430%)
-        IP6:          189 (  0.276%)
-    IP6 Ext:          196 (  0.286%)
-   IP6 Opts:            7 (  0.010%)
+        UDP:           17 ( 10.625%)
+        TCP:          135 ( 84.375%)
+        IP6:            0 (  0.000%)
+    IP6 Ext:            0 (  0.000%)
+   IP6 Opts:            0 (  0.000%)
       Frag6:            0 (  0.000%)
-      ICMP6:           41 (  0.060%)
-       UDP6:          104 (  0.152%)
-       TCP6:           44 (  0.064%)
+      ICMP6:            0 (  0.000%)
+       UDP6:            0 (  0.000%)
+       TCP6:            0 (  0.000%)
      Teredo:            0 (  0.000%)
     ICMP-IP:            0 (  0.000%)
     IP4/IP4:            0 (  0.000%)
@@ -2042,26 +1857,26 @@ GRE IP6 Ext:            0 (  0.000%)
     GRE IPX:            0 (  0.000%)
    GRE Loop:            0 (  0.000%)
        MPLS:            0 (  0.000%)
-        ARP:           53 (  0.077%)
+        ARP:            0 (  0.000%)
         IPX:            0 (  0.000%)
    Eth Loop:            0 (  0.000%)
    Eth Disc:            0 (  0.000%)
-   IP4 Disc:           30 (  0.044%)
+   IP4 Disc:            8 (  5.000%)
    IP6 Disc:            0 (  0.000%)
    TCP Disc:            0 (  0.000%)
    UDP Disc:            0 (  0.000%)
   ICMP Disc:            0 (  0.000%)
-All Discard:           30 (  0.044%)
-      Other:            5 (  0.007%)
-Bad Chk Sum:          241 (  0.352%)
+All Discard:            8 (  5.000%)
+      Other:            0 (  0.000%)
+Bad Chk Sum:           89 ( 55.625%)
     Bad TTL:            0 (  0.000%)
-     S5 G 1:            1 (  0.001%)
+     S5 G 1:            1 (  0.625%)
      S5 G 2:            0 (  0.000%)
-      Total:        68550
+      Total:          160
 ===============================================================================
 Action Stats:
-     Alerts:          193 (  0.282%)
-     Logged:          193 (  0.282%)
+     Alerts:            4 (  2.500%)
+     Logged:            4 (  2.500%)
      Passed:            0 (  0.000%)
 Limits:
       Match:            0
@@ -2070,10 +1885,10 @@ Limits:
       Event:            0
       Alert:            0
 Verdicts:
-      Allow:        68424 ( 99.816%)
+      Allow:          156 ( 98.113%)
       Block:            0 (  0.000%)
     Replace:            0 (  0.000%)
-  Whitelist:          125 (  0.182%)
+  Whitelist:            3 (  1.887%)
   Blacklist:            0 (  0.000%)
      Ignore:            0 (  0.000%)
       Retry:            0 (  0.000%)
@@ -2096,148 +1911,39 @@ FragTrackers Auto Freed: 0
 ===============================================================================
 ===============================================================================
 Stream statistics:
-            Total sessions: 34864
-              TCP sess===============================================================================
-Run time for packet processing was 869.865810 seconds
-Snort processed 77010 packets.
-Snort ran for 0 days 0 hours 14 minutes 29 seconds
-   Pkts/min:         5500
-   Pkts/sec:           88
-===============================================================================
-Memory usage summary:
-  Total non-mmapped bytes (arena):       96153600
-  Bytes in mapped regions (hblkhd):      22392832
-  Total allocated space (uordblks):      45440160
-  Total free space (fordblks):           50713440
-  Topmost releasable block (keepcost):   42762624
-===============================================================================
-Packet I/O Totals:
-   Received:        77011
-   Analyzed:        77010 ( 99.999%)
-    Dropped:            0 (  0.000%)
-   Filtered:            0 (  0.000%)
-Outstanding:            1 (  0.001%)
-   Injected:            0
-===============================================================================
-Breakdown by protocol (includes rebuilt packets):
-        Eth:        77011 (100.000%)
-       VLAN:            0 (  0.000%)
-        IP4:        75513 ( 98.055%)
-       Frag:            0 (  0.000%)
-       ICMP:            0 (  0.000%)
-        UDP:          937 (  1.217%)
-        TCP:        74537 ( 96.787%)
-        IP6:          389 (  0.505%)
-    IP6 Ext:          394 (  0.512%)
-   IP6 Opts:            7 (  0.009%)
-      Frag6:            0 (  0.000%)
-      ICMP6:           53 (  0.069%)
-       UDP6:          153 (  0.199%)
-       TCP6:          181 (  0.235%)
-     Teredo:            0 (  0.000%)
-    ICMP-IP:            0 (  0.000%)
-    IP4/IP4:            0 (  0.000%)
-    IP4/IP6:            0 (  0.000%)
-    IP6/IP4:            0 (  0.000%)
-    IP6/IP6:            0 (  0.000%)
-        GRE:            0 (  0.000%)
-    GRE Eth:            0 (  0.000%)
-   GRE VLAN:            0 (  0.000%)
-    GRE IP4:            0 (  0.000%)
-    GRE IP6:            0 (  0.000%)
-GRE IP6 Ext:            0 (  0.000%)
-   GRE PPTP:            0 (  0.000%)
-    GRE ARP:            0 (  0.000%)
-    GRE IPX:            0 (  0.000%)
-   GRE Loop:            0 (  0.000%)
-       MPLS:            0 (  0.000%)
-        ARP:         1109 (  1.440%)
-        IPX:            0 (  0.000%)
-   Eth Loop:            0 (  0.000%)
-   Eth Disc:            0 (  0.000%)
-   IP4 Disc:           34 (  0.044%)
-   IP6 Disc:            2 (  0.003%)
-   TCP Disc:            0 (  0.000%)
-   UDP Disc:            0 (  0.000%)
-  ICMP Disc:            0 (  0.000%)
-All Discard:           36 (  0.047%)
-      Other:            5 (  0.006%)
-Bad Chk Sum:          877 (  1.139%)
-    Bad TTL:            0 (  0.000%)
-     S5 G 1:            1 (  0.001%)
-     S5 G 2:            0 (  0.000%)
-      Total:        77011
-===============================================================================
-Action Stats:
-     Alerts:          219 (  0.284%)
-     Logged:          219 (  0.284%)
-     Passed:            0 (  0.000%)
-Limits:
-      Match:            0
-      Queue:            0
-        Log:            0
-      Event:            0
-      Alert:            0
-Verdicts:
-      Allow:        76845 ( 99.784%)
-      Block:            0 (  0.000%)
-    Replace:            0 (  0.000%)
-  Whitelist:          165 (  0.214%)
-  Blacklist:            0 (  0.000%)
-     Ignore:            0 (  0.000%)
-      Retry:            0 (  0.000%)
-===============================================================================
-Frag3 statistics:
-        Total Fragments: 0
-      Frags Reassembled: 0
-               Discards: 0
-          Memory Faults: 0
-               Timeouts: 0
-               Overlaps: 0
-              Anomalies: 0
-                 Alerts: 0
-                  Drops: 0
-     FragTrackers Added: 0
-    FragTrackers Dumped: 0
-FragTrackers Auto Freed: 0
-    Frag Nodes Inserted: 0
-     Frag Nodes Deleted: 0
-===============================================================================
-===============================================================================
-Stream statistics:
-            Total sessions: 39026
-              TCP sessions: 38942
-              UDP sessions: 84
+            Total sessions: 15
+              TCP sessions: 9
+              UDP sessions: 6
              ICMP sessions: 0
                IP sessions: 0
                 TCP Prunes: 0
                 UDP Prunes: 0
                ICMP Prunes: 0
                  IP Prunes: 0
-TCP StreamTrackers Created: 38942
-TCP StreamTrackers Deleted: 38942
+TCP StreamTrackers Created: 9
+TCP StreamTrackers Deleted: 9
               TCP Timeouts: 0
               TCP Overlaps: 0
-       TCP Segments Queued: 74
-     TCP Segments Released: 74
-       TCP Rebuilt Packets: 36
-         TCP Segments Used: 67
-              TCP Discards: 4
-                  TCP Gaps: 4
-      UDP Sessions Created: 84
-      UDP Sessions Deleted: 84
+       TCP Segments Queued: 28
+     TCP Segments Released: 28
+       TCP Rebuilt Packets: 15
+         TCP Segments Used: 25
+              TCP Discards: 0
+                  TCP Gaps: 3
+      UDP Sessions Created: 6
+      UDP Sessions Deleted: 6
               UDP Timeouts: 0
               UDP Discards: 0
-                    Events: 9
+                    Events: 0
            Internal Events: 0
            TCP Port Filter
                   Filtered: 0
                  Inspected: 0
-                   Tracked: 73909
+                   Tracked: 51
            UDP Port Filter
                   Filtered: 0
                  Inspected: 0
-                   Tracked: 84
+                   Tracked: 6
 ===============================================================================
 HTTP Inspect - encodings (Note: stream-reassembled packets included):
     POST methods:                         0         
@@ -2245,7 +1951,7 @@ HTTP Inspect - encodings (Note: stream-reassembled packets included):
     HTTP Request Headers extracted:       0         
     HTTP Request Cookies extracted:       0         
     Post parameters extracted:            0         
-    HTTP response Headers extracted:      12        
+    HTTP response Headers extracted:      1         
     HTTP Response Cookies extracted:      0         
     Unicode:                              0         
     Double unicode:                       0         
@@ -2257,62 +1963,33 @@ HTTP Inspect - encodings (Note: stream-reassembled packets included):
     Gzip Compressed Data Processed:       n/a       
     Gzip Decompressed Data Processed:     n/a       
     Http/2 Rebuilt Packets:               0         
-    Total packets processed:              16        
+    Total packets processed:              1         
 ===============================================================================
 SMTP Preprocessor Statistics
-  Total sessions                                    : 1
-  Max concurrent sessions                           : 1
-  Base64 attachments decoded                        : 0
-  Total Base64 decoded bytes                        : 0
-  Quoted-Printable attachments decoded              : 0
-  Total Quoted decoded bytes                        : 0
-  UU attachments decoded                            : 0
-  Total UU decoded bytes                            : 0
-  Non-Encoded MIME attachments extracted            : 0
-  Total Non-Encoded MIME bytes extracted            : 0
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
 ===============================================================================
 dcerpc2 Preprocessor Statistics
-  Total sessions: 2
-  Total sessions aborted: 2
-
-  Transports
-    SMB
-      Total sessions: 2
-      Packet stats
-        Packets: 0
-        Maximum outstanding requests: 0
-        SMB command requests/responses processed
-    SMB2
-      Smb2 prunes: 0
-      Memory used for smb2 processing: 0
-      Maximum memory used for smb2 processing: 0
-      SMB2 command requests/responses processed
-        smb2 create         : 0
-        smb2 write          : 0
-        smb2 read           : 0
-        smb2 set info       : 0
-        smb2 tree connect   : 0
-        smb2 tree disconnect: 0
-        smb2 close          : 0
+  Total sessions: 0
 ===============================================================================
 SSL Preprocessor:
-   SSL packets decoded: 92        
+   SSL packets decoded: 42        
           Client Hello: 0         
-          Server Hello: 10        
-           Certificate: 2         
-           Server Done: 2         
+          Server Hello: 0         
+           Certificate: 0         
+           Server Done: 0         
    Client Key Exchange: 0         
    Server Key Exchange: 0         
-         Change Cipher: 10        
+         Change Cipher: 0         
               Finished: 0         
-    Client Application: 1         
-    Server Application: 24        
+    Client Application: 0         
+    Server Application: 2         
                  Alert: 0         
-  Unrecognized records: 65        
+  Unrecognized records: 40        
   Completed handshakes: 0         
         Bad handshakes: 0         
-      Sessions ignored: 12        
-    Detection disabled: 5         
+      Sessions ignored: 2         
+    Detection disabled: 0         
 ===============================================================================
 SIP Preprocessor Statistics
   Total sessions: 0
@@ -2326,14 +2003,86 @@ POP Preprocessor Statistics
   Max concurrent sessions                           : 0
 ===============================================================================
 Snort exiting
- of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:55950 -> 239.255.255.250:1900
-03/15-16:12:33.879945  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 -> 239.255.255.250:1900
-03/15-16:12:36.781566  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.140:64481 -> 239.255.255.250:1900
-03/15-16:12:48.062351  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
-03/15-16:12:49.069797  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
-03/15-16:12:50.091555  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
-03/15-16:12:50.906271  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.117:54200 -> 239.255.255.250:1900
-03/15-16:12:52.407304  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
-03/15-16:12:53.379552  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
-03/15-16:12:54.379741  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
-03/15-16:12:55.380258  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.43.44:60128 -> 239.255.255.250:1900
+03/17-02:20:49.739262  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
+03/17-02:20:50.722974  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
+03/17-02:20:51.724887  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
+03/17-02:20:52.724202  [**] [1:1917:6] SCAN UPnP service discover attempt [**] [Classification: Detection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
+50
+       TCP Rebuilt Packets: 20
+         TCP Segments Used: 45
+              TCP Discards: 0
+                  TCP Gaps: 4
+      UDP Sessions Created: 19
+      UDP Sessions Deleted: 19
+              UDP Timeouts: 0
+              UDP Discards: 0
+                    Events: 0
+           Internal Events: 0
+           TCP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 4230
+           UDP Port Filter
+                  Filtered: 0
+                 Inspected: 0
+                   Tracked: 19
+===============================================================================
+HTTP Inspect - encodings (Note: stream-reassembled packets included):
+    POST methods:                         0         
+    GET methods:                          0         
+    HTTP Request Headers extracted:       0         
+    HTTP Request Cookies extracted:       0         
+    Post parameters extracted:            0         
+    HTTP response Headers extracted:      13        
+    HTTP Response Cookies extracted:      0         
+    Unicode:                              0         
+    Double unicode:                       0         
+    Non-ASCII representable:              0         
+    Directory traversals:                 0         
+    Extra slashes ("//"):                 0         
+    Self-referencing paths ("./"):        0         
+    HTTP Response Gzip packets extracted: 0         
+    Gzip Compressed Data Processed:       n/a       
+    Gzip Decompressed Data Processed:     n/a       
+    Http/2 Rebuilt Packets:               0         
+    Total packets processed:              23        
+===============================================================================
+SMTP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+dcerpc2 Preprocessor Statistics
+  Total sessions: 0
+===============================================================================
+SSL Preprocessor:
+   SSL packets decoded: 47        
+          Client Hello: 0         
+          Server Hello: 0         
+           Certificate: 0         
+           Server Done: 0         
+   Client Key Exchange: 0         
+   Server Key Exchange: 0         
+         Change Cipher: 0         
+              Finished: 0         
+    Client Application: 0         
+    Server Application: 5         
+                 Alert: 0         
+  Unrecognized records: 42        
+  Completed handshakes: 0         
+        Bad handshakes: 0         
+      Sessions ignored: 5         
+    Detection disabled: 0         
+===============================================================================
+SIP Preprocessor Statistics
+  Total sessions: 0
+===============================================================================
+IMAP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+POP Preprocessor Statistics
+  Total sessions                                    : 0
+  Max concurrent sessions                           : 0
+===============================================================================
+Snort exiting
+etection of a Network Scan] [Priority: 3] {UDP} 192.168.1.101:56671 -> 239.255.255.250:1900
