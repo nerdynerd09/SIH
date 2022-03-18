@@ -1,7 +1,8 @@
 import scapy.all as scapy
 import requests
+from sendmail import mailReport
 
-arpResult = "Everthig is safe"
+arpResult = "You are ARP safe!!"
 def arpSniff(interface):
 	scapy.sniff(iface=interface,prn=process_sniffed_packet)
 
@@ -15,6 +16,7 @@ def process_sniffed_packet(packet):
 		if originalmac != responsemac:
 			arpResult = "Alert!! ARP Table attacked."
 			requests.post('http://127.0.0.1:5000/attackDetection', data={'attackType': "arp"})
+			mailReport("ARP Table Spoofed")
 			# print(arpResult)
 	# return arpResult
 	print(arpResult)
@@ -30,3 +32,6 @@ def mac(ipadd):
 
 
 # arpSniff('eth0')
+
+
+

@@ -63,6 +63,9 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <div id="preLoader"></div>
+
     <div class="mainBox">
         <div class="tableBox">
             <table class="table1">
@@ -118,6 +121,8 @@
                 <h1>Alert</h1>
                 <p id='arpAlert'>ARP Safe!!</p>
                 <p id='dosAlert'>DOS Safe!!</p>
+                <p id='synAlert'>SYN Safe!!</p>
+                <p id='icmpAlert'>ICMP Safe!!</p>
                 <!-- <img src="warning.png" alt="" height="90px"> -->
             </center>
         </div>
@@ -210,12 +215,12 @@
 
                 if ((url[1]==0)) return;
                 if ((url[1]) <= 10) {
-                    urlsElement.innerHTML += `<li id="urls" style="background-color:red">${url[0]}</li>`;
+                    urlsElement.innerHTML += `<li id="urls" style="background-color:#FA6464">${url[0]}</li>`;
                 } else if ((url[1]) <= 20) {
-                    urlsElement.innerHTML += `<li id="urls" style="background-color:green">${url[0]}</li>`;
+                    urlsElement.innerHTML += `<li id="urls" style="background-color:#9E0101">${url[0]}</li>`;
 
                 } else {
-                    urlsElement.innerHTML += `<li id="urls" style="background-color:yellow">${url[0]}</li>`;
+                    urlsElement.innerHTML += `<li id="urls" style="background-color:#FF0000">${url[0]}</li>`;
                 }
 
                 // urlsElement.innerHTML += `<li>${url[0]}</li>`;
@@ -290,18 +295,38 @@
 
     <script>
         arpElement = document.querySelector("#arpAlert")
-        dosElement = document.querySelector("#dosAlert")
-
+        dosElement = document.querySelector("#dosAlert")        
+        synElement = document.querySelector("#synAlert")
+        icmpAttackElement = document.querySelector("#icmpAlert")
 
         socket.on('ddos', function() {
             console.log("ddos attacked");
             dosElement.innerHTML = `<p> Under DoS Attack!!</p>`
         })
+
+        socket.on('synattack', function() {
+            console.log("SYN attack");
+            synElement.innerHTML = `<p> Under Syn Attack!!</p>`
+        })
+
+        socket.on('icmpattack', function() {
+            console.log("ICMP attack");
+            icmpAttackElement.innerHTML = `<p> Under ICMP Attack!!</p>`
+        })
+
         socket.on('arp', function() {
             console.log("arp attacked");
 
             arpElement.innerHTML = `<p> Arp Attacked!!</p>`
 
+        })
+    </script>
+
+    <script>
+        var loader = document.querySelector('#preLoader');
+
+        window.addEventListener('load', function() {
+            loader.style.display = "none"
         })
     </script>
 </body>

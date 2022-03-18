@@ -25,14 +25,14 @@ def hello_world():
     # networkIPs,networkMAC,vendor,currentIP,currentMAC = nmapper()
 
     # Working
-    dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor = portScanner()    
-    threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
-    threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
+    # dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor = portScanner()    
+    # threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
+    # threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
     threading.Thread(target=dosDetection,daemon=True).start()
-    return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor)
+    # return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor)
 
 
-    # return render_template('index.html')
+    return render_template('index.html')
     
     # alertString = dosDetection()
 
@@ -64,10 +64,21 @@ def addUrlFn():
 def attackDetectionFn():
     data = request.form
     d = dict(data)
+    alertType = d.get('alertType')
     attackType = d.get('attackType')
-    if attackType == "ddos":
-        socket.emit("ddos");
-    elif attackType == "arp":
+    print(f"AlertType: {alertType}")
+
+    
+    # if attackType == "ddos":
+    #     socket.emit("ddos");
+
+    if (d.get('alertType')=="syn"):
+        socket.emit("synattack")
+
+    if(d.get('alertType')=="icmp"):
+        socket.emit("icmpattack")
+    
+    if attackType == "arp":
         socket.emit("arp")
     return jsonify(isError= False,
                     message= "Success",
