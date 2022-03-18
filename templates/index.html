@@ -11,7 +11,7 @@
     <script src="https://cdn.socket.io/4.0.1/socket.io.min.js"></script>
     <script src="index.js"></script>
 
-    
+
     <script type="text/javascript">
         let lineDataChart = [
             ["Text", "UDP", "TCP"],
@@ -78,20 +78,17 @@
                 </tr>
             </table>
             <table class="table1" cellspacing="10" style="border-collapse: separate;">
-                {% for ip in (ipList) %}
+                {% for ip in (ipList) %} {% for key in ((dictionary['scan'][ip]['tcp']).keys()) %}
 
-                    {% for key in ((dictionary['scan'][ip]['tcp']).keys()) %}
-
-                    <tr>
-                        <td>{{ip}}</td>
-                        <td>{{key}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['state']}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['name']}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['product']}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['version']}}</td>
-                        </tr>
-                    {% endfor %}
-                {% endfor %}
+                <tr>
+                    <td>{{ip}}</td>
+                    <td>{{key}}</td>
+                    <td>{{dictionary['scan'][ip]['tcp'][key]['state']}}</td>
+                    <td>{{dictionary['scan'][ip]['tcp'][key]['name']}}</td>
+                    <td>{{dictionary['scan'][ip]['tcp'][key]['product']}}</td>
+                    <td>{{dictionary['scan'][ip]['tcp'][key]['version']}}</td>
+                </tr>
+                {% endfor %} {% endfor %}
 
                 <!-- <tr>
                     <td>192.168.1.1</td>
@@ -119,10 +116,15 @@
         <div class="alert">
             <center>
                 <h1>Alert</h1>
-                <p id='arpAlert'>ARP Safe!!</p>
-                <p id='dosAlert'>DOS Safe!!</p>
-                <p id='synAlert'>SYN Safe!!</p>
-                <p id='icmpAlert'>ICMP Safe!!</p>
+<!--                 <p id='arpAlert'>ARP Safe!! <img class="arpAlertIcon" src="../assets/check.png"></p> -->
+
+                <p id='arpAlert'>ARP Safe!! <img class="arpAlertIcon" src="../static/images/check.png"></p>
+                <!-- <p id='dosAlert'>DOS Safe!!</p> -->
+                <br>
+                <p id='synAlert'>SYN Safe!! <img class="synAlertIcon" src="{{url_for('static',filename = 'images/check.png')}}"></p>
+                <br>
+                <p id='icmpAlert'>ICMP Safe!! <img id="icmpAlertIcon" src="{{url_for('static',filename = 'images/check.png')}}"></p>
+                <br>
                 <!-- <img src="warning.png" alt="" height="90px"> -->
             </center>
         </div>
@@ -162,15 +164,15 @@
                 </tr>
             </table>
             <table class="table1" cellspacing="10" style="border-collapse: separate;">
-                    <tbody>
-                {% for ip in range(networkIPs|length) %}
+                <tbody>
+                    {% for ip in range(networkIPs|length) %}
                     <tr>
                         <td>{{networkIPs[ip][0]}}</td>
                         <td>{{networkMAC[ip]}}</td>
                         <td>{{vendor[ip]}}</td>
-                        </tr>
-                {% endfor %}
-            </tbody>
+                    </tr>
+                    {% endfor %}
+                </tbody>
 
 
                 <!-- <tr>
@@ -195,7 +197,7 @@
 
 
 
-     <script>
+    <script>
         socket = io();
         socket.connect('http://127.0.0.1:5000/');
         socket.on('urlAdded', function(data) {
@@ -213,7 +215,7 @@
             urls.forEach(url => {
                 if (url.length == 0) return;
 
-                if ((url[1]==0)) return;
+                if ((url[1] == 0)) return;
                 if ((url[1]) <= 10) {
                     urlsElement.innerHTML += `<li id="urls" style="background-color:#FA6464">${url[0]}</li>`;
                 } else if ((url[1]) <= 20) {
@@ -290,12 +292,12 @@
 
 
 
-        }, 2000)
+        }, 3000)
     </script>
 
     <script>
         arpElement = document.querySelector("#arpAlert")
-        dosElement = document.querySelector("#dosAlert")        
+        dosElement = document.querySelector("#dosAlert")
         synElement = document.querySelector("#synAlert")
         icmpAttackElement = document.querySelector("#icmpAlert")
 
@@ -306,19 +308,30 @@
 
         socket.on('synattack', function() {
             console.log("SYN attack");
-            synElement.innerHTML = `<p> Under Syn Attack!!</p>`
+            synElement.innerHTML = `<p> Under Syn Attack!! <img id="synAlertIcon" src="../static/images/xbutton.png"> </p>`
+            synElement.style.backgroundColor = 'grey'
+            synElement.style.fontSize = '15px'
+            document.getElementById('synAlertIcon').style.marginLeft = '5vw'
         })
 
         socket.on('icmpattack', function() {
             console.log("ICMP attack");
-            icmpAttackElement.innerHTML = `<p> Under ICMP Attack!!</p>`
+            icmpAttackElement.innerHTML = `<p> Under ICMP Attack!! <img id="icmpAlertIcon" src="../static/images/xbutton.png"> </p>`
+            icmpAttackElement.style.backgroundColor = 'grey'
+            icmpAttackElement.style.fontSize = '15px'
+            document.getElementById('icmpAlertIcon').style.marginLeft = '5vw'
+            // document.querySelector('.icmpAlertIcon').src = "{{url_for('static',filename = 'images/xbutton.png')}}"
+
+            
         })
 
         socket.on('arp', function() {
             console.log("arp attacked");
 
-            arpElement.innerHTML = `<p> Arp Attacked!!</p>`
-
+            arpElement.innerHTML = `<p> Arp Attacked!!</p> <img id="arpAlertIcon" src="../static/images/xbutton.png"> `
+            arpElement.style.backgroundColor = 'grey'
+            arpElement.style.fontSize = '15px'
+            document.getElementById('arpAlertIcon').style.marginLeft = '5vw'
         })
     </script>
 
@@ -329,6 +342,12 @@
             loader.style.display = "none"
         })
     </script>
-</body>
+
+<!--     <script>
+        arpAttackElement = document.querySelector("#arpAlert")
+        arpAttackElement.style.backgroundColor = 'grey'
+        document.querySelector('.arpAlertIcon').src = '../assets/x-button.png'
+    </script>
+ --></body>
 
 </html>
