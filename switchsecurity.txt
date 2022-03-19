@@ -1,0 +1,5 @@
+Most managed Ethernet switches sport features designed to mitigate ARP Poisoning attacks. Typically known as Dynamic ARP Inspection (DAI), these features evaluate the validity of each ARP message and drop packets that appear suspicious or malicious. DAI can also typically be configured to limit the rate at which ARP messages can pass through the switch, effectively preventing DoS attacks. 
+
+DAI and similar features were once exclusive to high-end networking gear, but are now common on almost all business-grade switches, including those found in smaller businesses. It’s generally considered a best practice to enable DAI on all ports except those connected to other switches. The feature does not introduce a significant performance impact but may need to be enabled in conjunction with other features like DHCP Snooping.  
+
+Enabling Port Security on a switch can also help mitigate ARP Cache Poisoning attacks. Port Security can be configured to allow only a single MAC address on a switch port, depriving an attacker the chance to maliciously assume multiple network identities. 
