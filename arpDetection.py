@@ -15,8 +15,9 @@ def process_sniffed_packet(packet):
 		responsemac = packet[scapy.ARP].hwsrc
 		if originalmac != responsemac:
 			arpResult = "Alert!! ARP Table attacked."
-			requests.post('http://127.0.0.1:5000/attackDetection', data={'attackType': "arp"})
-			mailReport("ARP Table Spoofed")
+			requests.post('http://127.0.0.1:5000/arpDetection', data={'attackType': "arp"})
+			# mailReport("ARP Table Spoofed")
+			# print("ARP Mail Sent")
 			# print(arpResult)
 	# return arpResult
 	print(arpResult)

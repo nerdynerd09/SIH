@@ -1,10 +1,13 @@
 # Getting basic details
-import subprocess,nmap
+import subprocess,nmap,requests
 import re
 cmdList = []
 subdomainIP = ""
 currentIP = ""
 currentMAC = ""
+cveSearchList = []
+servicesList = []
+cveList = []
 def nmapper():
 	cmd = subprocess.check_output(['ifconfig']).decode('utf-8')
 	global currentIP
@@ -62,8 +65,10 @@ def nmapper():
 	return networkIPs,networkMAC,vendor
 
 def portScanner():
+	global servicesList
+	global cveList
 	nm = nmap.PortScanner()
-	# subdomainIP = '192.168.1.0/24'
+	# subdomainIP = '192.168.168.43'
 	networkIPs,networkMAC,vendor =nmapper()
 	dictionary = nm.scan(subdomainIP,'0-1000')
 	# ip = dictionary['scan']
@@ -77,9 +82,35 @@ def portScanner():
 					ipList.append(i)
 		except KeyError:
 			pass
+
+	# Searching for CVEs
+	for ip in ipList:
+	    for key in dictionary['scan'][ip]['tcp'].keys():
+        	servicesList.append([ip,dictionary['scan'][ip]['tcp'][key]['product'],dictionary['scan'][ip]['tcp'][key]['version']])
+
+	for i in range (len(servicesList)):
+		# print(servicesList[i][1])
+		# print(servicesList[i][2])
+		cveUrl = f'https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword={servicesList[i][1]}+{servicesList[i][2]}'
+		res = requests.get(cveUrl).text  
+
+		reg = re.findall(r'name=CVE.*\"',res)
+
+		for j in range(3):
+		    try:
+		        # print(servicesList[i][0],servicesList[i][1],reg[j][5:-1])
+		        cveList.append([servicesList[i][0],servicesList[i][1],reg[j][5:-1]])
+		    except IndexError:
+		        pass
+
+	print(f"CVELIST: {cveList}")
 	# print(ip)
+	# for ip in ipList:
+	# 	print(dictionary['scan'][ip]['tcp'])
+
 	# print(f"IPList: {ipList}\nDictionary: {dictionary}\nCurrentIP: {currentIP}\nCurrentMac: {currentMAC}\nNewtWork: {networkMAC}\nNetworkIPs: {networkIPs}\nVendor: {vendor}")
-	return dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor
+	return dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList
+	# return dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor
 
 
 # portScanner()

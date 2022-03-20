@@ -35,6 +35,7 @@ def dosDetection():
 				requests.post('http://127.0.0.1:5000/attackDetection', data={'attackType': "ddos",'alertType': "syn"})
 				if synMailSent == False:
 					mailReport("SYN DOS attack ho gya!!!")
+					print("SYN mail sent")
 					synMailSent = True
 
 			if icmpAttack in content:
@@ -42,12 +43,13 @@ def dosDetection():
 				requests.post('http://127.0.0.1:5000/attackDetection', data={'attackType': "ddos",'alertType': "icmp"})
 				if icmpMailSent == False:
 					mailReport("ICMP DOS attack ho gya!!!")
+					print("ICMP mail sent")
 					icmpMailSent = True
 
 				# requests.post('http://127.0.0.1:5000/attackDetection', data={'attackType': "ddos"})
 				# mailReport("DOS attack ho gya!!!")
 		# i+=1
-		print(f"SynAlert: {synAlert}\tICMPAlert: {icmpAlert}")
+		# print(f"SynAlert: {synAlert}\tICMPAlert: {icmpAlert}")
 		# requests.post('http://127.0.0.1:5000/attackDetection', data={'attackType': "ddos"})
 		time.sleep(2)
 		# return alertString

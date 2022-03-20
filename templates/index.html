@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/style/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
     <title>Network Packet Analyser</title>
     <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> -->
     <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -102,7 +103,7 @@
         <div class="chart">
             <div id="curve_chart"></div>
         </div>
-        <div class="chart1">
+        <!-- <div class="chart1">
             <center>
                 <div id="donutchart"></div>
             </center>
@@ -112,34 +113,57 @@
                 <li class="third">ICMP <span class="right">XXX</span> </li>
                 <li class="fourth">SSl <span class="right">XXX</span> </li>
             </ul>
-        </div>
+        </div> -->
+
+        <div class="chart1">
+            <div class="cvetableBox">
+                <div id="cveHeading">IP</div>
+                <div id="cveHeading">Product</div>
+                <div id="cveHeading">CVE</div>
+            </div>
+<!--             <div class="cveContent">
+                <p class="first">192.168.1.100</p>
+                <p class="second">dnsmaq</p>
+                <p class="third">CVE-2021-5686457</p>
+            </div>
+            <hr>
+ -->
+            {% for i in range(cveList | length)%}
+            <div class="cveContent">
+                <p class="first">{{cveList[i][0]}}</p>
+                <p class="second">{{cveList[i][1]}}</p>
+                <p class="third">{{cveList[i][2]}}</p>
+            </div>
+            <hr>
+
+            {%endfor%}
+        </div>        
         <div class="alert">
             <center>
                 <h1>Alert</h1>
-<!--                 <p id='arpAlert'>ARP Safe!! <img class="arpAlertIcon" src="../assets/check.png"></p> -->
-
+                <br>
                 <p id='arpAlert'>ARP Safe!! <img class="arpAlertIcon" src="../static/images/check.png"></p>
                 <!-- <p id='dosAlert'>DOS Safe!!</p> -->
                 <br>
-                <p id='synAlert'>SYN Safe!! <img class="synAlertIcon" src="{{url_for('static',filename = 'images/check.png')}}"></p>
+                <p id='synAlert'>SYN Safe!! <img class="synAlertIcon" src="../static/images/check.png"></p>
                 <br>
-                <p id='icmpAlert'>ICMP Safe!! <img id="icmpAlertIcon" src="{{url_for('static',filename = 'images/check.png')}}"></p>
+                <p id='icmpAlert'>ICMP Safe!! <img id="icmpAlertIcon" src="../static/images/check.png"></p>
                 <br>
                 <!-- <img src="warning.png" alt="" height="90px"> -->
             </center>
         </div>
-        <div class="alarm">
+        <!-- <div class="alarm">
             <center>
                 <img src="alarm.png" alt="" height="90px">
             </center>
-        </div>
+        </div> -->
         <div class="suspiciousWebsite">
             <center>
-                <h1>Suspicious <br> Websites</h1>
+                <h1>Suspicious Websites</h1>
             </center>
             <ul type="none" class="colList">
-                <li id="urls">web.com</li>
-                <!-- <li>1. subtitleseeker.com</li>
+                <!-- <li id="urls"></li>
+                <li>1. subtitleseeker.com</li>
                 <li>2. finance.co</li>
                 <li>3. delgets.com</li>
                 <li>4. </li>
@@ -217,12 +241,12 @@
 
                 if ((url[1] == 0)) return;
                 if ((url[1]) <= 10) {
-                    urlsElement.innerHTML += `<li id="urls" style="background-color:#FA6464">${url[0]}</li>`;
+                    urlsElement.innerHTML += `<li id="urls" style="background-color:#FA6464;display:flex;justify-content:center;align-items:center;">${url[0]}</li>`;
                 } else if ((url[1]) <= 20) {
-                    urlsElement.innerHTML += `<li id="urls" style="background-color:#9E0101">${url[0]}</li>`;
+                    urlsElement.innerHTML += `<li id="urls" style="background-color:#9E0101;display:flex;justify-content:center;align-items:center;">${url[0]}</li>`;
 
                 } else {
-                    urlsElement.innerHTML += `<li id="urls" style="background-color:#FF0000">${url[0]}</li>`;
+                    urlsElement.innerHTML += `<li id="urls" style="background-color:#FF0000;display:flex;justify-content:center;align-items:center;">${url[0]}</li>`;
                 }
 
                 // urlsElement.innerHTML += `<li>${url[0]}</li>`;
@@ -231,66 +255,20 @@
         };
 
 
-        udpElement = document.querySelector(".first .right")
-        tcpElement = document.querySelector(".second .right")
-        icmpElement = document.querySelector(".third .right")
-        var udpNum = udpElement.nodeValue
-        var tcpNum = tcpElement.nodeValue
-        var icmpNum = icmpElement.nodeValue
+        var udpNum = 0
+        var tcpNum = 0
         var graphTime = 0
         setInterval(() => {
             graphTime += 5
-            tcpElement.innerHTML = ""
             tcpNum = tcpNum + Math.floor(Math.random() * 6);
-            tcpElement.innerHTML += `${tcpNum}`
 
-            udpElement.innerHTML = ""
             udpNum = udpNum + Math.floor(Math.random() * 1.5);
-            udpElement.innerHTML += `${udpNum}`
-
-
-            icmpElement.innerHTML = ""
-            icmpNum = icmpNum + Math.floor(Math.random() * 0.5);
-            icmpElement.innerHTML += `${icmpNum}`
 
             // line chartUpdation
             lineDataChart.push([
                 `${graphTime}`, udpNum, tcpNum
             ]);
             drawLineChart();
-
-            // console.log(num)
-            google.charts.load("current", {
-                packages: ["corechart"]
-            });
-            google.charts.setOnLoadCallback(drawChart);
-
-            function drawChart() {
-                var data = google.visualization.arrayToDataTable([
-                    ['Protocol', 'Percentage'],
-                    ['TCP', tcpNum],
-                    ['ICMP', icmpNum],
-                    ['UDP', udpNum],
-                    // ['SSL', 10],
-                ]);
-
-                var options = {
-                    title: '',
-                    titleColor: 'white',
-                    pieHole: 0.6,
-                    pieSliceTextStyle: {
-                        color: 'white',
-                    },
-                    legend: {
-                        position: 'none'
-                    },
-                    backgroundColor: 'transparent',
-                };
-                var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-                chart.draw(data, options);
-            }
-
-
 
         }, 3000)
     </script>
@@ -308,16 +286,14 @@
 
         socket.on('synattack', function() {
             console.log("SYN attack");
-            synElement.innerHTML = `<p> Under Syn Attack!! <img id="synAlertIcon" src="../static/images/xbutton.png"> </p>`
-            synElement.style.backgroundColor = 'grey'
+            synElement.innerHTML = `<p style='color:#CA0D0D; animation: animate 2.5s linear infinite;'> SYN Attack!!</p> <img id="arpAlertIcon" src="../static/images/xbutton.png">`
             synElement.style.fontSize = '15px'
             document.getElementById('synAlertIcon').style.marginLeft = '5vw'
         })
 
         socket.on('icmpattack', function() {
             console.log("ICMP attack");
-            icmpAttackElement.innerHTML = `<p> Under ICMP Attack!! <img id="icmpAlertIcon" src="../static/images/xbutton.png"> </p>`
-            icmpAttackElement.style.backgroundColor = 'grey'
+            icmpAttackElement.innerHTML = `<p style='color:#CA0D0D; animation: animate 2.5s linear infinite;'> ICMP Attack!!</p> <img id="arpAlertIcon" src="../static/images/xbutton.png">`
             icmpAttackElement.style.fontSize = '15px'
             document.getElementById('icmpAlertIcon').style.marginLeft = '5vw'
             // document.querySelector('.icmpAlertIcon').src = "{{url_for('static',filename = 'images/xbutton.png')}}"
@@ -328,8 +304,7 @@
         socket.on('arp', function() {
             console.log("arp attacked");
 
-            arpElement.innerHTML = `<p> Arp Attacked!!</p> <img id="arpAlertIcon" src="../static/images/xbutton.png"> `
-            arpElement.style.backgroundColor = 'grey'
+            arpElement.innerHTML = `<p style='color:#CA0D0D; animation: animate 2.5s linear infinite;'> Arp Attacked!!</p> <img id="arpAlertIcon" src="../static/images/xbutton.png">`
             arpElement.style.fontSize = '15px'
             document.getElementById('arpAlertIcon').style.marginLeft = '5vw'
         })
@@ -345,9 +320,11 @@
 
 <!--     <script>
         arpAttackElement = document.querySelector("#arpAlert")
-        arpAttackElement.style.backgroundColor = 'grey'
+        arpAttackElement.innerHTML = `<p style='color:#CA0D0D; animation: animate 2.5s linear infinite;'> Arp Attacked!!</p> <img id="arpAlertIcon" src="../static/images/xbutton.png"> `
+        // arpAttackElement.style.color = '#CA0D0D'
         document.querySelector('.arpAlertIcon').src = '../assets/x-button.png'
-    </script>
- --></body>
+
+    </script> -->
+</body>
 
 </html>

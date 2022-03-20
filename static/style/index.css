@@ -1,7 +1,9 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
+
 
 .mainBox {
     overflow: hidden;
@@ -12,7 +14,7 @@
     width: 100vw;
     background-image: linear-gradient(rgb(5, 5, 58), rgb(5, 6, 71), rgb(1, 1, 15));
     display: grid;
-    grid-template-areas: 'tableBox tableBox tableBox chart chart chart' 'donutChart donutChart alert suspiciousWebsite ip ip' 'donutChart donutChart alarm suspiciousWebsite ip ip';
+    grid-template-areas: 'tableBox tableBox tableBox chart chart chart' 'donutChart donutChart alert suspiciousWebsite ip ip' 'donutChart donutChart alert suspiciousWebsite ip ip';
     gap: 5px;
     padding: 5px;
     align-content: space-between;
@@ -63,16 +65,16 @@
 }
 
 .chart1 {
-    overflow: hidden;
+    overflow: scroll;
+    scrollbar-width: none;
     grid-area: donutChart;
-    margin-left: 40px;
+    margin-left: 1vw;
     background-image: linear-gradient(180deg, rgb(5, 10, 83), rgba(9, 7, 53, 0.733));
-    border-radius: 40px;
-    border-radius: 40px;
+    border-radius: 25px;
     color: #ffffff;
     padding: 20px;
-    width: 400px;
-    display: none;
+    width: 24vw;
+    /*display: none;*/
 }
 
 .right {
@@ -87,7 +89,9 @@
     border-radius: 40px;
     color: #ffffff;
     margin-right: 10px;
-    width: 25vw;
+    width: 22vw;
+    height: 100%;
+    /*height: 25vh;*/
 }
 
 .alarm {
@@ -109,11 +113,15 @@
     border-radius: 40px;
     color: #ffffff;
     /* padding: 10px; */
-    width: 300px;
+    width: 18vw;
     overflow: scroll;
     scrollbar-width: none;
 }
 
+.suspiciousWebsite h1{
+    margin-top: 1vh;
+    font-size: 38px;
+}
 .ip {
     overflow: scroll;
     grid-area: ip;
@@ -125,67 +133,50 @@
     scrollbar-width: none;
 }
 
-.first::marker {
-    color: yellow;
-}
 
-.first .right {
-    color: white;
-}
 
-.second .right {
-    color: white;
-}
-
-.third .right {
-    color: white;
-}
-
-.second::marker {
-    color: blue;
-}
-
-.third::marker {
-    color: red;
-}
-
-.fourth::marker {
-    color: rgb(17, 177, 17);
-}
 
 #urls {
-    position: relative;
+    /*position: relative;*/
+    position: flex;
+    align-items: center ;
+    justify-content: center;
     top: 60%;
     background-color: white;
     border-radius: 25px;
     margin-top: 20px;
     width: 15vw;
     height: 5vh;
-    color: black;
+    color: white;
     /* align-items: center; */
     text-align: center;
     font-weight: 400;
     font-size: large;
-    /* overflow: hidden; */
+    overflow: scroll;
+    scrollbar-width: none;
 }
 
 .box {
     height: 80px;
     width: 400px;
-    background-color: rgba(59, 59, 59, 0.884);
+    /*background-color: rgba(59, 59, 59, 0.884);*/
+    background-color: linear-gradient(180deg, rgb(11, 16, 92), rgba(9, 7, 41, 0.733));;
     margin: auto;
-    border-bottom: 3px solid rgb(116, 113, 113);
-    padding: 10px;
-    border-radius: 4px;
+    /*border-bottom: 3px solid rgb(116, 113, 113);*/
+    padding: 5px;
+    border-radius: 8px;
     overflow: hidden;
+    /*display: none;*/
 }
 
 .innerBox {
     background-color: #ffffff;
-    border-radius: 20px;
+    border-radius: 10px;
     color: #49a5e7;
     padding: 7px;
     overflow: hidden;
+    box-shadow: 5px 10px 8px rgba(0,0,0,0.5);
+    /*display: none;*/
 }
 
 p {
@@ -242,13 +233,16 @@ p {
     background-color: white;
     color: black;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     font-size: large;
+    /*animation: animate 2.5s linear infinite;*/
 }
 
+
+
 #arpAlert img {
-    margin-left: 8vw;
+    margin-right: 1vw;
     height: 25px;
     width: 25px;
 }
@@ -261,13 +255,14 @@ p {
     background-color: white;
     color: black;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     font-size: large;
 }
 
 #synAlert img {
-    margin-left: 8vw;
+    /*margin-left: 8vw;*/
+    margin-right: 1vw;
     height: 25px;
     width: 25px;
     z-index: 100;
@@ -281,13 +276,13 @@ p {
     background-color: white;
     color: black;
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     font-size: large;
 }
 
 #icmpAlert img {
-    margin-left: 8vw;
+    margin-right: 1vw;
     height: 25px;
     width: 25px;
 }
@@ -301,7 +296,7 @@ p {
     background-color: white;
     color: black;
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
     align-items: center;
     font-size: medium;
     /* display: none; */
@@ -312,3 +307,62 @@ p {
     height: 25px;
     width: 25px;
 }
+
+
+
+ @keyframes animate {
+            0% {
+                opacity: 0;
+            }
+  
+            50% {
+                opacity: 0.9;
+            }
+  
+            100% {
+                opacity: 0;
+            }
+        }
+
+.cvetableBox{
+/*background-color: red;*/
+display: flex;
+justify-content: space-between;
+/*height: 100%;*/
+width: 100%;
+}
+
+#cveHeading{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    width: 5vw;
+    background-color: white;
+    color: black;
+}
+
+.cveContent{
+    margin-left: 1vw;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: space-between;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.first{
+    margin-left:-2px;
+}
+
+.second{
+    margin-left: 20px;
+}
+.third{
+    justify-content: right;
+    align-items: flex-end;
+    margin-right: -10px;
+}
+

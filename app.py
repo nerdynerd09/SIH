@@ -9,6 +9,7 @@ from nmapscanner import portScanner,nmapper
 from attackAnalysis import dosDetection
 from arpDetection import arpSniff
 from testtext import testFunc
+from initialMail import initialReportGenerator
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "BROWNRING"
@@ -25,14 +26,15 @@ def hello_world():
     # networkIPs,networkMAC,vendor,currentIP,currentMAC = nmapper()
 
     # Working
-    # dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor = portScanner()    
-    # threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
-    # threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
+    dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList = portScanner()    
+    threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
+    threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
     threading.Thread(target=dosDetection,daemon=True).start()
-    # return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor)
+    initialReportGenerator(networkIPs,networkMAC,vendor,currentIP,currentMAC,cveList)
+    return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
 
 
-    return render_template('index.html')
+    # return render_template('index.html')    
     
     # alertString = dosDetection()
 
@@ -66,7 +68,7 @@ def attackDetectionFn():
     d = dict(data)
     alertType = d.get('alertType')
     attackType = d.get('attackType')
-    print(f"AlertType: {alertType}")
+    # print(f"AlertType: {alertType}")
 
     
     # if attackType == "ddos":
@@ -78,26 +80,27 @@ def attackDetectionFn():
     if(d.get('alertType')=="icmp"):
         socket.emit("icmpattack")
     
-    if attackType == "arp":
-        socket.emit("arp")
+    # if attackType == "arp":
+    #     socket.emit("arp")
     return jsonify(isError= False,
                     message= "Success",
                     statusCode= 200,
                     data= data), 200
 
-# @app.route("/arpDetection", methods = ['POST'])
-# def addUrlFn():
-#     data = request.form
-#     d = dict(data)
-#     arp = d.get('arpResult')
-#     # arpList.append([arpResult])
-#     # print(f"ArpResult: {arpList}")
-#     socket.emit("arpDetecting",{"arpResult" : arp});
-#     return jsonify(isError= False,
-#                     message= "Success",
-#                     statusCode= 200,
-#                     data= data), 200
+@app.route("/arpDetection", methods = ['POST'])
+def arpAttackDetectionFn():
+    data = request.form
+    d = dict(data)
+    attackType = d.get('attackType')
 
+    if attackType == "arp":
+        socket.emit("arp")
+    return jsonify(isError = False,
+                    message = "Success",
+                    statusCode = 200,
+                    data = data), 200
+
+    
 
 @app.route("/nmapper")
 def nmap():
