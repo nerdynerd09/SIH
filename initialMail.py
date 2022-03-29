@@ -123,7 +123,7 @@ def initialReportGenerator(networkIPs,networkMAC,vendor,currentIP,currentMAC,cve
 
 
 def sendInitialMail(filename):
-    yag = yagmail.SMTP('at14k3r@gmail.com', 'at14k3r@123')
+    yag = yagmail.SMTP('sendermail', 'senderMailPass')
     receiver="aliashhar3@gmail.com"
     body = "Below attached is the Report of your Network."
     # filename = initialReportGenerator()

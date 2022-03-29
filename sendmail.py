@@ -2,7 +2,7 @@ import yagmail
 
 
 def mailReport(msg):
-    yag = yagmail.SMTP('at14k3r@gmail.com', 'at14k3r@123')
+    yag = yagmail.SMTP('senderMail', 'senderMailPass')
     # receiver="vikashkumar990523@gmail.com"
     receiver="aliashhar3@gmail.com"
     # body = "Hello there from Yagmail"
