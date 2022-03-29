@@ -1,0 +1,221 @@
+ 1010 clear 1011 rm attackResult.txt 1012 clear 1013 ls 1014 clear 1015 python3 app.py 1016 
+ poweroff 1017 cd Desktop/PicoCTF/ 1018 ls 1019 cd picoCtf2021/o 1020 cd picoCtf2021/ 1021 
+ ls 1022 cd Python_Wrangling/ 1023 ls 1024 subl ende.py 1025 cat flag.txt 1026 cat 
+ flag.txt.en 1027 cleae 1028 clear 1029 ls 1030 cat pw.txt 1031 cat base64 1032 lssclear 
+ 1033 ls 1034 clear 1035 ls 1036 cd .. 1037 ls 1038 cd .. 1039 ls 1040 cd Any/ 1041 l 1042 
+ ls 1043 cd .. 1044 ls 1045 cd 01_picoCtf2019/ 1046 ls 1047 cd Whitepages/ 1048 ls 1049 
+ clear 1050 ls 1051 cat whitepages. 1052 cat whitepages.p 1053 cat whitepages.py 1054 ls 
+ 1055 cat decoded 1056 clear 1057 ls 1058 cat whitepages.txt 1059 clear 1060 ls 1061 subl 
+ whitepages.txt 1062 subl whitepages.py 1063 python whitepages.py 1064 pip install pwntools 
+ 1065 clear 1066 pip install pwntools 1067 python whitepages.py 1068 python3 whitepages.py 
+ 1069 python whitepages.py 1070 python3 -m pip install --upgrade pwntools 1071 poweroff 1072 
+ cd ~/Desktop/SIH/ 1073 ls 1074 python3 app.py 1075 clear 1076 exit 1077 ls 1078 cat flag 
+ 1079 l 1080 cat WriteUp 1081 subl WriteUp 1082 exit 1083 cd 
+ Desktop/PicoCTF/01_picoCtf2019/;ls 1084 cd Whitepages/ 1085 ls 1086 clear 1087 l;s 1088 
+ clar 1089 clear 1090 ls 1091 history 1092 history | grep echo 0 1093 history | grep echo 
+ 1094 echo 0 > /proc/sys/net/ipv4/ip_forward 1095 systemctl restart network 1096 systemctl 
+ restart networking.service 1097 service NetworkManager start 1098 service NetworkManager 
+ status 1099 service NetworkManager stop 1100 service NetworkManager start 1101 ifconfig 
+ 1102 clear 1103 ls 1104 subl 1105 python3 whitepages.py 1106 python whitepages.py 1107 ls 
+ 1108 cat decoded 1109 clear 1110 ls 1111 cat output.txt 1112 cd .. 1113 ls 1114 cd 
+ Irish-Name-Repo_ 1115 ls 1116 cd Irish-Name-Repo_1/ 1117 ls 1118 subl WriteUp 1119 cd 
+ ../Client-Side-Again/ 1120 sl 1121 clear 1122 poweroff 1123 cd ~/Desktop/ComputerGraphics/ 
+ 1124 ls 1125 cd Lab5/ 1126 ls 1127 subl scanFill 1128 subl scanFill.c 1129 ./scanFill 1130 
+ subl floodFill.cpp 1131 ./floodFill 1132 subl boundaryFill.cpp 1133 ./boundaryFill 1134 
+ ./scanFill 1135 ./boundaryFill 1136 ./floodFill 1137 subl floodFill.cpp 1138 ./floodFill 
+ 1139 g++ floodFill.cpp -o floodFill -lGL -lglut -lGLU 1140 ./floodFill 1141 subl floodFill 
+ 1142 subl floodFill.cpp 1143 g++ floodFill.cpp -o floodFill -lGL -lglut -lGLU 1144 
+ ./floodFill 1145 g++ floodFill.cpp -o floodFill -lGL -lglut -lGLU 1146 ./floodFill 1147 g++ 
+ floodFill.cpp -o floodFill -lGL -lglut -lGLU 1148 ./floodFill 1149 g++ floodFill.cpp -o 
+ floodFill -lGL -lglut -lGLU 1150 ./floodFill 1151 g++ floodFill.cpp -o floodFill -lGL 
+ -lglut -lGLU 1152 ./floodFill 1153 g++ floodFill.cpp -o floodFill -lGL -lglut -lGLU 1154 
+ ./floodFill 1155 poweroff 1156 ifconfig 1157 cp Desktop/SIH/ /var/www/html/ 1158 cp -r 
+ Desktop/SIH/ /var/www/html/ 1159 service apache2 start 1160 ifconfig 1161 service 
+ NetworkManager restart 1162 ifconfig 1163 systemifc 1164 ifconfig 1165 history | grep echo 
+ 0 1166 history | grep echo 1167 echo 0 > /proc/sys/net/ipv4/ip_forward 1168 ngrok http 80 
+ 1169 ifconfig 1170 poweroff 1171 ifconfig 1172 cd Desktop/ 1173 ls 1174 mkdir It_File/ 1175 
+ ls 1176 cd It_File/ 1177 ls 1178 mkdir Lab8 1179 cd Lab8/ 1180 l 1181 ls 1182 clear 1183 ls 
+ 1184 subl payloads 1185 ifconfig 1186 cd ~/Desktop/SIH/ 1187 sl 1188 python3 app.py 1189 
+ exit 1190 ;s 1191 ls 1192 subl attackAnalysis.py 1193 python3 attackAnalysis.py 1194 
+ ifconfig 1195 python3 attackAnalysis.py 1196 rm attackResult.txt 1197 python3 
+ attackAnalysis.py 1198 cleat 1199 clear 1200 python3 attackAnalysis.py 1201 clar 1202 c;ear 
+ 1203 clear 1204 python3 app.py 1205 ifconfig 1206 exit 1207 ifconfig 1208 poweroff 1209 cd 
+ ../data/;ls 1210 cat pass 1211 cd .. 1212 cat pass 1213 cd Desktop/SIH/ 1214 l 1215 ls 1216 
+ git remote add origin https://github.com/nerdynerd09/SIH.git 1217 git init 1218 ls 1219 git 
+ add . 1220 ls 1221 git branch -M ashhar 1222 git remote add origin 
+ https://github.com/nerdynerd09/SIH.git 1223 git branch -M ashhar 1224 git push -u origin 
+ ashhar 1225 git remote add origin https://github.com/nerdynerd09/SIH.git 1226 git commit -m 
+ "updates" 1227 git config --global user.email "nerdynerd0905@gmail.com" 1228 git config 
+ --global user.name "nerdynerd09" 1229 git commit -m "updates" 1230 git branch 1231 git push 
+ -u origin ashhar 1232 git pull 1233 git push -u origin ashhar 1234 cd . 1235 cd .. 1236 cp 
+ SIH/ SIH2 1237 cp -r SIH/ SIH2 1238 cd SIH2 1239 ls 1240 cd .. 1241 ls 1242 clear 1243 cd 
+ SIH 1244 ls 1245 gti set-url origin 
+ https://nerdynerd09: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@github.com/nerdynerd09/SIH.git 
+ 1246 git set-url origin 
+ https://nerdynerd09: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@github.com/nerdynerd09/SIH.git 
+ 1247 git remote set-url origin 
+ https://nerdynerd09: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@github.com/nerdynerd09/SIH.git 
+ 1248 git branch 1249 git push -u origin ashhar 1250 git pull 1251 git pull remote ashhar 
+ 1252 git pull origin ashhar 1253 git push -u origin ashhar 1254 git branch 
+ --set-upstream-to=origin/ashhar ashhar 1255 git set-upstream 1256 git remote -v 1257 git 
+ pull origin ashhar 1258 git pull origin master --allow-unrelated-histories 1259 git pull 
+ origin ashhar --allow-unrelated-histories 1260 git pull 1261 git branch 1262 git status 
+ 1263 git add . 1264 git status 1265 git commit -m "Updates" 1266 git push -u origin ashhar 
+ 1267 subl sendmail.py 1268 git status 1269 git add sendmail.py 1270 git status 1271 git 
+ commit -m "Updates" 1272 git push -u origin ashhar 1273 git branch 1274 git -b arihant 1275 
+ git branch 1276 ls 1277 ls assets/ 1278 claer 1279 clear 1280 python3 app.py 1281 subl 
+ sniffer.py 1282 python3 app.py 1283 cd ../SIH2/ 1284 cear 1285 clear 1286 python3 app.py 
+ 1287 git status 1288 git branch 1289 git add . 1290 git status 1291 git commit -m "updates" 
+ 1292 git push -u origin main 1293 history | grep set-url 1294 git remote set-url origin 
+ https://nerdynerd09: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@github.com/nerdynerd09/SIH.git 
+ 1295 git push -u origin main 1296 git push -u origin ashhar 1297 git push --force origin 
+ ashhar 1298 cp ~/Desktop/SIH/sendmail.py ~/Desktop/SIH2/ 1299 ls 1300 git push --force 
+ origin ashhar 1301 git add sendmail.py 1302 git push --force origin ashhar 1303 git status 
+ 1304 git push -u origin ashhar 1305 git status 1306 git add . 1307 git status 1308 git push 
+ -u origin ashhar 1309 git push --force origin ashhar 1310 cd .. 1311 cd SIH 1312 git pull 
+ 1313 rm attackResult.txt 1314 git pull 1315 python3 app.py 1316 subl urlscan.py 1317 ls 
+ 1318 subl nmapscanner.py 1319 python3 ap 1320 python3 app.py 1321 cd ../SIH2/ 1322 python3 
+ app.py 1323 cd ../ 1324 mkdir SIH3 1325 cd SIH3 1326 git clone 
+ https://github.com/nerdynerd09/SIH.git 1327 ls 1328 cd SIH/ 1329 ls 1330 python3 app.py 
+ 1331 clear 1332 python3 app.py 1333 clear 1334 git status 1335 subl sendmail.py 1336 git 
+ add . 1337 git branch 1338 git commit -m "updates" 1339 git push -u origin ashhar 1340 rm 
+ attackResult.txt 1341 git add . 1342 git sta 1343 git status 1344 git commit -m "updates" 
+ 1345 git push -u origin ashhar 1346 clear 1347 python3 app.py 1348 clear 1349 subl 
+ arpDetection.py 1350 cp ../../SIH/assets/ ~/Desktop/SIH3/SIH/ 1351 mkdir assets 1352 cp -r 
+ ../../SIH/assets/ ~/Desktop/SIH3/SIH/assets/ 1353 cd assets/ 1354 ls 1355 cd assets/ 1356 
+ ls 1357 cp preloader2.gif ../ 1358 ls 1359 cd ../ 1360 l 1361 ls 1362 rm -r assets/ 1363 l 
+ 1364 ls 1365 cd ../../ 1366 ls 1367 cd SIH/ 1368 ls 1369 subl in 1370 subl 
+ templates/index.html 1371 subl static/style/index.css 1372 python3 app.py 1373 poweroff 
+ 1374 cd ../../SIH 1375 subl attackAnalysis.py 1376 python3 attackAnalysis.py 1377 cp 
+ attackAnalysis.py ../SIH3/SIH/ 1378 ifconfig 1379 python3 app.py 1380 subl app.py 1381 exit 
+ 1382 ifconfig 1383 exit 1384 cd Desktop/SIH3/SIH/ 1385 python3 app.py 1386 poweroff 1387 cd 
+ Desktop/SIH3/SIH/ 1388 subl sendmail.py 1389 subl attackResult.txt 1390 ls 1391 subl app.py 
+ 1392 subl attackAnalysis.py 1393 subl attackResult.txt 1394 python3 attackAnalysis.py 1395 
+ clear 1396 ifconfig 1397 python3 attackAnalysis.py 1398 clear 1399 python3 
+ attackAnalysis.py 1400 clear 1401 subl attackResult.txt 1402 python3 attackAnalysis.py 1403 
+ subl report.pdf 1404 python3 attackAnalysis.py 1405 pip install yagmail 1406 pip3 install 
+ yagmail 1407 clear 1408 python3 attackAnalysis.py 1409 clear 1410 python3 attackAnalysis.py 
+ 1411 clear 1412 python3 attackAnalysis.py 1413 subl arpDetection.py 1414 subl 
+ templates/index.html 1415 subl static/style/index.css 1416 python3 app.py 1417 clear 1418 
+ python3 app.py 1419 poweroff 1420 subl attackResult.txt 1421 exit 1422 cd Desktop/ 1423 
+ hping3 -h 1424 clear 1425 ls 1426 hping3 -C -p 80 --rand-source --flood 192.168.1.103 1427 
+ hping3 -C -p 80 --flood 192.168.1.103 1428 hping3 192.168.1.103 -C -p 80000 --flood 1429 
+ hping3 192.168.1.103 -C -p 8000 1430 hping3 192.168.1.103 -C 1431 hping3 192.168.1.103 -C 
+ -p 8000 1432 hping3 -h 1433 clear 1434 l 1435 slls 1436 hping3-1 --flood -a 192.168.33.103 
+ 192.168.1.255 1437 hping3 -1 --flood -a 192.168.33.103 192.168.1.255 1438 hping3 -1 --flood 
+ -a 192.168.33.103 1439 hping3 -1 --flood -a 192.168.33.103 192.168.1.255 1440 ifconfig 1441 
+ cd SIH3/SIH/ 1442 subl attackAnalysis.py 1443 hping3 -C --flood -a 192.168.33.103 
+ 192.168.1.255 1444 hping3 -1 --flood -a 192.168.33.103 192.168.1.255 1445 clear 1446 
+ python3 attackAnalysis.py 1447 clear 1448 subl snortTest.py 1449 snort -c 
+ /etc/snort/snort.conf -A console 1450 clear 1451 python3 attackAnalysis.py 1452 ifconfig 
+ 1453 clear 1454 ifconfig 1455 clear 1456 python3 attackAnalysis.py 1457 clear 1458 python3 
+ attackAnalysis.py 1459 hping3 -h | grep -a 1460 hping3 -h | grep a 1461 python3 
+ attackAnalysis.py 1462 clear 1463 python3 attackAnalysis.py 1464 celar 1465 clear 1466 rm 
+ attackResult.txt 1467 clear 1468 python3 attackAnalysis.py 1469 clear 1470 python3 
+ attackAnalysis.py 1471 ifconfig 1472 clea 1473 clear 1474 ifconfig 1475 clear 1476 python3 
+ attackAnalysis.py 1477 ifconfig 1478 clear 1479 ifconfig 1480 clear 1481 python3 
+ attackAnalysis.py 1482 clear 1483 ifconfig 1484 clear 1485 rm attackResult.txt 1486 celar 
+ 1487 clear 1488 python3 attackAnalysis.py 1489 clear 1490 python3 attackAnalysis.py 1491 
+ subl attackResult.txt 1492 clear 1493 rm attackResult.txt 1494 python3 attackAnalysis.py 
+ 1495 rm attackResult.txt 1496 python3 attackAnalysis.py 1497 clear 1498 python3 
+ attackAnalysis.py 1499 clear 1500 python3 attackAnalysis.py 1501 clear 1502 python3 
+ attackAnalysis.py 1503 clear 1504 python3 attackAnalysis.py 1505 clear 1506 python3 
+ attackAnalysis.py 1507 claer 1508 clear 1509 python3 attackAnalysis.py 1510 ifconfig 1511 
+ clear 1512 python3 attackAnalysis.py 1513 clear 1514 python3 attackAnalysis.py 1515 clear 
+ 1516 python3 attackAnalysis.py 1517 clear 1518 ifconfig 1519 claer 1520 clear 1521 python3 
+ attackAnalysis.py 1522 cleaer 1523 clear 1524 subl app.py 1525 clear 1526 python3 app.py 
+ 1527 clear 1528 python3 app.py 1529 clear 1530 python3 app.py 1531 clear 1532 python3 
+ app.py 1533 clear 1534 python3 app.py 1535 clear 1536 python3 app.py 1537 clear 1538 
+ python3 app.py 1539 clear 1540 python3 app.py 1541 clear 1542 python3 app.py 1543 clear 
+ 1544 python3 app.py 1545 clear 1546 python3 app.py 1547 clear 1548 python3 app.py 1549 
+ clear 1550 python3 app.py 1551 clear 1552 python3 app.py 1553 clear 1554 python3 app.py 
+ 1555 clear 1556 python3 app.py 1557 clear 1558 python3 app.py 1559 subl arpDetection.py 
+ 1560 clear 1561 python3 app.py 1562 clear 1563 python3 app.py 1564 clear 1565 python3 
+ app.py 1566 cd ../SIH/ 1567 cd ../../ 1568 cd SIH 1569 ls 1570 subl arpDetection.py 1571 cd 
+ ../SIH3/SIH/ 1572 clear 1573 python3 app.py 1574 cleae 1575 clear 1576 python3 app.py 1577 
+ clear 1578 python3 app.py 1579 clear 1580 python3 app.py 1581 clear 1582 python3 app.py 
+ 1583 rm attackResult.txt 1584 clear 1585 rm attackResult.txt 1586 clear 1587 python3 app.py 
+ 1588 clear 1589 python3 app.py 1590 clear 1591 python3 app.py 1592 clear 1593 python3 
+ app.py 1594 clear 1595 poweroff 1596 subl attackResult.txt 1597 ifconfig 1598 apt-get 
+ install dsniff 1599 arpspoof 1600 ifconfig 1601 cd ../../ 1602 l 1603 ls 1604 cat pass 1605 
+ exit 1606 subl reportgeneration.py 1607 exi 1608 exit 1609 subl attackResult.txt 1610 exit 
+ 1611 cd ~/Downloads/;ls 1612 ls /tmp/ 1613 mv /tmp/check.png /root/Desktop/SIH3/SIH/assets/ 
+ 1614 mv x-button.png /root/Desktop/SIH3/SIH/assets/ 1615 exit 1616 cd static/images/ 1617 
+ pwd 1618 exit 1619 cd static/images/ 1620 l 1621 ls 1622 exit 1623 cd Desktop/SIH3/SIH/ 
+ 1624 python3 app.py 1625 subl 1626 clear 1627 python3 app.py 1628 clear 1629 python3 app.py 
+ 1630 clear 1631 python3 app.py 1632 clear 1633 python3 app.py 1634 clear 1635 python3 
+ app.py 1636 clear 1637 python3 app.py 1638 clear 1639 git status 1640 git add . 1641 git 
+ branch 1642 git status 1643 git push -u origin ashhar 1644 git commit -m "Updates" 1645 git 
+ push -u origin ashhar 1646 rm attackResult.txt 1647 git commit -m "Updates" 1648 git status 
+ 1649 git push -u origin ashhar 1650 git commit -m "updates" 1651 git status 1652 clear 1653 
+ poweroff 1654 subl Desktop/SIH3/SIH/ 1655 cd Desktop/SIH 1656 cd ../SIH3/ 1657 subl SIH/ 
+ 1658 firefox SIH/templates/index.html 1659 poweroff 1660 ifconfig 1661 onifc 1662 ifconfig 
+ 1663 ifconfig 1664 ifconfig 1665 clear 1666 ifconfig 1667 clear 1668 ifconfig 1669 poweroff 
+ 1670 arp -a 1671 arp -n 1672 arp 1673 arp-scan 1674 arp-scan -h 1675 clea 1676 clear 1677 
+ clea 1678 clear 1679 arp-scan -h 1680 arptables 1681 clear 1682 arp -h 1683 arp -a 1684 
+ clear 1685 subl Desktop/SIH3/SIH/ 1686 cd Desktop/SIH3/SIH/ 1687 python3 app.py 1688 
+ ifconfig 1689 clear 1690 python3 app.py 1691 clear 1692 python3 app.py 1693 ifconfig 1694 
+ clear 1695 python3 app.py 1696 clear 1697 python3 app.py 1698 clear 1699 python3 app.py 
+ 1700 clear 1701 python3 app.py 1702 clear 1703 python3 app.py 1704 clear 1705 arp 0s 1706 
+ arp -s 1707 arp 192.168.1.103 -s 1708 arp -s 192.168.1.103 1709 ifconfig 1710 arp -s 
+ 08:00:27:a4:f0:86 1711 arp -s 1712 clear 1713 arp -n 1714 arp -a 1715 CLEAR 1716 clear 1717 
+ python3 app.py 1718 clear 1719 python3 app.py 1720 clear 1721 python3 app.py 1722 clear 
+ 1723 python3 app.py 1724 clear 1725 python3 app.py 1726 clear 1727 python3 app.py 1728 
+ clear 1729 python3 app.py 1730 clear 1731 python3 app.py 1732 clear 1733 python3 app.py 
+ 1734 clear 1735 python3 app.py 1736 cleae 1737 clear 1738 python3 app.py 1739 firefox 
+ templates/index.html 1740 python3 cvedetails.py 1741 ifconfig 1742 clear 1743 ifconfig 1744 
+ python3 cvedetails.py 1745 clear 1746 python3 cvedetails.py 1747 clear 1748 python3 
+ cvedetails.py 1749 clear 1750 python3 cvedetails.py 1751 firefox templates/index.html 1752 
+ python3 app.py 1753 clar 1754 cler 1755 clear 1756 python3 app.py 1757 clear 1758 python3 
+ app.py 1759 poweroff 1760 pip3 install pycvesearch 1761 cve.search('microsoft/office') 1762 
+ python3 1763 clear 1764 searchsploit 1765 searchsploit vsftd 1766 searchsploit ftp 1767 
+ searchsploit ftp vsftf 1768 searchsploit ftp vsftd 1769 searchsploit ftp clear 1770 clear 
+ 1771 searchsploit ftp 3.2 1772 clear 1773 cd Desktop/SIH3/SIH/ 1774 ls 1775 subl ../SIH/ 
+ 1776 subl cvedetails.py 1777 python cvedetails.py 1778 python3 cvedetails.py 1779 clear 
+ 1780 python3 cvedetails.py 1781 clear 1782 python3 cvedetails.py 1783 clear 1784 python3 
+ cvedetails.py 1785 clear 1786 python3 cvedetails.py 1787 python3 nmapscanner.py 1788 clear 
+ 1789 python3 nmapscanner.py 1790 ifconfig 1791 clear 1792 python3 nmapscanner.py 1793 clear 
+ 1794 python3 cvedetails.py 1795 clear 1796 python3 cvedetails.py 1797 claer 1798 clear 1799 
+ python3 nmapscanner.py 1800 clear 1801 python3 nmapscanner.py 1802 python3 cvedetails.py 
+ 1803 clear 1804 python3 cvedetails.py 1805 clear 1806 python3 cvedetails.py 1807 claer 1808 
+ clear 1809 python3 cvedetails.py 1810 clear 1811 python3 cvedetails.py 1812 clear 1813 
+ python3 cvedetails.py 1814 clear 1815 python3 cvedetails.py 1816 clear 1817 python3 
+ cvedetails.py 1818 clear 1819 python3 nmapscanner.py 1820 clear 1821 python3 nmapscanner.py 
+ 1822 clear 1823 python3 cvedetails.py 1824 clear 1825 python3 cvedetails.py 1826 clear 1827 
+ python3 cvedetails.py 1828 clear 1829 python3 cvedetails.py 1830 clear 1831 python3 
+ cvedetails.py 1832 clear 1833 python3 cvedetails.py 1834 clear 1835 python3 cvedetails.py 
+ 1836 clear 1837 python3 cvedetails.py 1838 clear 1839 python3 nmapscanner.py 1840 cleaer 
+ 1841 clear 1842 python3 nmapscanner.py 1843 clear 1844 python3 nmapscanner.py 1845 python3 
+ cvedetails.py 1846 clear 1847 python3 cvedetails.py 1848 clear 1849 python3 cvedetails.py 
+ 1850 clear 1851 python3 nmapscanner.py 1852 clear 1853 python3 nmapscanner.py 1854 cd 
+ Desktop/SIH3/SIH/ 1855 subl ../ 1856 python3 app.py 1857 clar 1858 clear 1859 python3 
+ app.py 1860 clear 1861 python3 app.py 1862 clear 1863 python3 app.py 1864 clear 1865 
+ python3 app.py 1866 clear 1867 python3 app.py 1868 clear 1869 python3 app.py 1870 clear 
+ 1871 python3 app.py 1872 clear 1873 poweroff 1874 subl 1875 exit 1876 cd Desktop/SIH3/SIH/ 
+ 1877 subl ../ 1878 subl initialMail.py 1879 python3 initialMail.py 1880 clear 1881 python3 
+ initialMail.py 1882 ls 1883 clear 1884 python3 initialMail.py 1885 python3 app.py 1886 clea 
+ 1887 clear 1888 python3 app.py 1889 ifconfig 1890 service apache2 start 1891 clear 1892 
+ python3 app.py 1893 clear 1894 python3 app.py 1895 clear 1896 python3 app.py 1897 clear 
+ 1898 python3 app.py 1899 clear 1900 python3 app.py 1901 clear 1902 python3 app.py 1903 
+ clear 1904 python3 app.py 1905 clear 1906 python3 app.py 1907 clear 1908 python3 app.py 
+ 1909 clear 1910 python3 app.py 1911 subl ../ 1912 clear 1913 python3 app.py 1914 clear 1915 
+ python3 app.py 1916 clear 1917 python3 app.py 1918 ifconfig 1919 clear 1920 python3 app.py 
+ 1921 clear 1922 python3 app.py 1923 service systemd-resolved restart 1924 clear 1925 
+ python3 app.py 1926 clear 1927 python3 app.py 1928 nano /etc/resolv.conf 1929 systemctl 
+ restart systemd-resolved.service 1930 sudo chmod 644 /etc/resolv.conf 1931 clear 1932 
+ python3 app.py 1933 ifconfig 1934 python3 app.py 1935 poweroff 1936 cd Desktop/SIH3/SIH/ 
+ 1937 python3 app.py 1938 clear 1939 python3 app.py 1940 ifconfig 1941 clear 1942 python3 
+ app.py 1943 reboot 1944 cd Desktop/SIH3/SIH/ 1945 subl 1946 python3 app.py 1947 clear 1948 
+ python3 app.py 1949 clear 1950 python3 app.py 1951 python3 arpDetection.py 1952 clear 1953 
+ python3 arpDetection.py 1954 clear 1955 python3 arpDetection.py 1956 clear 1957 python3 
+ arpDetection.py 1958 ifconfig 1959 clear 1960 ifconfig 1961 clear 1962 python3 
+ arpDetection.py 1963 clear 1964 python3 arpDetection.py 1965 clear 1966 python3 
+ arpDetection.py 1967 clear 1968 python3 app.py 1969 clear 1970 python3 app.py 1971 clear 
+ 1972 python3 app.py 1973 clear 1974 python3 app.py 1975 clear 1976 python3 app.py 1977 
+ cleaer 1978 clear 1979 python3 app.py 1980 cclear 1981 clear 1982 python3 app.py 1983 clear 
+ 1984 python3 app.py 1985 git status 1986 git branch 1987 git add . 1988 git status 1989 git 
+ commit -m "updates" 1990 git push -u origin ashhar 1991 clear 1992 poweroff 1993 clear 1994 
+ netstat 1995 exit 1996 cd Desktop/SIH3/SIH/ 1997 service apache2 start 1998 clear 1999 
+ python3 app.py 2000 poweroff 2001 cd Desktop/SIH3/SIH/ 2002 python3 app.py 2003 subl 2004 
+ clear 2005 python3 arpDetection.py 2006 clear 2007 python3 arpDetection.py 2008 history 
+ 2009 history | nano

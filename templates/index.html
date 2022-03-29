@@ -224,13 +224,27 @@
     <script>
         socket = io();
         socket.connect('http://127.0.0.1:5000/');
-        socket.on('urlAdded', function(data) {
-            renderUrls(data['list']);
-        })
 
         socket.on('connect', function() {
             socket.send('a')
         })
+
+
+        socket.on('urlAdded', function(data) {
+            renderUrls(data['list']);
+        })
+
+        // socket.on('capturedPackets', function(data) {
+        //     // renderPackets(data['packets']);
+        //     // console.log(data['packets'])
+        //     console.log("Packets Captured")
+        // })
+
+        socket.on('capturedPackets',function(){
+            console.log("Packet captured")
+        })
+
+        
 
         const urlsElement = document.querySelector(".colList");
         const renderUrls = (urls) => {
@@ -255,6 +269,17 @@
         };
 
 
+
+
+        const renderPackets = (urls) => {
+            // document.querySelector(".colList").innerHTML = ""
+            urlsElement.innerHTML = "";
+            urls.forEach(url => {
+                console.log(url)
+            }
+        };
+
+
         var udpNum = 0
         var tcpNum = 0
         var graphTime = 0
@@ -271,6 +296,10 @@
             drawLineChart();
 
         }, 3000)
+
+
+
+        
     </script>
 
     <script>
@@ -308,6 +337,7 @@
             arpElement.style.fontSize = '15px'
             document.getElementById('arpAlertIcon').style.marginLeft = '5vw'
         })
+
     </script>
 
     <script>

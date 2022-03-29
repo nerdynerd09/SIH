@@ -33,6 +33,3 @@ def mac(ipadd):
 
 
 # arpSniff('eth0')
-
-
-

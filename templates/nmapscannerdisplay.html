@@ -1,59 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Nmap</title>
+    <meta charset="utf-8">
+    <title>Packets Capture</title>
 </head>
 <body>
-<div class="container">
-        <table class="table">
-            <h1>Current IP: {{currentIP}}</h1>  
-            <h1>Current MAC: {{currentMAC}}</h1>
-            <thead>
-                <tr>
-                    <th scope="col">IP</th>
-                    <th scope="col">Port</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Product</th>
-                    <th scope="col">Version</th>
-                </tr>
-            
-                <!-- <tr>
-                    <th scope="col">IPList</th>
-                    <th scope="col">MAC</th>
-                    <th scope="col">Vendor</th>    
-
-                </tr> -->
-            </thead>
-            <tbody>
-                <!-- {% for ip in range(networkIPs|length) %}
-
-                    
-
-                    <tr>
-                        <td>{{networkIPs[ip][0]}}</td>
-                        <td>{{networkMAC[ip]}}</td>
-                        <td>{{vendor[ip]}}</td>
-                        </tr>
-                {% endfor %} -->
-
-
-                {% for ip in (ipList) %}
-
-                    {% for key in ((dictionary['scan'][ip]['tcp']).keys()) %}
-
-                    <tr>
-                        <td>{{ip}}</td>
-                        <td>{{key}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['state']}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['name']}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['product']}}</td>
-                        <td>{{dictionary['scan'][ip]['tcp'][key]['version']}}</td>
-                        </tr>
-                    {% endfor %}
-                {% endfor %}
-                </tbody>
-            </table>
-    </div>
+    <script type="text/javascript">
+        
+        
+    </script>
 </body>
 </html>

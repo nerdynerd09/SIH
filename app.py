@@ -10,6 +10,7 @@ from attackAnalysis import dosDetection
 from arpDetection import arpSniff
 from testtext import testFunc
 from initialMail import initialReportGenerator
+from pysharktest import packetCapture
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "BROWNRING"
@@ -18,7 +19,7 @@ socket = SocketIO(app)
 i=0
 
 urlList = []
-
+capturedPackets = []
 
 @app.route("/")
 @app.route("/dashboard")
@@ -26,15 +27,15 @@ def hello_world():
     # networkIPs,networkMAC,vendor,currentIP,currentMAC = nmapper()
 
     # Working
-    dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList = portScanner()    
-    threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
-    threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
-    threading.Thread(target=dosDetection,daemon=True).start()
-    initialReportGenerator(networkIPs,networkMAC,vendor,currentIP,currentMAC,cveList)
-    return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
+    # dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList = portScanner()    
+    # threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
+    # threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
+    # threading.Thread(target=dosDetection,daemon=True).start()
+    # initialReportGenerator(networkIPs,networkMAC,vendor,currentIP,currentMAC,cveList)
+    # return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
+    threading.Thread(target=packetCapture,daemon=True).start()
 
-
-    # return render_template('index.html')    
+    return render_template('index.html')    
     
     # alertString = dosDetection()
 
@@ -61,6 +62,23 @@ def addUrlFn():
                     statusCode= 200,
                     data= data), 200
 
+@app.route("/datapackets", methods = ['POST'])
+def capturePacketsFn():
+    data = request.form
+    d = dict(data)
+    capturedSrc = d.get('src')
+    capturedDst = d.get('dst')
+    capturedLayer = d.get('layer')
+
+    # packetList = d.get('packetList')
+    print(f"SRC: {capturedSrc}\tDST: {capturedDst}\tLayer: {capturedLayer}")
+    capturedPackets.append([capturedSrc,capturedDst,capturedLayer])
+    print(f"CapturedPacket: {capturedPackets}")
+    socket.emit("capturedPackets",{'packets':capturedPackets})      
+    return jsonify(isError = False,
+                    message = "Success",
+                    statusCode = 200,
+                    data = data), 200
 
 @app.route("/attackDetection", methods = ['POST'])
 def attackDetectionFn():
@@ -102,12 +120,12 @@ def arpAttackDetectionFn():
 
     
 
-@app.route("/nmapper")
-def nmap():
-    # networkIPs,networkMAC,vendor,currentIP,currentMAC = nmapper()
-    dictionary,ipList,currentIP,currentMAC = portScanner()
-    return render_template('nmapscannerdisplay.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP)
-    # return render_template('nmapscannerdisplay.html',networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,currentIP=currentIP,currentMAC=currentMAC)
+# @app.route("/nmapper")
+# def nmap():
+#     capturePackets = packetCapture()
+#     return render_template('nmapscannerdisplay.html',capturePackets=capturePackets)
+
+
 
 if __name__ =="__main__":
     socket.run(app,debug=True)
