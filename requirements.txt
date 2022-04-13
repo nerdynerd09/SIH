@@ -49,7 +49,6 @@ ipython-genutils==0.2.0
 itsdangerous==0.24
 Jinja2==2.11.3
 joshbasiccalculator==0.0.1
-jsbeautifier==1.6.4
 ldap3==2.9
 ldapdomaindump==0.9.3
 lxml==4.4.1
