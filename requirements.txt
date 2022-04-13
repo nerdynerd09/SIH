@@ -41,7 +41,6 @@ hiddeneye-reborn==0.0a1.dev4
 html5lib==1.0.1
 idna==2.10
 ImageHash==4.1.0
-impacket==0.9.24.dev1+20210702.183028.4821d64e
 importlib-metadata==2.1.1
 importlib-resources==3.3.1
 intervaltree==3.1.0
