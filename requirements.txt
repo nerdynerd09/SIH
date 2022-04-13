@@ -93,7 +93,6 @@ python-engineio==3.13.2
 python-socketio==4.6.0
 python-whois==0.6.3
 pythonaes==1.0
-PyV8==1.0.dev0
 PyWavelets==1.0.3
 pywebcopy==6.3.0
 PyYAML==5.1.2
