@@ -1,5 +1,5 @@
 import pyshark
-import requests
+import requests,time
 
 # cap.sniff(timeout=10)
 # print(cap)
@@ -19,6 +19,7 @@ def packetCapture():
 		try:
 			capturePackets2.append([packets.transport_layer,packets.ip.src,packets.ip.dst])
 			requests.post('http://127.0.0.1:5000/datapackets', data={'src': packets.ip.src,'dst':packets.ip.dst,'layer':packets.transport_layer})		
+			time.sleep(10)
 			# requests.post('http://127.0.0.1:5000/datapackets', data={'packetList': capturePackets2})		
 			# print(capturePackets2)
 		except AttributeError:

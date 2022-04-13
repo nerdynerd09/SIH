@@ -27,15 +27,18 @@ def hello_world():
     # networkIPs,networkMAC,vendor,currentIP,currentMAC = nmapper()
 
     # Working
-    # dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList = portScanner()    
-    # threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
+    dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList = portScanner()    
+    threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
     # threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
     # threading.Thread(target=dosDetection,daemon=True).start()
     # initialReportGenerator(networkIPs,networkMAC,vendor,currentIP,currentMAC,cveList)
     # return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
-    threading.Thread(target=packetCapture,daemon=True).start()
+    threading.Thread(target=packetCapture).start()
+    return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
 
-    return render_template('index.html')    
+    # return render_template('index.html')    
+
+    # return render_template('wireshark.html')    
     
     # alertString = dosDetection()
 
@@ -71,9 +74,9 @@ def capturePacketsFn():
     capturedLayer = d.get('layer')
 
     # packetList = d.get('packetList')
-    print(f"SRC: {capturedSrc}\tDST: {capturedDst}\tLayer: {capturedLayer}")
+    # print(f"SRC: {capturedSrc}\tDST: {capturedDst}\tLayer: {capturedLayer}")
     capturedPackets.append([capturedSrc,capturedDst,capturedLayer])
-    print(f"CapturedPacket: {capturedPackets}")
+    # print(f"CapturedPacket: {capturedPackets}")
     socket.emit("capturedPackets",{'packets':capturedPackets})      
     return jsonify(isError = False,
                     message = "Success",

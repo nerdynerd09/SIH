@@ -50,9 +50,10 @@
 }
 
 #curve_chart {
-    overflow: hidden;
+    overflow: scroll;
     height: 100%;
     width: 100%;
+    scrollbar-width: none;
 }
 
 .chart {
@@ -366,3 +367,51 @@ width: 100%;
     margin-right: -10px;
 }
 
+.wiresharkHeading {
+    height: auto;
+    width: 70%;
+    text-align: center;
+    margin: 15px auto;
+    overflow: scroll;
+}
+
+.wiresharkHeading th {
+    background-color: #3d4353;
+    padding: 20px;
+    color: white;
+    font-size: 20;
+    overflow: hidden;
+}
+
+.wiresharkHeading td {
+    background-color: #3c4252;
+    margin-top: 5px;
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#wiresharkBodyHeading {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.wiresharkBody {
+    height: auto;
+    width: 70%;
+    text-align: center;
+    margin: 15px auto;
+    overflow: scroll;
+}
+
+.wiresharkBody td {
+    background-color: transparent;
+    margin-top: 5px;
+    padding: 10px;
+    color: white;
+    border-radius: 15px;
+    overflow: scroll;
+    scroll-behavior: none;
+}
