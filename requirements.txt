@@ -37,7 +37,6 @@ geopy==1.23.0
 gevent==21.12.0
 gevent-websocket==0.10.1
 greenlet==1.1.2
-hiddeneye-reborn==0.0a1.dev4
 html5lib==1.0.1
 idna==2.10
 ImageHash==4.1.0
@@ -75,7 +74,6 @@ prompt-toolkit==1.0.15
 psutil==5.8.0
 pwn==1.0
 pwntools==4.3.1
-pyasn1==0.4.2
 pycairo==1.16.2
 pycrypto==2.6.1
 pycryptodomex==3.6.1
