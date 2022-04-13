@@ -14,7 +14,6 @@ blinker==1.4
 capstone==4.0.2
 certifi==2020.6.20
 chardet==3.0.4
-CherryTree==0.38.8
 Click==7.0
 colorama==0.3.7
 colored==1.4.2
