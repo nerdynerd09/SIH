@@ -8,24 +8,31 @@ currentMAC = ""
 cveSearchList = []
 servicesList = []
 cveList = []
+
 def nmapper():
 	cmd = subprocess.check_output(['ifconfig']).decode('utf-8')
+	# print(cmd.split('\n\n'))
+
 	global currentIP
-	currentIP = (re.findall(r'inet\s.*\sn',cmd))[0][5:-2]
 	global currentMAC
-	currentMAC = re.findall(r'\w\w:\w\w:\w\w:\w\w:\w\w:\w\w',cmd)[0]
+
+	for wificard in cmd.split('\n\n'):
+		if 'eth0:' in wificard:
+			currentIP = (re.findall(r'inet\s.*\sn',wificard))[0][5:-2]
+			# print(currentIP)
+			currentMAC = re.findall(r'\w\w:\w\w:\w\w:\w\w:\w\w:\w\w',wificard)[0]
+
 	print(f"Current IP: {currentIP}")
 	print(f"Current MAC: {currentMAC}")
 	global subdomainIP	
 	subdomainIP = re.findall(r'.*\.',currentIP)
 	subdomainIP = str(*subdomainIP)+'0/24' 
 
-	# print(subdomainIP)
-
 	# Getting all the devices inside a network
 
 	# print("\n\n\t\t**********Searching for devices**********\n")
 	nmapResult = subprocess.check_output(['nmap','-sn',subdomainIP]).decode('utf-8')
+
 	# print("Nmap Result")
 	# print(nmapResult)
 
@@ -103,7 +110,7 @@ def portScanner():
 		    except IndexError:
 		        pass
 
-	print(f"CVELIST: {cveList}")
+	# print(f"CVELIST: {cveList}")
 	# print(ip)
 	# for ip in ipList:
 	# 	print(dictionary['scan'][ip]['tcp'])
@@ -112,5 +119,7 @@ def portScanner():
 	return dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList
 	# return dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor
 
+
+# nmapper()
 
 # portScanner()

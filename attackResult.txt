@@ -19,27 +19,26 @@ Detection:
     Search-Method-Optimizations = enabled
     Maximum pattern length = 20
 Tagged Packet Limit: 256
-Loading dynamic engine /usr/lib/snort/snort_dynamicengine/libsf_engine.so... done
-Loading all dynamic detection libs from /usr/lib/snort/snort_dynamicrules...
-WARNING: No dynamic libraries found in directory /usr/lib/snort/snort_dynamicrules.
-  Finished Loading all dynamic detection libs from /usr/lib/snort/snort_dynamicrules
-Loading all dynamic preprocessor libs from /usr/lib/snort/snort_dynamicpreprocessor/...
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_pop_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_dns_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_reputation_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_ftptelnet_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_dce2_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_modbus_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_sip_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_ssh_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_ssl_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_sdf_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_dnp3_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_gtp_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_appid_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_imap_preproc.so... done
-  Loading dynamic preprocessor library /usr/lib/snort/snort_dynamicpreprocessor//libsf_smtp_preproc.so... done
-  Finished Loading all dynamic preprocessor libs from /usr/lib/snort/snort_dynamicpreprocessor/
+Loading dynamic engine /usr/lib/snort_dynamicengine/libsf_engine.so... done
+Loading all dynamic detection libs from /usr/lib/snort_dynamicrules...
+WARNING: No dynamic libraries found in directory /usr/lib/snort_dynamicrules.
+  Finished Loading all dynamic detection libs from /usr/lib/snort_dynamicrules
+Loading all dynamic preprocessor libs from /usr/lib/snort_dynamicpreprocessor/...
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_modbus_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_pop_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_ssh_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_reputation_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_gtp_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_dce2_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_sdf_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_dnp3_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_ssl_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_sip_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_smtp_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_dns_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_imap_preproc.so... done
+  Loading dynamic preprocessor library /usr/lib/snort_dynamicpreprocessor//libsf_ftptelnet_preproc.so... done
+  Finished Loading all dynamic preprocessor libs from /usr/lib/snort_dynamicpreprocessor/
 Log directory = /var/log/snort
 WARNING: ip4 normalizations disabled because not inline.
 WARNING: tcp normalizations disabled because not inline.
@@ -62,7 +61,7 @@ Stream global config:
     Track TCP sessions: ACTIVE
     Max TCP sessions: 262144
     TCP cache pruning timeout: 30 seconds
-    TCP cache nominal timeout: 180 seconds
+    TCP cache nominal timeout: 3600 seconds
     Memcap (for reassembly packet storage): 8388608
     Track UDP sessions: ACTIVE
     Max UDP sessions: 131072
@@ -164,7 +163,6 @@ HttpInspect Config:
       IIS Unicode Map: GLOBAL IIS UNICODE MAP CONFIG
       Non-RFC Compliant Characters: 0x00 0x01 0x02 0x03 0x04 0x05 0x06 0x07 
       Whitespace Characters: 0x09 0x0b 0x0c 0x0d 
-      Legacy mode: NO
 rpc_decode arguments:
     Ports to decode RPC on: 111 32770 32771 32772 32773 32774 32775 32776 32777 32778 32779 
     alert_fragments: INACTIVE
@@ -200,7 +198,6 @@ SMTP Config:
     Ignore TLS Data: No
     Ignore SMTP Alerts: No
     Max Command Line Length: 512
-    Max auth Command Line Length: 1000
     Max Specific Command Line Length: 
        ATRN:255 AUTH:246 BDAT:255 DATA:246 DEBUG:255 
        EHLO:500 EMAL:255 ESAM:255 ESND:255 ESOM:255 
@@ -1692,19 +1689,20 @@ WARNING: /etc/snort/rules/community-web-php.rules(473) GID 1 SID 100000933 in ru
 
 WARNING: /etc/snort/rules/community-web-php.rules(474) GID 1 SID 100000934 in rule duplicates previous rule. Ignoring old rule.
 
-4057 Snort rules read
-    3383 detection rules
+4150 Snort rules read
+    3476 detection rules
     0 decoder rules
     0 preprocessor rules
-3383 Option Chains linked into 932 Chain Headers
+3476 Option Chains linked into 271 Chain Headers
+0 Dynamic rules
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 +-------------------[Rule Port Counts]---------------------------------------
 |             tcp     udp    icmp      ip
 |     src     151      18       0       0
 |     dst    3306     126       0       0
-|     any     383      48      52      22
-|      nc      27       8      15      20
+|     any     383      48     145      22
+|      nc      27       8      94      20
 |     s+d      12       5       0       0
 +----------------------------------------------------------------------------
 
@@ -1725,23 +1723,23 @@ WARNING: /etc/snort/rules/community-web-php.rules(474) GID 1 SID 100000934 in ru
 +-----------------------[event-filter-global]----------------------------------
 | none
 +-----------------------[event-filter-local]-----------------------------------
-| gen-id=1      sig-id=2924       type=Threshold tracking=dst count=10  seconds=60 
-| gen-id=1      sig-id=2494       type=Both      tracking=dst count=20  seconds=60 
-| gen-id=1      sig-id=2496       type=Both      tracking=dst count=20  seconds=60 
-| gen-id=1      sig-id=2523       type=Both      tracking=dst count=10  seconds=10 
-| gen-id=1      sig-id=1991       type=Limit     tracking=src count=1   seconds=60 
-| gen-id=1      sig-id=2495       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=3273       type=Threshold tracking=src count=5   seconds=2  
 | gen-id=1      sig-id=2275       type=Threshold tracking=dst count=5   seconds=60 
 | gen-id=1      sig-id=2923       type=Threshold tracking=dst count=10  seconds=60 
+| gen-id=1      sig-id=2523       type=Both      tracking=dst count=10  seconds=10 
 | gen-id=1      sig-id=3152       type=Threshold tracking=src count=5   seconds=2  
-| gen-id=1      sig-id=3273       type=Threshold tracking=src count=5   seconds=2  
+| gen-id=1      sig-id=2494       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2495       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2496       type=Both      tracking=dst count=20  seconds=60 
+| gen-id=1      sig-id=2924       type=Threshold tracking=dst count=10  seconds=60 
+| gen-id=1      sig-id=1991       type=Limit     tracking=src count=1   seconds=60 
 +-----------------------[suppression]------------------------------------------
 | none
 -------------------------------------------------------------------------------
-Rule application order: pass->drop->sdrop->reject->alert->log
+Rule application order: activation->dynamic->pass->drop->sdrop->reject->alert->log
 Verifying Preprocessor Configurations!
-WARNING: flowbits key 'smb.tree.create.llsrpc' is set but not ever checked.
 WARNING: flowbits key 'ms_sql_seen_dns' is checked but not ever set.
+WARNING: flowbits key 'smb.tree.create.llsrpc' is set but not ever checked.
 33 out of 1024 flowbits in use.
 
 [ Port Based Pattern Matching Memory ]
@@ -1754,86 +1752,85 @@ WARNING: flowbits key 'ms_sql_seen_dns' is checked but not ever set.
 |     1 byte states : 204
 |     2 byte states : 11
 |     4 byte states : 0
-| Characters        : 64755
-| States            : 31951
-| Transitions       : 863868
+| Characters        : 64982
+| States            : 32135
+| Transitions       : 872051
 | State Density     : 10.6%
-| Patterns          : 5041
-| Match States      : 3836
-| Memory (MB)       : 16.90
+| Patterns          : 5055
+| Match States      : 3855
+| Memory (MB)       : 17.00
 |   Patterns        : 0.51
-|   Match Lists     : 1.01
+|   Match Lists     : 1.02
 |   DFA
 |     1 byte states : 1.02
-|     2 byte states : 13.96
+|     2 byte states : 14.05
 |     4 byte states : 0.00
 +----------------------------------------------------------------
-[ Number of patterns truncated to 20 bytes: 1038 ]
+[ Number of patterns truncated to 20 bytes: 1039 ]
 pcap DAQ configured to passive.
 Acquiring network traffic from "eth0".
 Reload thread starting...
-Reload thread started, thread 0x7f1957b37640 (3235)
+Reload thread started, thread 0x7f44c8ebf6c0 (73424)
 Decoding Ethernet
 
         --== Initialization Complete ==--
 
    ,,_     -*> Snort! <*-
-  o"  )~   Version 2.9.15.1 GRE (Build 15125) 
+  o"  )~   Version 2.9.7.0 GRE (Build 149) 
    ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
-           Copyright (C) 2014-2019 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 2014 Cisco and/or its affiliates. All rights reserved.
            Copyright (C) 1998-2013 Sourcefire, Inc., et al.
-           Using libpcap version 1.10.1 (with TPACKET_V3)
+           Using libpcap version 1.10.3 (with TPACKET_V3)
            Using PCRE version: 8.39 2016-06-14
-           Using ZLIB version: 1.2.11
+           Using ZLIB version: 1.2.13
 
-           Rules Engine: SF_SNORT_DETECTION_ENGINE  Version 3.1  <Build 1>
-           Preprocessor Object: SF_SMTP  Version 1.1  <Build 9>
+           Rules Engine: SF_SNORT_DETECTION_ENGINE  Version 2.4  <Build 1>
+           Preprocessor Object: SF_FTPTELNET  Version 1.2  <Build 13>
            Preprocessor Object: SF_IMAP  Version 1.0  <Build 1>
-           Preprocessor Object: appid  Version 1.1  <Build 5>
-           Preprocessor Object: SF_GTP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_DNS  Version 1.1  <Build 4>
+           Preprocessor Object: SF_SMTP  Version 1.1  <Build 9>
+           Preprocessor Object: SF_SIP  Version 1.1  <Build 1>
+           Preprocessor Object: SF_SSLPP  Version 1.1  <Build 4>
            Preprocessor Object: SF_DNP3  Version 1.1  <Build 1>
            Preprocessor Object: SF_SDF  Version 1.1  <Build 1>
-           Preprocessor Object: SF_SSLPP  Version 1.1  <Build 4>
-           Preprocessor Object: SF_SSH  Version 1.1  <Build 3>
-           Preprocessor Object: SF_SIP  Version 1.1  <Build 1>
-           Preprocessor Object: SF_MODBUS  Version 1.1  <Build 1>
            Preprocessor Object: SF_DCERPC2  Version 1.0  <Build 3>
-           Preprocessor Object: SF_FTPTELNET  Version 1.2  <Build 13>
+           Preprocessor Object: SF_GTP  Version 1.1  <Build 1>
            Preprocessor Object: SF_REPUTATION  Version 1.1  <Build 1>
-           Preprocessor Object: SF_DNS  Version 1.1  <Build 4>
+           Preprocessor Object: SF_SSH  Version 1.1  <Build 3>
            Preprocessor Object: SF_POP  Version 1.0  <Build 1>
-Commencing packet processing (pid=3224)
+           Preprocessor Object: SF_MODBUS  Version 1.1  <Build 1>
+Commencing packet processing (pid=73388)
 *** Caught Int-Signal
 ===============================================================================
-Run time for packet processing was 89.138353 seconds
-Snort processed 8732 packets.
-Snort ran for 0 days 0 hours 1 minutes 29 seconds
-   Pkts/min:         8732
-   Pkts/sec:           98
+Run time for packet processing was 148.487937 seconds
+Snort processed 1710 packets.
+Snort ran for 0 days 0 hours 2 minutes 28 seconds
+   Pkts/min:          855
+   Pkts/sec:           11
 ===============================================================================
 Memory usage summary:
-  Total non-mmapped bytes (arena):       53399552
-  Bytes in mapped regions (hblkhd):      22392832
-  Total allocated space (uordblks):      45435904
-  Total free space (fordblks):           7963648
-  Topmost releasable block (keepcost):   75664
+  Total non-mmapped bytes (arena):       46637056
+  Bytes in mapped regions (hblkhd):      13574144
+  Total allocated space (uordblks):      40384560
+  Total free space (fordblks):           6252496
+  Topmost releasable block (keepcost):   6112
 ===============================================================================
 Packet I/O Totals:
-   Received:         8733
-   Analyzed:         8732 ( 99.989%)
+   Received:         1711
+   Analyzed:         1710 ( 99.942%)
     Dropped:            0 (  0.000%)
    Filtered:            0 (  0.000%)
-Outstanding:            1 (  0.011%)
+Outstanding:            1 (  0.058%)
    Injected:            0
 ===============================================================================
 Breakdown by protocol (includes rebuilt packets):
-        Eth:         8733 (100.000%)
+        Eth:         1711 (100.000%)
        VLAN:            0 (  0.000%)
-        IP4:         7693 ( 88.091%)
+        IP4:         1706 ( 99.708%)
        Frag:            0 (  0.000%)
-       ICMP:         1001 ( 11.462%)
-        UDP:          193 (  2.210%)
-        TCP:         6465 ( 74.030%)
+       ICMP:            0 (  0.000%)
+        UDP:         1271 ( 74.284%)
+        TCP:          431 ( 25.190%)
         IP6:            0 (  0.000%)
     IP6 Ext:            0 (  0.000%)
    IP6 Opts:            0 (  0.000%)
@@ -1858,26 +1855,26 @@ GRE IP6 Ext:            0 (  0.000%)
     GRE IPX:            0 (  0.000%)
    GRE Loop:            0 (  0.000%)
        MPLS:            0 (  0.000%)
-        ARP:         1040 ( 11.909%)
+        ARP:            5 (  0.292%)
         IPX:            0 (  0.000%)
    Eth Loop:            0 (  0.000%)
    Eth Disc:            0 (  0.000%)
-   IP4 Disc:           34 (  0.389%)
+   IP4 Disc:            4 (  0.234%)
    IP6 Disc:            0 (  0.000%)
    TCP Disc:            0 (  0.000%)
    UDP Disc:            0 (  0.000%)
   ICMP Disc:            0 (  0.000%)
-All Discard:           34 (  0.389%)
+All Discard:            4 (  0.234%)
       Other:            0 (  0.000%)
-Bad Chk Sum:          406 (  4.649%)
+Bad Chk Sum:          628 ( 36.704%)
     Bad TTL:            0 (  0.000%)
-     S5 G 1:            1 (  0.011%)
+     S5 G 1:            1 (  0.058%)
      S5 G 2:            0 (  0.000%)
-      Total:         8733
+      Total:         1711
 ===============================================================================
 Action Stats:
-     Alerts:           18 (  0.206%)
-     Logged:           18 (  0.206%)
+     Alerts:            0 (  0.000%)
+     Logged:            0 (  0.000%)
      Passed:            0 (  0.000%)
 Limits:
       Match:            0
@@ -1886,10 +1883,10 @@ Limits:
       Event:            0
       Alert:            0
 Verdicts:
-      Allow:         8686 ( 99.462%)
+      Allow:         1599 ( 93.454%)
       Block:            0 (  0.000%)
     Replace:            0 (  0.000%)
-  Whitelist:           46 (  0.527%)
+  Whitelist:          111 (  6.487%)
   Blacklist:            0 (  0.000%)
      Ignore:            0 (  0.000%)
       Retry:            0 (  0.000%)
@@ -1912,8 +1909,8 @@ FragTrackers Auto Freed: 0
 ===============================================================================
 ===============================================================================
 Stream statistics:
-            Total sessions: 4104
-              TCP sessions: 4076
+            Total sessions: 43
+              TCP sessions: 15
               UDP sessions: 28
              ICMP sessions: 0
                IP sessions: 0
@@ -1921,26 +1918,26 @@ Stream statistics:
                 UDP Prunes: 0
                ICMP Prunes: 0
                  IP Prunes: 0
-TCP StreamTrackers Created: 4076
-TCP StreamTrackers Deleted: 4076
+TCP StreamTrackers Created: 15
+TCP StreamTrackers Deleted: 15
               TCP Timeouts: 0
               TCP Overlaps: 0
-       TCP Segments Queued: 70
-     TCP Segments Released: 70
-       TCP Rebuilt Packets: 34
-         TCP Segments Used: 65
-              TCP Discards: 9
-                  TCP Gaps: 0
+       TCP Segments Queued: 53
+     TCP Segments Released: 53
+       TCP Rebuilt Packets: 5
+         TCP Segments Used: 25
+              TCP Discards: 0
+                  TCP Gaps: 5
       UDP Sessions Created: 28
       UDP Sessions Deleted: 28
               UDP Timeouts: 0
               UDP Discards: 0
-                    Events: 9
+                    Events: 0
            Internal Events: 0
            TCP Port Filter
                   Filtered: 0
                  Inspected: 0
-                   Tracked: 6141
+                   Tracked: 203
            UDP Port Filter
                   Filtered: 0
                  Inspected: 0
@@ -1952,7 +1949,7 @@ HTTP Inspect - encodings (Note: stream-reassembled packets included):
     HTTP Request Headers extracted:       0         
     HTTP Request Cookies extracted:       0         
     Post parameters extracted:            0         
-    HTTP response Headers extracted:      4         
+    HTTP response Headers extracted:      0         
     HTTP Response Cookies extracted:      0         
     Unicode:                              0         
     Double unicode:                       0         
@@ -1960,71 +1957,39 @@ HTTP Inspect - encodings (Note: stream-reassembled packets included):
     Directory traversals:                 0         
     Extra slashes ("//"):                 0         
     Self-referencing paths ("./"):        0         
-    HTTP Response Gzip packets extracted: 1         
-    Gzip Compressed Data Processed:       2295.00   
-    Gzip Decompressed Data Processed:     4958.00   
-    Http/2 Rebuilt Packets:               0         
-    Total packets processed:              8         
+    HTTP Response Gzip packets extracted: 0         
+    Gzip Compressed Data Processed:       n/a       
+    Gzip Decompressed Data Processed:     n/a       
+    Total packets processed:              3         
 ===============================================================================
 SMTP Preprocessor Statistics
   Total sessions                                    : 0
   Max concurrent sessions                           : 0
 ===============================================================================
 dcerpc2 Preprocessor Statistics
-  Total sessions: 1
-
-  Transports
-    TCP
-      Total sessions: 1
-      Packet stats
-        Packets: 0
+  Total sessions: 0
 ===============================================================================
 SSL Preprocessor:
-   SSL packets decoded: 95        
+   SSL packets decoded: 55        
           Client Hello: 0         
-          Server Hello: 1         
+          Server Hello: 17        
            Certificate: 0         
-           Server Done: 6         
+           Server Done: 1         
    Client Key Exchange: 0         
    Server Key Exchange: 0         
-         Change Cipher: 7         
+         Change Cipher: 17        
               Finished: 0         
     Client Application: 0         
-    Server Application: 13        
+    Server Application: 30        
                  Alert: 0         
-  Unrecognized records: 82        
+  Unrecognized records: 24        
   Completed handshakes: 0         
         Bad handshakes: 0         
-      Sessions ignored: 9         
-    Detection disabled: 3         
+      Sessions ignored: 14        
+    Detection disabled: 5         
 ===============================================================================
 SIP Preprocessor Statistics
   Total sessions: 0
 ===============================================================================
-IMAP Preprocessor Statistics
-  Total sessions                                    : 0
-  Max concurrent sessions                           : 0
-===============================================================================
-POP Preprocessor Statistics
-  Total sessions                                    : 0
-  Max concurrent sessions                           : 0
-===============================================================================
 Snort exiting
-04/14-03:50:53.066252  [**] [1:1421:11] SNMP AgentX/tcp request [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.3:705
-04/14-03:50:53.066494  [**] [1:1421:11] SNMP AgentX/tcp request [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.1:705
-04/14-03:50:53.094277  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.3:162
-04/14-03:50:53.175270  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.3:161
-04/14-03:50:53.193770  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 10.0.2.15:52162 -> 10.0.2.3:0
-04/14-03:50:54.106848  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.1:162
-04/14-03:50:54.242654  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.1:161
-04/14-03:50:54.274463  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 10.0.2.15:52162 -> 10.0.2.1:0
-04/14-03:50:54.274617  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 10.0.2.1:0 -> 10.0.2.15:52162
-04/14-03:50:55.032100  [**] [1:1421:11] SNMP AgentX/tcp request [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.2:705
-04/14-03:50:55.133644  [**] [1:1421:11] SNMP AgentX/tcp request [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52163 -> 10.0.2.2:705
-04/14-03:50:56.879995  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.2:162
-04/14-03:50:56.982220  [**] [1:1420:11] SNMP trap tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52163 -> 10.0.2.2:162
-04/14-03:50:59.315867  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52162 -> 10.0.2.2:161
-04/14-03:50:59.416076  [**] [1:1418:11] SNMP request tcp [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 10.0.2.15:52163 -> 10.0.2.2:161
-04/14-03:51:01.065903  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 10.0.2.15:52162 -> 10.0.2.2:0
-04/14-03:51:01.169681  [**] [1:524:8] BAD-TRAFFIC tcp port 0 traffic [**] [Classification: Misc activity] [Priority: 3] {TCP} 10.0.2.15:52163 -> 10.0.2.2:0
-04/14-03:51:31.762031  [**] [1:254:4] DNS SPOOF query response with TTL of 1 min. and no authority [**] [Classification: Potentially Bad Traffic] [Priority: 2] {UDP} 192.168.1.1:53 -> 10.0.2.15:45940
+

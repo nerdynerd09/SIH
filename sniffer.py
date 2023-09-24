@@ -11,6 +11,8 @@ def sniffing(interface):
     scapy.sniff(iface=interface,prn=process_packet)
 
 def process_packet(packet):
+    print("Starting packet scan\n")
+
     global returnValue
     global urlValue 
     if packet.haslayer(http.HTTPRequest):
@@ -31,11 +33,16 @@ def process_packet(packet):
                         uncleanIndex +=1 
             except KeyError:
                 pass
+
+            print(f"Adding url: {returnValue}\n")
             requests.post('http://127.0.0.1:5000/addUrl', data={'url': returnValue,'urlScore':uncleanIndex})
+            print(f"Url Added: {returnValue}")
 
             dataList.append([returnValue,uncleanIndex])
         # print(f"ReturnValue: {returnValue}")
     else:
         pass
+    print(dataList)
     return dataList
 
+# sniffing('eth0')

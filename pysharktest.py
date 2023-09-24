@@ -18,7 +18,9 @@ def packetCapture():
 		# print(f"{packets.transport_layer} {packets.ip.src} -> {packets.ip.dst}")
 		try:
 			capturePackets2.append([packets.transport_layer,packets.ip.src,packets.ip.dst])
+			print("Adding data packets")
 			requests.post('http://127.0.0.1:5000/datapackets', data={'src': packets.ip.src,'dst':packets.ip.dst,'layer':packets.transport_layer})		
+			print("data packets added")
 			time.sleep(10)
 			# requests.post('http://127.0.0.1:5000/datapackets', data={'packetList': capturePackets2})		
 			# print(capturePackets2)
