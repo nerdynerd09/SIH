@@ -27,17 +27,17 @@ def hello_world():
     # networkIPs,networkMAC,vendor,currentIP,currentMAC = nmapper()
 
     # Working
-    # dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList = portScanner()    
-    # print("Port scanning done.\n")
-    # threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=True).start()
+    dictionary,ipList,currentIP,currentMAC,networkIPs,networkMAC,vendor,cveList = portScanner()    
+    print("Port scanning done.\n")
+    threading.Thread(target=sniffer.sniffing,args=('eth0',),daemon=False).start()
     # threading.Thread(target=arpSniff,args=('eth0',),daemon=True).start()
     # threading.Thread(target=dosDetection,daemon=True).start()
     # initialReportGenerator(networkIPs,networkMAC,vendor,currentIP,currentMAC,cveList)
     # return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
-    threading.Thread(target=packetCapture).start()
-    # return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
+    # threading.Thread(target=packetCapture).start()
+    return render_template('index.html',dictionary=dictionary,ipList=ipList,currentMAC=currentMAC,currentIP=currentIP,networkIPs=networkIPs,networkMAC=networkMAC,vendor=vendor,cveList=cveList)
 
-    return render_template('index.html')    
+    # return render_template('index.html')    
 
     # return render_template('wireshark.html')    
     
@@ -132,4 +132,4 @@ def arpAttackDetectionFn():
 
 
 if __name__ =="__main__":
-    socket.run(app,debug=True)
+    socket.run(app,debug=False)

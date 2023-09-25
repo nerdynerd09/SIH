@@ -1,6 +1,16 @@
 import scapy.all as scapy
 from scapy.layers import http
 import requests
+from warnings import filterwarnings
+
+filterwarnings("ignore")
+
+import warnings
+from cryptography.utils import CryptographyDeprecationWarning
+import paramiko
+
+with warnings.catch_warnings():
+    warnings.filterwarnings('ignore', category=CryptographyDeprecationWarning)
 
 dataList = []
 returnValue = None
